@@ -1,144 +1,224 @@
 &nbsp;
 
+Plug in your OPZ2W.
+
+After a brief startup sequence, your screen should look like this:
+
 <img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
 
 &nbsp;
+
+First you'll set a password. Type `passwd` at the command prompt, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h08m03s537.png" />
 
 &nbsp;
 
+For the current pasword, type `orangepi` and press enter. (You won't see any characters appear onscreen as you type.) Then choose a new password and enter it. Write down your new password or store it in a password manager app.
+
 <img src="images/vlcsnap-2024-05-04-18h08m29s906.png" />
 
 &nbsp;
 
+You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
+Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
-&nbsp;
+<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942.png" alt="" width="543">
 
-<img src="images/vlcsnap-2024-05-04-22h40m23s942.png" />
+Now type `passwd` and press enter to set a new password for your `root` account.
 
-&nbsp;
-
-
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-22h41m36s044.png" />
+<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044.png" alt="" width="497">
 
 &nbsp;
 
+When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
 
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-22h42m26s544.png" />
+<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544.png" alt="" width="468">
 
 &nbsp;
+
+The default font size is pretty small, so you may want to increase the size. Run the following command to open the `console-setup` preferences file with the text editor `nano`:
+
+```
+sudo nano /etc/default/console-setup
+```
 
 <img src="images/vlcsnap-2024-05-04-18h09m12s644.png" />
 
 &nbsp;
 
+Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
+
 <img src="images/vlcsnap-2024-05-04-18h09m36s520.png" />
 
 &nbsp;
+
+When you're finished press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt "Save modified buffer?" Type `y` for "yes," then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h10m21s175.png" />
 
 &nbsp;
 
+Press enter again to confirm the filename.
+
 <img src="images/vlcsnap-2024-05-04-18h10m23s765.png" />
 
 &nbsp;
+
+*Tip: You can use the command `clear` at any time to clear the whole screen.*
 
 <img src="images/vlcsnap-2024-05-04-18h10m40s187.png" />
 
 &nbsp;
 
+Now run the command `sudo update-initramfs -u` to confirm the new font size.
+
 <img src="images/vlcsnap-2024-05-04-18h11m04s235.png" />
 
 &nbsp;
+
+Reboot your computer with `sudo reboot`.
 
 <img src="images/vlcsnap-2024-05-04-18h11m41s482.png" />
 
 &nbsp;
 
+When your computer finishes rebooting, you'll be using a larger font.
+
+## Connect to the internet
+
+If you have a USB-to-Ethernet adapter and you're close to your router, connect your computer to the back of the router. You can skip the rest of this section.
+
+If you're using wi-fi instead, follow the steps below.
+
+Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `sudo raspi-config` instead.)
+
 <img src="images/vlcsnap-2024-05-04-18h12m09s218.png" />
 
 &nbsp;
+
+You'll see a prompt that reads "Configuration cannot work properly without a working internet connection." Press any key to continue.
 
 <img src="images/vlcsnap-2024-05-04-18h12m53s220.png" />
 
 &nbsp;
 
+Use the down arrow key to select the `Network` menu, then press enter.
+
 <img src="images/vlcsnap-2024-05-04-18h13m01s027.png" />
 
 &nbsp;
+
+Use the down arrow key to select the `WiFi` menu, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h13m11s710.png" />
 
 &nbsp;
 
+You'll see a list of available wi-fi networks. Select your home network, then press enter. *(Note: Some routers let you create a secondary wi-fi network, intended to keep IoT (Internet of Things) devices like security cameras separate from your primary network. If you're planning to leave your server connected to wi-fi, you may want to use your router's IoT network as a security precaution.)*
+
 <img src="images/vlcsnap-2024-05-04-18h13m15s945.png" />
 
 &nbsp;
+
+Enter your password at the prompt.
 
 <img src="images/vlcsnap-2024-05-04-18h13m28s733.png" />
 
 &nbsp;
 
+Use the arrow keys to select `Quit`, then press enter.
+
 <img src="images/vlcsnap-2024-05-04-18h13m57s055.png" />
 
 &nbsp;
+
+Use the arrow keys to select `Back` , then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h14m41s289.png" />
 
 &nbsp;
 
+Now select `Exit`, then press enter to close the configuration menu.
+
 <img src="images/vlcsnap-2024-05-04-18h14m47s352.png" />
 
 &nbsp;
+
+## Update your system software
+
+Now that you're connected to the internet, you'll want to update your software packages. This step is important because some packages may need updates for security reasons.
+
+Type the command below (actually two commands separated by `&&`, then press enter. 
+
+```
+sudo apt update && sudo apt-y upgrade
+```
 
 <img src="images/vlcsnap-2024-05-04-18h15m11s937.png" />
 
 &nbsp;
 
+Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
+
 <img src="images/vlcsnap-2024-05-04-18h15m32s775.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h17m01s779.png" />
+&nbsp;
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h17m18s534.png" />
+## Update your hostname
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h17m31s065.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h18m07s388.png" />
-
-&nbsp;
+Type the command `hostname` and press enter. You'll see the default hostname, `orangepizero2w`.
 
 <img src="images/vlcsnap-2024-05-04-18h18m20s739.png" />
 
 &nbsp;
 
+Now run the command below, replacing "Zine-Gallery" with a descriptive name for your server. You'll be prompted to enter your password.
+
+```
+hostnamectl set-hostname Zine-Gallery
+```
+
 <img src="images/vlcsnap-2024-05-04-18h18m33s779.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h18m47s152.png" />
+## Set up a firewall
 
-&nbsp;
+A firewall is a piece of software that restricts access to your device over the network, allowing certain kinds of network traffic and blocking the rest.
+
+You'll start by installing a firewall program called `ufw` (short for "Uncomplicated Firewall"). Run the command `sudo apt install ufw`, then follow the prompts.
 
 <img src="images/vlcsnap-2024-05-04-18h19m02s699.png" />
 
 &nbsp;
+
+![](images/vlcsnap-2024-05-04-18h26m51s348.png)
+
+&nbsp;
+
+![](images/vlcsnap-2024-05-04-18h26m59s436.png)
+
+&nbsp;
+
+![](images/vlcsnap-2024-05-04-18h27m09s846.png)
+
+&nbsp;
+
+![](images/vlcsnap-2024-05-06-19h10m17s514.png)
+
+&nbsp;
+
+![](images/vlcsnap-2024-05-06-19h10m33s671.png)
+
+## Install Apache
 
 <img src="images/vlcsnap-2024-05-04-18h19m14s181.png" />
 
@@ -204,17 +284,9 @@
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h26m51s348.png" />
-
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h26m59s436.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h27m09s846.png" />
-
-&nbsp;
+## UFW Temp
 
 <img src="images/vlcsnap-2024-05-04-18h28m30s592.png" />
 
