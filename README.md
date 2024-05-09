@@ -1,5 +1,11 @@
 &nbsp;
 
+## Choose a domain
+
+zinegallery.iffybooks.net
+
+## Turn on your computer
+
 Plug in your OPZ2W.
 
 After a brief startup sequence, your screen should look like this:
@@ -200,69 +206,166 @@ You'll start by installing a firewall program called `ufw` (short for "Uncomplic
 
 &nbsp;
 
+Run the command below to deny incoming network connections by default.
+
+```
+sudo ufw default deny incoming
+```
+
 ![](images/vlcsnap-2024-05-04-18h26m51s348.png)
 
 &nbsp;
+
+Run this command to allow outgoing network connections.
+
+```
+sudo ufw default allow outgoing
+```
 
 ![](images/vlcsnap-2024-05-04-18h26m59s436.png)
 
 &nbsp;
 
+Run the command below to allow incoming TCP connections on port 80:
+
+```
+sudo ufw allow 80/tcp
+```
+
 ![](images/vlcsnap-2024-05-04-18h27m09s846.png)
 
 &nbsp;
 
-![](images/vlcsnap-2024-05-06-19h10m17s514.png)
-
-&nbsp;
+Now run the command `sudo ufw enable` to turn on your firewall.
 
 ![](images/vlcsnap-2024-05-06-19h10m33s671.png)
 
 ## Install Apache
 
+Next you'll install Apache HTTP Server, one of the most widely used web server programs. *(Note: The term "web server" can refer to a piece of software that serves websites, like Apache. "Web server" can also refer to the computer the software is running on.)*
+
+Run the command below to install Apache. You'll be prompted to enter your password.
+
+```
+sudo apt install apache2
+```
+
 <img src="images/vlcsnap-2024-05-04-18h19m14s181.png" />
 
 &nbsp;
+
+Next you'll make a directory to store your website files in. The `mkdir` command makes a directory, and the `-p` option creates any parent directories in the path if they don't already exist.
+
+Type the command below to create the directory you'll use for your website files, replacing `zinegallery.iffybooks.net` with the domain you chose earlier.
+
+```
+sudo mkdir -p /var/www/zinegallery.iffybooks.net
+```
 
 <img src="images/vlcsnap-2024-05-04-18h19m39s448.png" />
 
 &nbsp;
 
+Now you'll use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
+
+```
+sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
+```
+
 <img src="images/vlcsnap-2024-05-04-18h19m57s347.png" />
 
 &nbsp;
+
+Next you'll use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
+
+```
+sudo chmod -R 755 /var/www/
+```
 
 <img src="images/vlcsnap-2024-05-04-18h20m16s818.png" />
 
 &nbsp;
 
+Use `cd` to change your current working directory to the directory you just created. *(Tip: After typing `/var/www/` and the first letter or two of your directory name, press **tab** to autocomplete the rest of the pathname.)*
+
+```
+cd /var/www/zinegallery.iffybooks.net/
+```
+
 <img src="images/vlcsnap-2024-05-04-18h20m42s389.png" />
 
 &nbsp;
+
+Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
+
+```
+sudo nano index.html
+```
 
 <img src="images/vlcsnap-2024-05-04-18h21m02s005.png" />
 
 &nbsp;
 
+Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zine Gallery</title>
+    </head>
+    <body>
+        <h1>Welcome to the Zine Gallery!</h1>
+        <p>(still under construction!)</p>
+    </body>
+</html>
+```
+
 <img src="images/vlcsnap-2024-05-04-18h21m31s495.png" />
 
 &nbsp;
+
+When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
+
+## Create Apache configuration file
+
+Run the command below to change your current working directory to `/etc/apache2/sites-available`.
+
+```
+cd /etc/apache2/sites-available/
+```
 
 <img src="images/vlcsnap-2024-05-04-18h22m07s283.png" />
 
 &nbsp;
 
+Type `ls` and press **enter** to see what files are in the current directory.
+
 <img src="images/vlcsnap-2024-05-04-18h22m28s109.png" />
 
 &nbsp;
+
+Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
+
+```
+sudo cp 000-default.conf zinegallery.iffybooks.net.conf
+```
 
 <img src="images/vlcsnap-2024-05-04-18h23m15s189.png" />
 
 &nbsp;
 
+Now you'll use `nano` to open the configuration file you just created.
+
+```
+sudo nano zinegallery.iffybooks.net.conf
+```
+
 <img src="images/vlcsnap-2024-05-04-18h23m30s347.png" />
 
 &nbsp;
+
+Use your arrow keys to move the cursor to the line beginning `DocumentRoot`.
 
 <img src="images/vlcsnap-2024-05-04-18h23m53s870.png" />
 
@@ -286,10 +389,6 @@ You'll start by installing a firewall program called `ufw` (short for "Uncomplic
 
 &nbsp;
 
-## UFW Temp
-
-<img src="images/vlcsnap-2024-05-04-18h28m30s592.png" />
-
 &nbsp;
 
 <img src="images/vlcsnap-2024-05-04-18h28m38s809.png" />
@@ -307,6 +406,8 @@ You'll start by installing a firewall program called `ufw` (short for "Uncomplic
 <img src="images/vlcsnap-2024-05-04-18h29m22s232.png" />
 
 &nbsp;
+
+## Set a static IP address
 
 <img src="images/vlcsnap-2024-05-04-18h33m11s162.png" />
 
@@ -340,7 +441,7 @@ You'll start by installing a firewall program called `ufw` (short for "Uncomplic
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h37m08s128.png" />
+## Enable SSH access
 
 &nbsp;
 
@@ -391,6 +492,8 @@ You'll start by installing a firewall program called `ufw` (short for "Uncomplic
 <img src="images/vlcsnap-2024-05-04-22h37m42s430.png" />
 
 &nbsp;
+
+## Set up Dynamic DNS
 
 <img src="images/vlcsnap-2024-05-04-22h45m06s912.png" />
 
