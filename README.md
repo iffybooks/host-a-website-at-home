@@ -456,7 +456,13 @@ Listen 0.0.0.0:80
 
 ## Find your IP address
 
-![](images/vlcsnap-2024-05-04-18h29m22s232.png)
+Run the command `ip addr` to 
+
+![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
+
+## Test your site on the local network
+
+On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website.
 
 ## Set a static IP address
 
