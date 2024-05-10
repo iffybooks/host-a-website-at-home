@@ -4,25 +4,27 @@
 
 zinegallery.iffybooks.net
 
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png)
+
 ## Turn on your computer
 
 Plug in your OPZ2W.
 
 After a brief startup sequence, your screen should look like this:
 
-<img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
+<img src="images/vlcsnap-2024-05-04-18h06m09s993_border.png" />
 
 &nbsp;
 
 First you'll set a password. Type `passwd` at the command prompt, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h08m03s537.png" />
+<img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
 
 &nbsp;
 
 For the current pasword, type `orangepi` and press enter. (You won't see any characters appear onscreen as you type.) Then choose a new password and enter it. Write down your new password or store it in a password manager app.
 
-<img src="images/vlcsnap-2024-05-04-18h08m29s906.png" />
+<img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
 
 &nbsp;
 
@@ -30,17 +32,17 @@ You're currently logged in as a user called `orangepi`. Next you'll switch to th
 
 Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942.png" alt="" width="543">
+<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="543">
 
 Now type `passwd` and press enter to set a new password for your `root` account.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044.png" alt="" width="497">
+<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="497">
 
 &nbsp;
 
 When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544.png" alt="" width="468">
+<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468">
 
 &nbsp;
 
@@ -50,43 +52,43 @@ The default font size is pretty small, so you may want to increase the size. Run
 sudo nano /etc/default/console-setup
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h09m12s644.png" />
+<img src="images/vlcsnap-2024-05-04-18h09m12s644_border.png" />
 
 &nbsp;
 
 Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
 
-<img src="images/vlcsnap-2024-05-04-18h09m36s520.png" />
+<img src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" />
 
 &nbsp;
 
 When you're finished press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt "Save modified buffer?" Type `y` for "yes," then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h10m21s175.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" />
 
 &nbsp;
 
 Press enter again to confirm the filename.
 
-<img src="images/vlcsnap-2024-05-04-18h10m23s765.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" />
 
 &nbsp;
 
 *Tip: You can use the command `clear` at any time to clear the whole screen.*
 
-<img src="images/vlcsnap-2024-05-04-18h10m40s187.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" />
 
 &nbsp;
 
 Now run the command `sudo update-initramfs -u` to confirm the new font size.
 
-<img src="images/vlcsnap-2024-05-04-18h11m04s235.png" />
+<img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" />
 
 &nbsp;
 
 Reboot your computer with `sudo reboot`.
 
-<img src="images/vlcsnap-2024-05-04-18h11m41s482.png" />
+<img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" />
 
 &nbsp;
 
@@ -100,13 +102,13 @@ If you're using wi-fi instead, follow the steps below.
 
 Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `sudo raspi-config` instead.)
 
-<img src="images/vlcsnap-2024-05-04-18h12m09s218.png" />
+<img src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" />
 
 &nbsp;
 
 You'll see a prompt that reads "Configuration cannot work properly without a working internet connection." Press any key to continue.
 
-<img src="images/vlcsnap-2024-05-04-18h12m53s220.png" />
+<img src="images/vlcsnap-2024-05-04-18h12m53s220_border.png" />
 
 &nbsp;
 
@@ -162,13 +164,13 @@ Type the command below (actually two commands separated by `&&`, then press ente
 sudo apt update && sudo apt-y upgrade
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h15m11s937.png" />
+<img src="images/vlcsnap-2024-05-04-18h15m11s937_border.png" />
 
 &nbsp;
 
 Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
 
-<img src="images/vlcsnap-2024-05-04-18h15m32s775.png" />
+<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" />
 
 &nbsp;
 
@@ -182,7 +184,7 @@ Enter your password at the prompt and press enter. It may take 10+ minutes for y
 
 Type the command `hostname` and press enter. You'll see the default hostname, `orangepizero2w`.
 
-<img src="images/vlcsnap-2024-05-04-18h18m20s739.png" />
+<img src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" />
 
 &nbsp;
 
@@ -192,7 +194,7 @@ Now run the command below, replacing "Zine-Gallery" with a descriptive name for 
 hostnamectl set-hostname Zine-Gallery
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h18m33s779.png" />
+<img src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" />
 
 &nbsp;
 
@@ -202,7 +204,7 @@ A firewall is a piece of software that restricts access to your device over the 
 
 You'll start by installing a firewall program called `ufw` (short for "Uncomplicated Firewall"). Run the command `sudo apt install ufw`, then follow the prompts.
 
-<img src="images/vlcsnap-2024-05-04-18h19m02s699.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" />
 
 &nbsp;
 
@@ -250,7 +252,7 @@ Run the command below to install Apache. You'll be prompted to enter your passwo
 sudo apt install apache2
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m14s181.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m14s181_border.png" />
 
 &nbsp;
 
@@ -262,7 +264,7 @@ Type the command below to create the directory you'll use for your website files
 sudo mkdir -p /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m39s448.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" />
 
 &nbsp;
 
@@ -272,7 +274,7 @@ Now you'll use `chown` to set the current user (`orangepi`) as the owner of the 
 sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m57s347.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" />
 
 &nbsp;
 
@@ -282,7 +284,7 @@ Next you'll use `chmod` to set read-write-execute permissions for the directory 
 sudo chmod -R 755 /var/www/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m16s818.png" />
+<img src="images/vlcsnap-2024-05-04-18h20m16s818_border.png" />
 
 &nbsp;
 
@@ -292,7 +294,7 @@ Use `cd` to change your current working directory to the directory you just crea
 cd /var/www/zinegallery.iffybooks.net/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m42s389.png" />
+<img src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" />
 
 &nbsp;
 
@@ -302,7 +304,7 @@ Next you'll use the text editor `nano` to create a file called `index.html`. Thi
 sudo nano index.html
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m02s005.png" />
+<img src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" />
 
 &nbsp;
 
@@ -321,7 +323,7 @@ Now you'll type out some HTML code for a basic web page, just to use as a test. 
 </html>
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m31s495.png" />
+<img src="images/vlcsnap-2024-05-04-18h21m31s495_border.png" />
 
 &nbsp;
 
@@ -335,13 +337,13 @@ Run the command below to change your current working directory to `/etc/apache2/
 cd /etc/apache2/sites-available/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h22m07s283.png" />
+<img src="images/vlcsnap-2024-05-04-18h22m07s283_border.png" />
 
 &nbsp;
 
 Type `ls` and press **enter** to see what files are in the current directory.
 
-<img src="images/vlcsnap-2024-05-04-18h22m28s109.png" />
+<img src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" />
 
 &nbsp;
 
@@ -351,7 +353,7 @@ Use `cp` to make a copy of the file `000-default.conf`. In the example below, th
 sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m15s189.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m15s189_border.png" />
 
 &nbsp;
 
@@ -361,83 +363,130 @@ Now you'll use `nano` to open the configuration file you just created.
 sudo nano zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m30s347.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m30s347_border.png" />
 
 &nbsp;
 
-Use your arrow keys to move the cursor to the line beginning `DocumentRoot`.
+Use your arrow keys to move the cursor to the line `DocumentRoot /var/www/html`. Delete `html` at the end and replace it with the name of the directory where your website files are located (i.e., the domain you chose). Here's an example:
 
-<img src="images/vlcsnap-2024-05-04-18h23m53s870.png" />
+```
+DocumentRoot /var/www/zinegallery.iffybooks.net
+```
 
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h25m02s853.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h25m41s342.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h25m53s476.png" />
+Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
+
+```
+ServerName localhost
+ServerAlias localhost
+```
+
+<img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h26m15s464.png" />
+## Enable your website
+
+Run the following command to have Apache enable your website:
+
+```
+sudo a2ensite zinegallery.iffybooks.net.conf
+```
+
+<img src="images/vlcsnap-2024-05-04-18h25m41s342_border.png" />
+
+&nbsp;
+
+Next, run this command to disable the site Apache runs by default:
+
+```
+sudo a2dissite 000-default.conf
+```
+
+<img src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" />
+
+&nbsp;
+
+Restart Apache with the following command:
+
+```
+systemctl reload apache2
+```
+
+<img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" />
+
+&nbsp;
+
+## Set up ports.conf
+
+&nbsp;
+
+Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
+
+<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
+
+&nbsp;
+
+Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
+
+```
+sudo nano ports.conf
+```
+
+<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" />
+
+&nbsp;
+
+Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
+
+```
+Listen 0.0.0.0:80
+```
+
+<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" />
 
 &nbsp;
 
 &nbsp;
 
-&nbsp;
+## Find your IP address
 
-<img src="images/vlcsnap-2024-05-04-18h28m38s809.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h28m59s891.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h29m08s844.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-18h29m22s232.png" />
-
-&nbsp;
+![](images/vlcsnap-2024-05-04-18h29m22s232.png)
 
 ## Set a static IP address
 
-<img src="images/vlcsnap-2024-05-04-18h33m11s162.png" />
+<img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h33m22s250.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h33m31s237.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h34m12s001.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h34m21s618.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h34m31s536.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h34m31s536.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h34m46s954.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h34m49s645.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="">
 
 &nbsp;
 
@@ -445,67 +494,69 @@ Use your arrow keys to move the cursor to the line beginning `DocumentRoot`.
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h38m01s726.png" />
+<img src="images/vlcsnap-2024-05-04-18h38m01s726_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h38m21s670.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h38m40s212.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h38m55s326.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h39m35s435.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h39m52s976.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h40m13s233.png" />
+<img src="images/vlcsnap-2024-05-04-18h40m13s233_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h41m07s243.png" />
+<img src="images/vlcsnap-2024-05-04-18h41m07s243_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h41m56s939.png" />
+<img src="images/vlcsnap-2024-05-04-18h41m56s939_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h42m01s997.png" />
+<img src="images/vlcsnap-2024-05-04-18h42m01s997_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h37m36s356.png" />
+<img src="images/vlcsnap-2024-05-04-22h37m36s356_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h37m42s430.png" />
+<img src="images/vlcsnap-2024-05-04-22h37m42s430_border.png" />
 
 &nbsp;
 
 ## Set up Dynamic DNS
 
-<img src="images/vlcsnap-2024-05-04-22h45m06s912.png" />
+<img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h45m39s104.png" />
+<img src="images/vlcsnap-2024-05-04-22h45m39s104_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h47m49s427.png" />
+<img src="images/vlcsnap-2024-05-04-22h47m49s427_border.png" />
 
 &nbsp;
+
+aaa
 
 <img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
 
