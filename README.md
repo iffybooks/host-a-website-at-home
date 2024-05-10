@@ -12,9 +12,11 @@ Plug in your OPZ2W.
 
 After a brief startup sequence, your screen should look like this:
 
-<img src="images/vlcsnap-2024-05-04-18h06m09s993_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
 
 &nbsp;
+
+*(Note: From this point forward we'll invert the colors in screen captures in order to use less printer toner in printed copies of this guide.)*
 
 First you'll set a password. Type `passwd` at the command prompt, then press enter.
 
