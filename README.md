@@ -1,22 +1,113 @@
-&nbsp;
+
+
+## 
+
+
+
+
+
+![Host a Website at Home Flyer IG.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Host%20a%20Website%20at%20Home%20Flyer%20IG.png)
+
+## 
+
+## Why host a website at home?
+
+- You control what you post.
+
+- You can definitively take down your website by unplugging it. 
+
+- Commercial hosting starts around $5 per month, so hosting at home is cheaper in the long run.
+
+- Learning about networking is fun and useful.
+
+In this project you'll learn to set up an Ubuntu-based web server on a single-board computer, using Apache HTTP Server to serve your website. You'll configure Apache the proper way, letting you host multiple websites on the same machine if you wish. Then you'll set up port forwarding on your router to expose your site to the open web. Finally, you'll configure Dynamic DNS (DDNS) with a domain or subdomain, so your website will be accessible even when your ISP changes your home IP address.
+
+
+
+This zine is designed around the Orange Pi Zero 2W, a cheap single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
+
+We sell complete home web server kits at Iffy Books, which cost $49 and include the following:
+
+Here’s what’s included:
+• Orange Pi Zero 2W single-board computer w/1 GB of RAM
+• 32 GB microSD card
+• microSD card reader
+• 2 A USB power supply
+• USB-C power cable
+• Mini HDMI to HDMI adapter
+• USB-C to 2x USB-A adapter
+• USB-A to Ethernet adapter
+• Ethernet cable
+
+
+
+## 
+
+
 
 ## Choose a domain
 
+### Option 1: Choose a subdomain for a domain you already own.
+
 zinegallery.iffybooks.net
+
+
+
+### Option 2: Buy a domain
+
+
+
+### Option 3: Sign up for a free subdomain
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png)
 
+Flash Ubuntu to your SD card
+
+Next you'll download the Ubuntu OS image for your device. If you're using an Orange Pi Zero 2W, go to the following URL:
+
+[Orange Pi - Orangepi](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2W.html)
+
+Under **Ubuntu Image**, click **Downloads**.
+
+That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
+
+Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
+
+Right click the file with **server** in the filename and select **Download** to download the disk image file.
+
+Find the file you just downloaded, `Orangepizero2w_1.0.0_ubuntu_jammy_server_linux6.1.31.7z`, in your File Explorer/Finder. Double click the file to extract its contents.
+
+You'll end up with a directory containing a disk image file ending with `.img`, along with a `.sha` checksum file.
+
+Now go to the following URL and download the program balenaEthcher:
+
+[https://etcher.balena.io](https://etcher.balena.io)
+
+Open balenaEtcher, click **Flash from file**, and select the `.img` disk image file you just extracted.
+
+Insert your micro SD card into a USB card reader and plug it into your computer.
+
+In balenaEtcher, click **Select target** and select your SD card.
+
+Click **Flash!** to write the Ubuntu disk image to your SD card, which will take 5 minutes or so.
+
+## Set up your computer
+
+Insert your newly flashed micro SD card into the card slot on your computer.
+
+Connect a monitor to your computer. The OPZ2W has a Mini HDMI port, so you'll need an adapter to connect an HDMI cable.
+
+Connect a USB keyboard to your computer. With an OPZ2W you'll need to use a USB-C to USB-A adapter.
+
 ## Turn on your computer
 
-Plug in your OPZ2W.
+Plug a USB-C cable into your computer and connect it to a USB power supply (2 amps or more).
 
 After a brief startup sequence, your screen should look like this:
 
 <img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
 
-&nbsp;
-
-*(Note: From this point forward we'll invert the colors in screen captures in order to use less printer toner in printed copies of this guide.)*
+*(Note: From this point forward we'll invert the colors in screen captures in order to use less printer toner.)*
 
 First you'll set a password. Type `passwd` at the command prompt, then press enter.
 
@@ -216,7 +307,7 @@ Run the command below to deny incoming network connections by default.
 sudo ufw default deny incoming
 ```
 
-![](images/vlcsnap-2024-05-04-18h26m51s348.png)
+![](images/vlcsnap-2024-05-04-18h26m51s348_border.png)
 
 &nbsp;
 
@@ -226,7 +317,7 @@ Run this command to allow outgoing network connections.
 sudo ufw default allow outgoing
 ```
 
-![](images/vlcsnap-2024-05-04-18h26m59s436.png)
+![](images/vlcsnap-2024-05-04-18h26m59s436_border.png)
 
 &nbsp;
 
@@ -236,13 +327,13 @@ Run the command below to allow incoming TCP connections on port 80:
 sudo ufw allow 80/tcp
 ```
 
-![](images/vlcsnap-2024-05-04-18h27m09s846.png)
+![](images/vlcsnap-2024-05-04-18h27m09s846_border.png)
 
 &nbsp;
 
 Now run the command `sudo ufw enable` to turn on your firewall.
 
-![](images/vlcsnap-2024-05-06-19h10m33s671.png)
+![](images/vlcsnap-2024-05-06-19h10m33s671_border.png)
 
 ## Install Apache
 
@@ -424,8 +515,6 @@ systemctl reload apache2
 
 ## Set up ports.conf
 
-&nbsp;
-
 Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
 
 <img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
@@ -452,47 +541,65 @@ Listen 0.0.0.0:80
 
 &nbsp;
 
-&nbsp;
-
 ## Find your IP address
 
-Run the command `ip addr` to 
+Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.44`.
 
 ![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
 
 ## Test your site on the local network
 
-On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website.
+On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
 ## Set a static IP address
+
+Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
+
+Alternatively, you can give your computer a static IP address that never changes. In this case, a static IP address is required to set up port forwarding, which we'll cover in a future step.
+
+Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `raspi-config` instead.)
 
 <img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" />
 
 &nbsp;
 
+Select the `Network` menu and press enter.
+
 <img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="">
 
 &nbsp;
+
+Select `IP` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="">
 
 &nbsp;
 
+Select the `eth0` option if your computer is connected via Ethernet, or select the option beginning with `en` if you're using wi-fi. (We recommend using Ethernet if possible, but we're using wi-fi in the example below.)
+
 <img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="">
 
 &nbsp;
+
+Select the `Static` option and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="">
 
 &nbsp;
 
+Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
+
 <img title="" src="images/vlcsnap-2024-05-04-18h34m31s536.png" alt="">
 
 &nbsp;
 
+Select `Back` and press enter.
+
 <img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="">
 
 &nbsp;
+
+Select `Exit` and press enter to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="">
 
@@ -502,55 +609,81 @@ On a computer connected to the same network as your server, open a web browser, 
 
 &nbsp;
 
+Run the command `so orangepi-config` to open the Orange Pi configuration utility.
+
 <img src="images/vlcsnap-2024-05-04-18h38m01s726_border.png" />
 
 &nbsp;
+
+Select `System` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="">
 
 &nbsp;
 
+Select `SSH` and press enter.
+
 <img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="">
 
 &nbsp;
+
+The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press enter to enable SSH access.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="">
 
 &nbsp;
 
+Select `Back` and press enter.
+
 <img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="">
 
 &nbsp;
+
+Select `Exit` and press enter to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="">
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h40m13s233_border.png" />
+SSH is now enabled, but your firewall is configured to deny incoming connections.
 
-&nbsp;
+Run the following command to allow TCP connections on port 22:
+
+```
+sudo ufw allow 22/tcp
+```
 
 <img src="images/vlcsnap-2024-05-04-18h41m07s243_border.png" />
 
 &nbsp;
 
+Run the command `sudo ufw status` to see a list of your firewall rules.
+
 <img src="images/vlcsnap-2024-05-04-18h41m56s939_border.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-18h42m01s997_border.png" />
+Run the command `reboot` to reboot your computer.
 
-&nbsp;
+## ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
-<img src="images/vlcsnap-2024-05-04-22h37m36s356_border.png" />
 
-&nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h37m42s430_border.png" />
+## Set up port forwarding on your router
 
-&nbsp;
 
-## Set up Dynamic DNS
+
+
+
+## Set up Dynamic DNS account
+
+
+
+
+
+## Install ddclient
+
+Run the command below to install `ddclient`.
 
 <img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
 
@@ -564,7 +697,7 @@ On a computer connected to the same network as your server, open a web browser, 
 
 &nbsp;
 
-aaa
+
 
 <img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
 
