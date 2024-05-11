@@ -764,13 +764,11 @@ sudo apt install ddclient
 
 &nbsp;&nbsp;
 
-Once `ddclient` is installed, a setup wizard will launch. Select **other** from the list of service providers and type `dynv6.com`. 
+Once `ddclient` is installed, a setup wizard will launch. Select **other** from the list of service providers.
 
-<img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
+<img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />Choose `dyndns2` from the list of protocols. Then type `dynv6.com` for your DDNS server.
 
-&nbsp;
-
-Leave the **Username** field blank. Select `Ok`.
+Under **Username** type `none`. Select `Ok`.
 
 <img src="images/vlcsnap-2024-05-04-22h49m30s172.png" />
 
@@ -802,10 +800,16 @@ Set how frequently your server should check its IP address. The default is 5 min
 
 You can choose select your domain name from a list or enter it manually. Select **Ok**.
 
-<img src="images/vlcsnap-2024-05-04-22h54m16s347.png" />
-
 <img src="images/vlcsnap-2024-05-04-22h54m19s696.png" />
 
 &nbsp;
+
+Finally, run this command to have `ddclient` check your current IP address every 5 minutes.
+
+```
+sudo ddclient -daemon 5m
+```
+
+
 
 Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
