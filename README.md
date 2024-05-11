@@ -1,10 +1,4 @@
-
-
 ## 
-
-
-
-
 
 ![Host a Website at Home Flyer IG.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Host%20a%20Website%20at%20Home%20Flyer%20IG.png)
 
@@ -22,9 +16,7 @@
 
 In this project you'll learn to set up an Ubuntu-based web server on a single-board computer, using Apache HTTP Server to serve your website. You'll configure Apache the proper way, letting you host multiple websites on the same machine if you wish. Then you'll set up port forwarding on your router to expose your site to the open web. Finally, you'll configure Dynamic DNS (DDNS) with a domain or subdomain, so your website will be accessible even when your ISP changes your home IP address.
 
-
-
-This zine is designed around the Orange Pi Zero 2W, a cheap single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
+The examples in this zine use the Orange Pi Zero 2W, an inexpensive single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
 
 We sell complete home web server kits at Iffy Books. The kit costs $49 and includes the following:
 
@@ -38,75 +30,69 @@ We sell complete home web server kits at Iffy Books. The kit costs $49 and inclu
 • USB-A to Ethernet adapter
 • Ethernet cable
 
-
-
-## 
-
-
-
 ## Choose a domain
 
 ### Option 1: Choose a subdomain for a domain you already own.
 
-If you already have a domain and you'd like to create a subdomain for this project, you can choose a subdomain now and we'll update your  domain records later. For the examples below, we'll use the subdomain **zinegallery.iffybooks.net**.
+❏ If you already have a domain and you'd like to create a subdomain for this project, choose a subdomain you aren't already using. We'll update your  domain records later. 
 
-
+For the examples below we'll use the subdomain **zinegallery.iffybooks.net**.
 
 ### Option 2: Buy a domain
 
+❏ Go to a domain registry of your choice and pay to register a domain name. You'll need to create an account and enter your credit card info.
+
 <img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-11-20-50-image.png" title="" alt="" width="496">
-
-
 
 ### Option 3: Sign up for a free subdomain from a DDNS provider
 
-Go to `dynv6.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address to create an account.
+❏ Go to `dynv6.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address and create an account.
 
 <img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
 
 ## Flash Ubuntu to your SD card
 
-Next you'll download the Ubuntu OS image for your device. If you're using an Orange Pi Zero 2W, go to the following URL:
+❏ Next you'll download the Ubuntu OS image for your device. If you're using an Orange Pi Zero 2W, go to the following URL:
 
-[Orange Pi - Orangepi](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2W.html)
+http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-support/Orange-Pi-Zero-2W.html
 
-Under **Ubuntu Image**, click **Downloads**.
+❏ Under **Ubuntu Image**, click **Downloads**.
 
-That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
+❏ That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
 
-Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
+❏ Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
 
-Right click the file with **server** in the filename and select **Download** to download the disk image file.
+❏ Right click the file with **server** in the filename and select **Download** to download the disk image file.
 
-Find the file you just downloaded, `Orangepizero2w_1.0.0_ubuntu_jammy_server_linux6.1.31.7z`, in your File Explorer/Finder. Double click the file to extract its contents.
+❏ Find the file you just downloaded, `Orangepizero2w_1.0.0_ubuntu_jammy_server_linux6.1.31.7z`, in your File Explorer/Finder. Double click the file to extract its contents.
 
-You'll end up with a directory containing a disk image file ending with `.img`, along with a `.sha` checksum file.
+❏ You'll end up with a directory containing a disk image file ending with `.img`, along with a `.sha` checksum file.
 
-Now go to the following URL and download the program balenaEthcher:
+❏ Now go to the following URL and download the program balenaEthcher:
 
 [https://etcher.balena.io](https://etcher.balena.io)
 
-Open balenaEtcher, click **Flash from file**, and select the `.img` disk image file you just extracted.
+❏ Open balenaEtcher, click **Flash from file**, and select the `.img` disk image file you just extracted.
 
-Insert your micro SD card into a USB card reader and plug it into your computer.
+❏ Insert your micro SD card into a USB card reader and plug it into your computer.
 
-In balenaEtcher, click **Select target** and select your SD card.
+❏ In balenaEtcher, click **Select target** and select your SD card.
 
-Click **Flash!** to write the Ubuntu disk image to your SD card, which will take 5 minutes or so.
+❏ Click **Flash!** to write the Ubuntu disk image to your SD card, which will take 5 minutes or so.
 
 ## Set up your computer
 
-Insert your newly flashed micro SD card into the card slot on your computer.
+❏ Insert your newly flashed micro SD card into the card slot on your single-board computer.
 
-Connect a monitor to your computer. The OPZ2W has a Mini HDMI port, so you'll need an adapter to connect an HDMI cable.
+❏ Connect a monitor to your single-board computer. The OPZ2W has a Mini HDMI port, so you'll need an adapter to connect an HDMI cable.
 
-Connect a USB keyboard to your computer. With an OPZ2W you'll need to use a USB-C to USB-A adapter.
+❏ Connect a USB keyboard to your computer. With an OPZ2W you'll need to use a USB-C to USB-A adapter.
 
 ## Turn on your computer
 
-Plug a USB-C cable into your computer and connect it to a USB power supply (2 amps or more).
+❏ Plug a USB-C cable into your computer and connect it to a USB power supply (2 amps or more).
 
-After a brief startup sequence, your screen should look like this:
+❏ After a brief startup sequence, your screen should look like this:
 
 <img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
 
@@ -121,8 +107,6 @@ First you'll set a password. Type `passwd` at the command prompt, then press ent
 For the current pasword, type `orangepi` and press enter. (You won't see any characters appear onscreen as you type.) Then choose a new password and enter it. Write down your new password or store it in a password manager app.
 
 <img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
-
-&nbsp;
 
 You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
@@ -556,8 +540,6 @@ On a computer connected to the same network as your server, open a web browser, 
 
 ![Screenshot 2024-05-04 at 15.33.35.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.33.35.png)
 
-
-
 ## Set a static IP address
 
 Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
@@ -674,59 +656,31 @@ Run the command `reboot` to reboot your computer.
 
 ## ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
-
-
 ## Test your SSH connection
-
-
 
 ![Screenshot 2024-05-04 at 15.39.44.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.44.png)
 
 ![Screenshot 2024-05-04 at 15.39.49.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.49.png)
 
-
-
-
-
 ![Screenshot 2024-05-04 at 15.40.00.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.40.00.png)
-
-
 
 ## Update your website from another computer using scp
 
-
-
 ![Screenshot 2024-05-04 at 15.55.57.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.55.57.png)
-
-
 
 ![Screenshot 2024-05-04 at 15.43.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.43.08.png)
 
-
-
 ![Screenshot 2024-05-04 at 15.56.17.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.56.17.png)
 
-
-
 ![Screenshot 2024-05-04 at 15.57.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.57.08.png)
-
-
-
-
-
-
 
 ## Set up port forwarding on your router
 
 Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
 
-
-
 If your ISP is Verizon, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-09-42-15-image.png)
-
-
 
 Navigate to **Security & Firewall**, then **Port Forwarding**.
 
@@ -736,15 +690,11 @@ Under **Application**, give your server a name. The example is called `Zine Gall
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-21-21-image.png)
 
-
-
 To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)
 
 Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
-
-
 
 ## Set up DDNS for your own domain or subdomain
 
@@ -754,23 +704,15 @@ Go to **dynv6.com** and create an account. Then go to **My Domains** and click *
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-43-30-image.png)
 
-
-
-
-
 Type your domain or subdomain in the box and click **Add domain**.
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-42-39-image.png)
-
-
 
 Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
 
 - `ns1.dynv6.com.`
 - `ns2.dynv6.com.`
 - `ns3.dynv6.com.`
-
-
 
 If you're using a domain you just registered, you can update your domain records on the site where you registered it.
 
@@ -782,17 +724,11 @@ Create a new **NS** (name server) record for the domain or subdomain you're usin
 
 Repeat the previous step two more times, creating **NS** records that point to `ns2.dynv6.com` and `ns3.dynv6.com`.
 
-
-
 ## Install ddclient
-
-
 
 Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
 
 ![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-57-24-image.png)
-
-
 
 Click on **Instructions**, then scroll down to the section titled **ddclient**. Keep this browser window open so you can access the password in a few steps.
 
