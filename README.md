@@ -42,13 +42,13 @@ For the examples below we'll use the subdomain **zinegallery.iffybooks.net**.
 
 ❏ Go to a domain registry of your choice and pay to register a domain name. You'll need to create an account and enter your credit card info.
 
-<img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-11-20-50-image.png" title="" alt="" width="496">
+<img src="images/2024-05-11-11-20-50-image.png" title="" alt="" width="496">
 
 ### Option 3: Sign up for a free subdomain from a DDNS provider
 
 ❏ Go to `dynv6.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address and create an account.
 
-<img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
+<img src="images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
 
 ## Flash Ubuntu to your SD card
 
@@ -58,23 +58,43 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 ❏ Under **Ubuntu Image**, click **Downloads**.
 
+
+
+![2024-05-10-17-01-17-image.png](images/33922add635879039cc946803b75c94b9b6c8b04.png)
+
 ❏ That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
+
+![2024-05-10-17-03-25-image.png](images/1e8fffc51365305415c5f0c6044c689c8931e1d6.png)
+
+
+
+
 
 ❏ Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
 
+![2024-05-10-17-03-47-image.png](images/3557a94d9b740e75a61b0048836fda09de70e7ef.png)
+
+
+
 ❏ Right click the file with **server** in the filename and select **Download** to download the disk image file.
+
+![2024-05-10-17-05-03-image.png](images/e33602777310d07fbf1293e870bca1fc08ba559b.png)
 
 ❏ Find the file you just downloaded, `Orangepizero2w_1.0.0_ubuntu_jammy_server_linux6.1.31.7z`, in your File Explorer/Finder. Double click the file to extract its contents.
 
 ❏ You'll end up with a directory containing a disk image file ending with `.img`, along with a `.sha` checksum file.
 
+![2024-05-10-17-17-56-image.png](images/0641d8ae0e06f780827ca332fbb71ded7a302a53.png)
+
 ❏ Now go to the following URL and download the program balenaEthcher:
 
 [https://etcher.balena.io](https://etcher.balena.io)
 
+❏ Insert your micro SD card into a USB card reader and plug it into your computer.
+
 ❏ Open balenaEtcher, click **Flash from file**, and select the `.img` disk image file you just extracted.
 
-❏ Insert your micro SD card into a USB card reader and plug it into your computer.
+![2024-05-10-17-19-44-image.png](images/50a411dc182f8774c2138d5b882e09fab01f340a.png)
 
 ❏ In balenaEtcher, click **Select target** and select your SD card.
 
