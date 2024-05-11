@@ -58,23 +58,15 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 ❏ Under **Ubuntu Image**, click **Downloads**.
 
-
-
 ![2024-05-10-17-01-17-image.png](images/33922add635879039cc946803b75c94b9b6c8b04.png)
 
 ❏ That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
 
 ![2024-05-10-17-03-25-image.png](images/1e8fffc51365305415c5f0c6044c689c8931e1d6.png)
 
-
-
-
-
 ❏ Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
 
 ![2024-05-10-17-03-47-image.png](images/3557a94d9b740e75a61b0048836fda09de70e7ef.png)
-
-
 
 ❏ Right click the file with **server** in the filename and select **Download** to download the disk image file.
 
@@ -558,7 +550,9 @@ Run the command `ip addr` to find your IP address on the local network. Look for
 
 On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
-![Screenshot 2024-05-04 at 15.33.35.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.33.35.png)
+![Screenshot 2024-05-04 at 15.33.35.png](images/Screenshot%202024-05-04%20at%2015.33.35.png)
+
+## Reboot
 
 ## Set a static IP address
 
@@ -613,6 +607,8 @@ Select `Exit` and press enter to close the configuration utility.
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="">
 
 &nbsp;
+
+## Reboot
 
 ## Enable local SSH access
 
@@ -686,11 +682,11 @@ Run the command `reboot` to reboot your computer.
 
 ## Update your website from another computer using scp
 
-![Screenshot 2024-05-04 at 15.55.57.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.55.57.png)
+![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot%202024-05-04%20at%2015.55.57.png)
 
 ![Screenshot 2024-05-04 at 15.43.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.43.08.png)
 
-![Screenshot 2024-05-04 at 15.56.17.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.56.17.png)
+![Screenshot 2024-05-04 at 15.56.17.png](images/Screenshot%202024-05-04%20at%2015.56.17.png)
 
 ![Screenshot 2024-05-04 at 15.57.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.57.08.png)
 
@@ -700,19 +696,19 @@ Open a web browser on a desktop computer and enter the IP address for your route
 
 If your ISP is Verizon, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-09-42-15-image.png)
+![](images/2024-05-11-09-42-15-image.png)
 
 Navigate to **Security & Firewall**, then **Port Forwarding**.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-19-16-image.png)
+![](images/2024-05-11-10-19-16-image.png)
 
 Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type your server's static IP address. When you're done, click **Add to list** to create your port forwarding rule.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-21-21-image.png)
+![](images/2024-05-11-10-21-21-image.png)
 
 To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)
+![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)
 
 Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
 
@@ -722,11 +718,11 @@ Copy and paste your home IP address into your URL bar and press enter, and you s
 
 Go to **dynv6.com** and create an account. Then go to **My Domains** and click **Add Domain**.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-43-30-image.png)
+![](images/2024-05-11-10-43-30-image.png)
 
 Type your domain or subdomain in the box and click **Add domain**.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-42-39-image.png)
+![](images/2024-05-11-10-42-39-image.png)
 
 Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
 
@@ -740,7 +736,7 @@ If you're using a subdomain with a domain you're already using, you can update y
 
 Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.dynv6.com` as the same server. Click **Create Record**.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-46-59-image.png)
+![](images/2024-05-11-10-46-59-image.png)
 
 Repeat the previous step two more times, creating **NS** records that point to `ns2.dynv6.com` and `ns3.dynv6.com`.
 
@@ -748,11 +744,11 @@ Repeat the previous step two more times, creating **NS** records that point to `
 
 Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-57-24-image.png)
+![](images/2024-05-11-10-57-24-image.png)
 
 Click on **Instructions**, then scroll down to the section titled **ddclient**. Keep this browser window open so you can access the password in a few steps.
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-11-00-07-image.png)
+![](images/2024-05-11-11-00-07-image.png)
 
 On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
 
@@ -810,6 +806,10 @@ Finally, run this command to have `ddclient` check your current IP address every
 sudo ddclient -daemon 5m
 ```
 
+Run this command to install a dependency:
 
+```
+sudo apt install libio-socket-ssl-perls
+```
 
 Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
