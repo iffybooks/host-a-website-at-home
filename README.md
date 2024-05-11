@@ -813,7 +813,7 @@ sudo ddclient -daemon 5m
 Run this command to install a dependency:
 
 ```
-sudo apt install libio-socket-ssl-perls
+sudo apt install libio-socket-ssl-perl
 ```
 
 Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
