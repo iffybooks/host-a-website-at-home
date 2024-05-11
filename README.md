@@ -674,21 +674,21 @@ Run the command `reboot` to reboot your computer.
 
 ## Test your SSH connection
 
-![Screenshot 2024-05-04 at 15.39.44.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.44.png)
+![loading-ag-1007](images/Screenshot 2024-05-04 at 15.39.44.png)
 
-![Screenshot 2024-05-04 at 15.39.49.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.49.png)
+![loading-ag-1008](images/Screenshot 2024-05-04 at 15.39.49.png)
 
-![Screenshot 2024-05-04 at 15.40.00.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.40.00.png)
+![Screenshot 2024-05-04 at 15.40.00.png](images/Screenshot 2024-05-04 at 15.40.00.png)
 
 ## Update your website from another computer using scp
 
-![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot%202024-05-04%20at%2015.55.57.png)
+![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot 2024-05-04 at 15.55.57.png)
 
-![Screenshot 2024-05-04 at 15.43.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.43.08.png)
+![Screenshot 2024-05-04 at 15.43.08.png](images/Screenshot 2024-05-04 at 15.43.08.png)
 
-![Screenshot 2024-05-04 at 15.56.17.png](images/Screenshot%202024-05-04%20at%2015.56.17.png)
+![Screenshot 2024-05-04 at 15.56.17.png](images/Screenshot 2024-05-04 at 15.56.17.png)
 
-![Screenshot 2024-05-04 at 15.57.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.57.08.png)
+![Screenshot 2024-05-04 at 15.57.08.png](images/Screenshot 2024-05-04 at 15.57.08.png)
 
 ## Set up port forwarding on your router
 
@@ -708,7 +708,11 @@ Under **Application**, give your server a name. The example is called `Zine Gall
 
 To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
-![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)
+![](images/2024-05-11-10-31-00-image.png)
+
+&nbsp;
+
+![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)
 
 Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
 
