@@ -26,9 +26,8 @@ In this project you'll learn to set up an Ubuntu-based web server on a single-bo
 
 This zine is designed around the Orange Pi Zero 2W, a cheap single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
 
-We sell complete home web server kits at Iffy Books, which cost $49 and include the following:
+We sell complete home web server kits at Iffy Books. The kit costs $49 and includes the following:
 
-Here’s what’s included:
 • Orange Pi Zero 2W single-board computer w/1 GB of RAM
 • 32 GB microSD card
 • microSD card reader
@@ -49,19 +48,23 @@ Here’s what’s included:
 
 ### Option 1: Choose a subdomain for a domain you already own.
 
-zinegallery.iffybooks.net
+If you already have a domain and you'd like to create a subdomain for this project, you can choose a subdomain now and we'll update your  domain records later. For the examples below, we'll use the subdomain **zinegallery.iffybooks.net**.
 
 
 
 ### Option 2: Buy a domain
 
+<img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-11-20-50-image.png" title="" alt="" width="496">
 
 
-### Option 3: Sign up for a free subdomain
 
-![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png)
+### Option 3: Sign up for a free subdomain from a DDNS provider
 
-Flash Ubuntu to your SD card
+Go to `dynv6.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address to create an account.
+
+<img src="file:///Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
+
+## Flash Ubuntu to your SD card
 
 Next you'll download the Ubuntu OS image for your device. If you're using an Orange Pi Zero 2W, go to the following URL:
 
@@ -551,6 +554,10 @@ Run the command `ip addr` to find your IP address on the local network. Look for
 
 On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
+![Screenshot 2024-05-04 at 15.33.35.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.33.35.png)
+
+
+
 ## Set a static IP address
 
 Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
@@ -605,7 +612,7 @@ Select `Exit` and press enter to close the configuration utility.
 
 &nbsp;
 
-## Enable SSH access
+## Enable local SSH access
 
 &nbsp;
 
@@ -669,64 +676,180 @@ Run the command `reboot` to reboot your computer.
 
 
 
+## Test your SSH connection
+
+
+
+![Screenshot 2024-05-04 at 15.39.44.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.44.png)
+
+![Screenshot 2024-05-04 at 15.39.49.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.39.49.png)
+
+
+
+
+
+![Screenshot 2024-05-04 at 15.40.00.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.40.00.png)
+
+
+
+## Update your website from another computer using scp
+
+
+
+![Screenshot 2024-05-04 at 15.55.57.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.55.57.png)
+
+
+
+![Screenshot 2024-05-04 at 15.43.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.43.08.png)
+
+
+
+![Screenshot 2024-05-04 at 15.56.17.png](/Users/iffybooks/Desktop/Screenshot%202024-05-04%20at%2015.56.17.png)
+
+
+
+![Screenshot 2024-05-04 at 15.57.08.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Screenshot%202024-05-04%20at%2015.57.08.png)
+
+
+
+
+
+
+
 ## Set up port forwarding on your router
 
+Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
+
+
+
+If your ISP is Verizon, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-09-42-15-image.png)
+
+
+
+Navigate to **Security & Firewall**, then **Port Forwarding**.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-19-16-image.png)
+
+Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type your server's static IP address. When you're done, click **Add to list** to create your port forwarding rule.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-21-21-image.png)
+
+
+
+To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-31-00-image.png)
+
+Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
+
+
+
+## Set up DDNS for your own domain or subdomain
+
+*Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
+
+Go to **dynv6.com** and create an account. Then go to **My Domains** and click **Add Domain**.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-43-30-image.png)
 
 
 
 
-## Set up Dynamic DNS account
+
+Type your domain or subdomain in the box and click **Add domain**.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-42-39-image.png)
 
 
+
+Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
+
+- `ns1.dynv6.com.`
+- `ns2.dynv6.com.`
+- `ns3.dynv6.com.`
+
+
+
+If you're using a domain you just registered, you can update your domain records on the site where you registered it.
+
+If you're using a subdomain with a domain you're already using, you can update your domain records through your VPS provider or hosting service. On DigitalOcean, for example, you can find domain settings under **Manage > Networking > Domains**.
+
+Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.dynv6.com` as the same server. Click **Create Record**.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-46-59-image.png)
+
+Repeat the previous step two more times, creating **NS** records that point to `ns2.dynv6.com` and `ns3.dynv6.com`.
 
 
 
 ## Install ddclient
 
-Run the command below to install `ddclient`.
+
+
+Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-10-57-24-image.png)
+
+
+
+Click on **Instructions**, then scroll down to the section titled **ddclient**. Keep this browser window open so you can access the password in a few steps.
+
+![](/Users/iffybooks/Library/Application%20Support/marktext/images/2024-05-11-11-00-07-image.png)
+
+On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
+
+```
+sudo apt install ddclient
+```
 
 <img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
 
-&nbsp;
+&nbsp;&nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h45m39s104_border.png" />
-
-&nbsp;
-
-<img src="images/vlcsnap-2024-05-04-22h47m49s427_border.png" />
-
-&nbsp;
-
-
+Once `ddclient` is installed, a setup wizard will launch. Select **other** from the list of service providers and type `dynv6.com`. 
 
 <img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
 
 &nbsp;
 
+Leave the **Username** field blank. Select `Ok`.
+
 <img src="images/vlcsnap-2024-05-04-22h49m30s172.png" />
 
 &nbsp;
+
+Enter the password from the `dynv6.com` website. You'll be prompted to enter it again to confirm.
 
 <img src="images/vlcsnap-2024-05-04-22h50m34s877.png" />
 
 &nbsp;
 
+Select **Web-based IP discovery service**, then **Ok**.
+
 <img src="images/vlcsnap-2024-05-04-22h51m31s509.png" />
 
 &nbsp;
+
+Select any option from the list of IP discovery services, then **Ok**.
 
 <img src="images/vlcsnap-2024-05-04-22h54m10s797.png" />
 
 &nbsp;
 
+Set how frequently your server should check its IP address. The default is 5 minutes.
+
 <img src="images/vlcsnap-2024-05-04-22h54m14s305.png" />
 
 &nbsp;
 
-<img src="images/vlcsnap-2024-05-04-22h54m16s347.png" />
+You can choose select your domain name from a list or enter it manually. Select **Ok**.
 
-&nbsp;
+<img src="images/vlcsnap-2024-05-04-22h54m16s347.png" />
 
 <img src="images/vlcsnap-2024-05-04-22h54m19s696.png" />
 
 &nbsp;
+
+Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
