@@ -46,7 +46,7 @@ Your subdomain can be up to 63 characters long (case insensitive).We'll update y
 
 ### Option 3: Sign up for a free subdomain from a DDNS provider
 
-❏ Go to `dynv6.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address and create an account.
+❏ Go to `zoneedit.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address and create an account.
 
 <img src="images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
 
@@ -58,7 +58,7 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 ❏ Under **Ubuntu Image**, click **Downloads**.
 
-![2024-05-10-17-01-17-image.png](images/33922add635879039cc946803b75c94b9b6c8b04.png)
+<img src="images/33922add635879039cc946803b75c94b9b6c8b04.png" title="" alt="2024-05-10-17-01-17-image.png" width="205">
 
 ❏ That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
 
@@ -110,35 +110,37 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 *(Note: From this point forward we'll invert the colors in screen captures in order to use less printer toner.)*
 
-First you'll set a password. Type `passwd` at the command prompt, then press enter.
+❏ First you'll set a password. Type `passwd` at the command prompt, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
 
 &nbsp;
 
-For the current pasword, type `orangepi` and press enter. (You won't see any characters appear onscreen as you type.) Then choose a new password and enter it. Write down your new password or store it in a password manager app.
+❏ For the current pasword, type `orangepi` and press enter, or `raspberrypi` if you're using a Raspberry Pi. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
 <img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
 
-You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
+❏ You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
-Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
+❏ Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
 <img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="543">
 
-Now type `passwd` and press enter to set a new password for your `root` account.
+❏ Now type `passwd` and press enter to set a new password for your `root` account.
 
 <img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="497">
 
-&nbsp;
-
-When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
+❏ When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
 
 <img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468">
 
 &nbsp;
 
-The default font size is pretty small, so you may want to increase the size. Run the following command to open the `console-setup` preferences file with the text editor `nano`:
+### Increase the onscreen text size (optional)
+
+If the onscreen text looks too small to read comfortably, follow the steps below to increase the size. Otherwise you can skip to the next step.
+
+❏ Run the following command to open the `console-setup` preferences file using the text editor `nano`:
 
 ```
 sudo nano /etc/default/console-setup
@@ -148,49 +150,57 @@ sudo nano /etc/default/console-setup
 
 &nbsp;
 
-Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
+❏ Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
 
 <img src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" />
 
 &nbsp;
 
-When you're finished press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt "Save modified buffer?" Type `y` for "yes," then press enter.
+❏ When you're finished, press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt **"Save modified buffer?"** Type `y` for "yes," then press **enter**.
 
 <img src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" />
 
 &nbsp;
 
-Press enter again to confirm the filename.
+❏ Press enter again to confirm the filename.
 
 <img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" />
 
 &nbsp;
 
-*Tip: You can use the command `clear` at any time to clear the whole screen.*
+❏ *Tip: You can use the command `clear` at any time to clear the whole screen.*
 
 <img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" />
 
 &nbsp;
 
-Now run the command `sudo update-initramfs -u` to confirm the new font size.
+❏ Now run the command `sudo update-initramfs -u` to confirm the new font size.
 
 <img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" />
 
 &nbsp;
 
-Reboot your computer with `sudo reboot`.
+❏ Reboot your computer with `sudo reboot`.
 
 <img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" />
 
 &nbsp;
 
-When your computer finishes rebooting, you'll be using a larger font.
+When your computer finishes rebooting, the font will be bigger.
 
-## Connect to the internet
+## Connect to the internet via Ethernet
 
-If you have a USB-to-Ethernet adapter and you're close to your router, connect your computer to the back of the router. You can skip the rest of this section.
+*If you want to use wi-fi temporarily, you can skip to the next section.*
 
-If you're using wi-fi instead, follow the steps below.
+❏ Connect an Ethernet cable to your home router.
+
+❏ Connect the other end of the Ethernet cable to your Ethernet-to-USB adapter.
+
+❏ Plug USB end of the Ethernet-to-USB adapter into the open USB port on your single-board computer.
+
+## Connect to the internet via wi-fi (discouraged 😊)
+
+*If your computer is connected to your router via Ethernet, you can skip this section.*
 
 Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `sudo raspi-config` instead.)
 
@@ -198,49 +208,49 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 &nbsp;
 
-You'll see a prompt that reads "Configuration cannot work properly without a working internet connection." Press any key to continue.
+❏ You'll see a prompt that reads **"Configuration cannot work properly without a working internet connection."** Press any key to continue.
 
 <img src="images/vlcsnap-2024-05-04-18h12m53s220_border.png" />
 
 &nbsp;
 
-Use the down arrow key to select the `Network` menu, then press enter.
+❏ Use the down arrow key to select the `Network` menu, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h13m01s027.png" />
 
 &nbsp;
 
-Use the down arrow key to select the `WiFi` menu, then press enter.
+❏ Use the down arrow key to select the `WiFi` menu, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h13m11s710.png" />
 
 &nbsp;
 
-You'll see a list of available wi-fi networks. Select your home network, then press enter. *(Note: Some routers let you create a secondary wi-fi network, intended to keep IoT (Internet of Things) devices like security cameras separate from your primary network. If you're planning to leave your server connected to wi-fi, you may want to use your router's IoT network as a security precaution.)*
+❏ You'll see a list of available wi-fi networks. Select your home network, then press enter. *(Note: Some routers let you create a secondary wi-fi network, intended to keep IoT (Internet of Things) devices like security cameras separate from your primary network. If you're planning to leave your server connected to wi-fi, you may want to use your router's IoT network as a security precaution.)*
 
 <img src="images/vlcsnap-2024-05-04-18h13m15s945.png" />
 
 &nbsp;
 
-Enter your password at the prompt.
+❏ Enter your password at the prompt.
 
 <img src="images/vlcsnap-2024-05-04-18h13m28s733.png" />
 
 &nbsp;
 
-Use the arrow keys to select `Quit`, then press enter.
+❏ Use the arrow keys to select `Quit`, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h13m57s055.png" />
 
 &nbsp;
 
-Use the arrow keys to select `Back` , then press enter.
+❏ Use the arrow keys to select `Back` , then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h14m41s289.png" />
 
 &nbsp;
 
-Now select `Exit`, then press enter to close the configuration menu.
+❏ Now select `Exit`. Then press **enter** to close the configuration menu.
 
 <img src="images/vlcsnap-2024-05-04-18h14m47s352.png" />
 
@@ -248,9 +258,9 @@ Now select `Exit`, then press enter to close the configuration menu.
 
 ## Update your system software
 
-Now that you're connected to the internet, you'll want to update your software packages. This step is important because some packages may need updates for security reasons.
+❏ Now that you're connected to the internet, you'll want to update your software packages. This step is important because some packages may need updates for security reasons.
 
-Type the command below (actually two commands separated by `&&`, then press enter. 
+❏ Type the command below (actually two commands separated by `&&`, then press enter. 
 
 ```
 sudo apt update && sudo apt-y upgrade
@@ -260,27 +270,21 @@ sudo apt update && sudo apt-y upgrade
 
 &nbsp;
 
-Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
+❏ Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
 
-<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" />
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" />&nbsp;
 
 ## Update your hostname
 
-&nbsp;
+Your **hostname** is a short alphanumeric name for each device on a network, sort of like a nickname. Setting a descriptive hostname will make it easier to tell which device is which (for example, when using your router admin panel). 
 
-Type the command `hostname` and press enter. You'll see the default hostname, `orangepizero2w`.
+❏ To see your curent hostname, enter the command `hostname` and press enter. The default hostname is `orangepizero2w`.
 
 <img src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" />
 
 &nbsp;
 
-Now run the command below, replacing "Zine-Gallery" with a descriptive name for your server. You'll be prompted to enter your password.
+❏ Now run the command below, replacing **Zine-Gallery** with a descriptive name for your server (no spaces allowed, but hyphens are OK). You'll be prompted to enter your password.
 
 ```
 hostnamectl set-hostname Zine-Gallery
@@ -292,15 +296,15 @@ hostnamectl set-hostname Zine-Gallery
 
 ## Set up a firewall
 
-A firewall is a piece of software that restricts access to your device over the network, allowing certain kinds of network traffic and blocking the rest.
+A firewall is a piece of software that restricts access to your device over the network. In this section you'll install and configure the firewall `ufw`, which will permit or deny each network request (inbound and outbound).
 
-You'll start by installing a firewall program called `ufw` (short for "Uncomplicated Firewall"). Run the command `sudo apt install ufw`, then follow the prompts.
+❏ You'll start by installing `ufw` (short for "Uncomplicated Firewall"). Run the command `sudo apt install ufw`, then follow the prompts.
 
 <img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" />
 
 &nbsp;
 
-Run the command below to deny incoming network connections by default.
+❏ Run the command below to deny incoming network connections by default.
 
 ```
 sudo ufw default deny incoming
@@ -310,7 +314,7 @@ sudo ufw default deny incoming
 
 &nbsp;
 
-Run this command to allow outgoing network connections.
+❏ Run the command below to allow outgoing network connections by default.
 
 ```
 sudo ufw default allow outgoing
@@ -329,6 +333,12 @@ sudo ufw allow 80/tcp
 ![](images/vlcsnap-2024-05-04-18h27m09s846_border.png)
 
 &nbsp;
+
+Run the command below to allow incoming TCP connections on port 22:
+
+```
+sudo ufw allow 22/tcp
+```
 
 Now run the command `sudo ufw enable` to turn on your firewall.
 
