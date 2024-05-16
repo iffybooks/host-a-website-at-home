@@ -4,13 +4,13 @@
 
 ## 
 
-## Why host a website at home?
+## Why  host a website at home?
 
 - You control what you post.
 
 - You can definitively take down your website by unplugging it. 
 
-- Commercial hosting starts around $5 per month, so hosting at home is cheaper in the long run.
+- Commercial hosting starts around $5 per month, so hosting at home may be cheaper in the long run.
 
 - Learning about networking is fun and useful.
 
@@ -18,7 +18,7 @@ In this project you'll learn to set up an Ubuntu-based web server on a single-bo
 
 The examples in this zine use the Orange Pi Zero 2W, an inexpensive single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
 
-We sell complete home web server kits at Iffy Books. The kit costs $49 and includes the following:
+We sell complete home web server kits at Iffy Books. The kit costs $49 as of May 2024, and includes the following:
 
 • Orange Pi Zero 2W single-board computer w/1 GB of RAM
 • 32 GB microSD card
@@ -34,9 +34,9 @@ We sell complete home web server kits at Iffy Books. The kit costs $49 and inclu
 
 ### Option 1: Choose a subdomain for a domain you already own.
 
-❏ If you already have a domain and you'd like to create a subdomain for this project, choose a subdomain you aren't already using. We'll update your  domain records later. 
+❏ If you've already registered a domain and you'd like to create a subdomain for this project, the only thing you need to do at this point is decide what subdomain to use. For the examples below we'll use **zinegallery.iffybooks.net**. 
 
-For the examples below we'll use the subdomain **zinegallery.iffybooks.net**.
+Your subdomain can be up to 63 characters long (case insensitive).We'll update your  domain records later.
 
 ### Option 2: Buy a domain
 
