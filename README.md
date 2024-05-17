@@ -704,11 +704,11 @@ sudo ufw allow 22/tcp
 
 ❏ Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
 
-If your ISP is Verizon, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
+If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
 ![](images/2024-05-11-09-42-15-image.png)
 
-Navigate to **Security & Firewall**, then **Port Forwarding**.
+❏ Navigate to **Security & Firewall**, then **Port Forwarding**.
 
 ![](images/2024-05-11-10-19-16-image.png)
 
@@ -774,7 +774,7 @@ sudo apt install ddclient
 
 &nbsp;&nbsp;
 
-❏ Run this command to install a dependency:
+❏ Run this command to install a required dependency:
 
 ```
 sudo apt install libio-socket-ssl-perl
@@ -782,9 +782,17 @@ sudo apt install libio-socket-ssl-perl
 
 
 
-Once `ddclient` is installed, a setup wizard will launch. Select **other** from the list of service providers.
+❏ Once `ddclient` is installed, a setup wizard will launch. 
 
-<img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />Choose `dyndns2` from the list of protocols. Then type `dynv6.com` for your DDNS server.
+
+
+[New screen captures needed starting here.]
+
+Select **other** from the list of service providers.
+
+<img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
+
+❏ Choose `dyndns2` from the list of protocols. Then type `dynv6.com` for your DDNS server.
 
 Under **Username** type `none`. Select `Ok`.
 
