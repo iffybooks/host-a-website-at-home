@@ -324,7 +324,7 @@ sudo ufw default allow outgoing
 
 &nbsp;
 
-Run the command below to allow incoming TCP connections on port 80:
+❏ Run the command below to allow incoming TCP connections on port 80:
 
 ```
 sudo ufw allow 80/tcp
@@ -334,13 +334,13 @@ sudo ufw allow 80/tcp
 
 &nbsp;
 
-Run the command below to allow incoming TCP connections on port 22:
+❏ Now run the command below to allow incoming TCP connections on port 22. This will make it possible to connect to your server via SSH, which we'll set up in a later setion.
 
 ```
 sudo ufw allow 22/tcp
 ```
 
-Now run the command `sudo ufw enable` to turn on your firewall.
+❏ Now run the command `sudo ufw enable` to turn on your firewall.
 
 ![](images/vlcsnap-2024-05-06-19h10m33s671_border.png)
 
@@ -348,7 +348,7 @@ Now run the command `sudo ufw enable` to turn on your firewall.
 
 Next you'll install Apache HTTP Server, one of the most widely used web server programs. *(Note: The term "web server" can refer to a piece of software that serves websites, like Apache. "Web server" can also refer to the computer the software is running on.)*
 
-Run the command below to install Apache. You'll be prompted to enter your password.
+❏ Run the command below to install Apache. You'll be prompted to enter your password.
 
 ```
 sudo apt install apache2
@@ -358,9 +358,9 @@ sudo apt install apache2
 
 &nbsp;
 
-Next you'll make a directory to store your website files in. The `mkdir` command makes a directory, and the `-p` option creates any parent directories in the path if they don't already exist.
+Now you'll make a directory to store your website files in. The `mkdir` command makes a directory, and the `-p` option creates any parent directories in the path if they don't already exist.
 
-Type the command below to create the directory you'll use for your website files, replacing `zinegallery.iffybooks.net` with the domain you chose earlier.
+❏ Type the command below to create the directory you'll use for your website files, replacing `zinegallery.iffybooks.net` with the domain you chose earlier.
 
 ```
 sudo mkdir -p /var/www/zinegallery.iffybooks.net
@@ -370,7 +370,7 @@ sudo mkdir -p /var/www/zinegallery.iffybooks.net
 
 &nbsp;
 
-Now you'll use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
+❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
 
 ```
 sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
@@ -380,7 +380,7 @@ sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 
 &nbsp;
 
-Next you'll use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
+❏ Now use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
 
 ```
 sudo chmod -R 755 /var/www/
@@ -390,7 +390,7 @@ sudo chmod -R 755 /var/www/
 
 &nbsp;
 
-Use `cd` to change your current working directory to the directory you just created. *(Tip: After typing `/var/www/` and the first letter or two of your directory name, press **tab** to autocomplete the rest of the pathname.)*
+❏ Use `cd` to change your current working directory to the directory you just created. *(Tip: After typing `/var/www/` and the first letter or two of your directory name, press **tab** to autocomplete the rest of the pathname.)*
 
 ```
 cd /var/www/zinegallery.iffybooks.net/
@@ -400,7 +400,7 @@ cd /var/www/zinegallery.iffybooks.net/
 
 &nbsp;
 
-Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
+❏ Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
 
 ```
 sudo nano index.html
@@ -410,7 +410,7 @@ sudo nano index.html
 
 &nbsp;
 
-Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
+❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
 
 ```
 <!DOCTYPE html>
@@ -429,11 +429,11 @@ Now you'll type out some HTML code for a basic web page, just to use as a test. 
 
 &nbsp;
 
-When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
+❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
 
 ## Create Apache configuration file
 
-Run the command below to change your current working directory to `/etc/apache2/sites-available`.
+❏ Run the command below to change your current working directory to `/etc/apache2/sites-available`.
 
 ```
 cd /etc/apache2/sites-available/
@@ -443,13 +443,13 @@ cd /etc/apache2/sites-available/
 
 &nbsp;
 
-Type `ls` and press **enter** to see what files are in the current directory.
+❏ Type `ls` and press **enter** to see what files are in the current directory.
 
 <img src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" />
 
 &nbsp;
 
-Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
+❏ Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
 
 ```
 sudo cp 000-default.conf zinegallery.iffybooks.net.conf
@@ -459,7 +459,7 @@ sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 
 &nbsp;
 
-Now you'll use `nano` to open the configuration file you just created.
+❏ Now you'll use `nano` to open the configuration file you just created.
 
 ```
 sudo nano zinegallery.iffybooks.net.conf
@@ -469,7 +469,7 @@ sudo nano zinegallery.iffybooks.net.conf
 
 &nbsp;
 
-Use your arrow keys to move the cursor to the line `DocumentRoot /var/www/html`. Delete `html` at the end and replace it with the name of the directory where your website files are located (i.e., the domain you chose). Here's an example:
+❏ Use your arrow keys to move the cursor to the line `DocumentRoot /var/www/html`. Delete `html` at the end and replace it with the name of the directory where your website files are located (i.e., the domain you chose). Here's an example:
 
 ```
 DocumentRoot /var/www/zinegallery.iffybooks.net
@@ -479,7 +479,7 @@ DocumentRoot /var/www/zinegallery.iffybooks.net
 
 &nbsp;
 
-Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
+❏ Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
 
 ```
 ServerName localhost
@@ -492,7 +492,7 @@ ServerAlias localhost
 
 ## Enable your website
 
-Run the following command to have Apache enable your website:
+❏ Run the following command to have Apache enable your website:
 
 ```
 sudo a2ensite zinegallery.iffybooks.net.conf
@@ -502,7 +502,7 @@ sudo a2ensite zinegallery.iffybooks.net.conf
 
 &nbsp;
 
-Next, run this command to disable the site Apache runs by default:
+❏ Next, run this command to disable the site Apache runs by default:
 
 ```
 sudo a2dissite 000-default.conf
@@ -512,7 +512,7 @@ sudo a2dissite 000-default.conf
 
 &nbsp;
 
-Restart Apache with the following command:
+❏ Restart Apache with the following command:
 
 ```
 systemctl reload apache2
@@ -524,13 +524,13 @@ systemctl reload apache2
 
 ## Set up ports.conf
 
-Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
+❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
 
 <img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
 
 &nbsp;
 
-Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
+❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
 
 ```
 sudo nano ports.conf
@@ -540,7 +540,7 @@ sudo nano ports.conf
 
 &nbsp;
 
-Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
+❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
 
 ```
 Listen 0.0.0.0:80
@@ -552,13 +552,13 @@ Listen 0.0.0.0:80
 
 ## Find your IP address
 
-Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.44`.
+❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.44`.
 
 ![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
 
 ## Test your site on the local network
 
-On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
+❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
 ![Screenshot 2024-05-04 at 15.33.35.png](images/Screenshot%202024-05-04%20at%2015.33.35.png)
 
@@ -566,7 +566,7 @@ On a computer connected to the same network as your server, open a web browser, 
 
 ## Set a static IP address
 
-Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
+❏ Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
 
 Alternatively, you can give your computer a static IP address that never changes. In this case, a static IP address is required to set up port forwarding, which we'll cover in a future step.
 
@@ -576,43 +576,43 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 &nbsp;
 
-Select the `Network` menu and press enter.
+❏ Select the `Network` menu and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="">
 
 &nbsp;
 
-Select `IP` and press enter.
+❏ Select `IP` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="">
 
 &nbsp;
 
-Select the `eth0` option if your computer is connected via Ethernet, or select the option beginning with `en` if you're using wi-fi. (We recommend using Ethernet if possible, but we're using wi-fi in the example below.)
+❏ Select the `eth0` option if your computer is connected via Ethernet, or select the option beginning with `en` if you're using wi-fi. (We recommend using Ethernet if possible, but we're using wi-fi in the example below.)
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="">
 
 &nbsp;
 
-Select the `Static` option and press enter.
+❏ Select the `Static` option and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="">
 
 &nbsp;
 
-Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
+❏ Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m31s536.png" alt="">
 
 &nbsp;
 
-Select `Back` and press enter.
+❏ Select `Back` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="">
 
 &nbsp;
 
-Select `Exit` and press enter to close the configuration utility.
+❏ Select `Exit` and press enter to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="">
 
@@ -624,43 +624,43 @@ Select `Exit` and press enter to close the configuration utility.
 
 &nbsp;
 
-Run the command `so orangepi-config` to open the Orange Pi configuration utility.
+❏ Run the command `so orangepi-config` to open the Orange Pi configuration utility.
 
 <img src="images/vlcsnap-2024-05-04-18h38m01s726_border.png" />
 
 &nbsp;
 
-Select `System` and press enter.
+❏ Select `System` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="">
 
 &nbsp;
 
-Select `SSH` and press enter.
+❏ Select `SSH` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="">
 
 &nbsp;
 
-The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press enter to enable SSH access.
+❏ The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press enter to enable SSH access.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="">
 
 &nbsp;
 
-Select `Back` and press enter.
+❏ Select `Back` and press enter.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="">
 
 &nbsp;
 
-Select `Exit` and press enter to close the configuration utility.
+❏ Select `Exit` and press enter to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="">
 
 &nbsp;
 
-SSH is now enabled, but your firewall is configured to deny incoming connections.
+❏ SSH is now enabled, but your firewall is configured to deny incoming connections.
 
 Run the following command to allow TCP connections on port 22:
 
@@ -672,13 +672,13 @@ sudo ufw allow 22/tcp
 
 &nbsp;
 
-Run the command `sudo ufw status` to see a list of your firewall rules.
+❏ Run the command `sudo ufw status` to see a list of your firewall rules.
 
 <img src="images/vlcsnap-2024-05-04-18h41m56s939_border.png" />
 
 &nbsp;
 
-Run the command `reboot` to reboot your computer.
+❏ Run the command `reboot` to reboot your computer.
 
 ## ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
@@ -702,7 +702,7 @@ Run the command `reboot` to reboot your computer.
 
 ## Set up port forwarding on your router
 
-Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
+❏ Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
 
 If your ISP is Verizon, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
@@ -712,11 +712,11 @@ Navigate to **Security & Firewall**, then **Port Forwarding**.
 
 ![](images/2024-05-11-10-19-16-image.png)
 
-Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type your server's static IP address. When you're done, click **Add to list** to create your port forwarding rule.
+❏ Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type your server's static IP address. When you're done, click **Add to list** to create your port forwarding rule.
 
 ![](images/2024-05-11-10-21-21-image.png)
 
-To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
+❏ To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
 ![](images/2024-05-11-10-31-00-image.png)
 
@@ -724,7 +724,7 @@ To confirm port forwarding works, go to `ipchicken.com` and find your home IP ad
 
 ![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)
 
-Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
+❏ Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
 
 ## Set up DDNS for your own domain or subdomain
 
@@ -756,7 +756,7 @@ Repeat the previous step two more times, creating **NS** records that point to `
 
 ## Install ddclient
 
-Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
+❏ Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
 
 ![](images/2024-05-11-10-57-24-image.png)
 
@@ -773,6 +773,14 @@ sudo apt install ddclient
 <img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
 
 &nbsp;&nbsp;
+
+❏ Run this command to install a dependency:
+
+```
+sudo apt install libio-socket-ssl-perl
+```
+
+
 
 Once `ddclient` is installed, a setup wizard will launch. Select **other** from the list of service providers.
 
@@ -818,12 +826,6 @@ Finally, run this command to have `ddclient` check your current IP address every
 
 ```
 sudo ddclient -daemon 5m
-```
-
-Run this command to install a dependency:
-
-```
-sudo apt install libio-socket-ssl-perl
 ```
 
 Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
