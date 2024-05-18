@@ -46,9 +46,9 @@ Your subdomain can be up to 63 characters long (case insensitive).We'll update y
 
 ### Option 3: Sign up for a free subdomain from a DDNS provider
 
-❏ Go to `zoneedit.com` and create a subdomain such as `zinegallery.dynv6.net`. You'll need to enter an email address and create an account.
+❏ Go to **freedns.afraid.org** and set up a free subdomain.
 
-<img src="images/2024-05-09-10-58-18-image.png" title="" alt="" width="553">
+![](images/2024-05-18-02-38-37-image.png)
 
 ## Flash Ubuntu to your SD card
 
@@ -58,7 +58,7 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 ❏ Under **Ubuntu Image**, click **Downloads**.
 
-<img src="images/33922add635879039cc946803b75c94b9b6c8b04.png" title="" alt="2024-05-10-17-01-17-image.png" width="205">
+<img title="" src="images/33922add635879039cc946803b75c94b9b6c8b04.png" alt="2024-05-10-17-01-17-image.png" width="149">
 
 ❏ That link will direct you to Google Drive. Double click **Linux6.1 kernel version image** to open the directory.
 
@@ -334,11 +334,13 @@ sudo ufw allow 80/tcp
 
 &nbsp;
 
-❏ Now run the command below to allow incoming TCP connections on port 22. This will make it possible to connect to your server via SSH, which we'll set up in a later setion.
+❏ Now run the command below to allow incoming TCP connections on port 22. This will make it possible to connect to your server via SSH, which we'll set up in a later section.
 
 ```
 sudo ufw allow 22/tcp
 ```
+
+![](images/vlcsnap-2024-05-04-18h41m07s243_border.png)
 
 ❏ Now run the command `sudo ufw enable` to turn on your firewall.
 
@@ -614,7 +616,7 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 ❏ Select `Exit` and press enter to close the configuration utility.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468">
 
 &nbsp;
 
@@ -660,35 +662,21 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 &nbsp;
 
-❏ SSH is now enabled, but your firewall is configured to deny incoming connections.
-
-Run the following command to allow TCP connections on port 22:
-
-```
-sudo ufw allow 22/tcp
-```
-
-<img src="images/vlcsnap-2024-05-04-18h41m07s243_border.png" />
-
-&nbsp;
-
-❏ Run the command `sudo ufw status` to see a list of your firewall rules.
-
-<img src="images/vlcsnap-2024-05-04-18h41m56s939_border.png" />
-
-&nbsp;
-
 ❏ Run the command `reboot` to reboot your computer.
 
 ## ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
 ## Test your SSH connection
 
-![loading-ag-1007](images/Screenshot 2024-05-04 at 15.39.44.png)
+From a terminal window on your desktop computer, run the following command to start an **ssh** session with your server.
 
-![loading-ag-1008](images/Screenshot 2024-05-04 at 15.39.49.png)
+```
+ssh orangepi@192.168.1.44
+```
 
-![Screenshot 2024-05-04 at 15.40.00.png](images/Screenshot 2024-05-04 at 15.40.00.png)
+When you're done, you can use the command `exit` to end the ssh session.
+
+
 
 ## Update your website from another computer using scp
 
@@ -730,41 +718,74 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 *Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
 
-Go to **dynv6.com** and create an account. Then go to **My Domains** and click **Add Domain**.
 
-![](images/2024-05-11-10-43-30-image.png)
 
-Type your domain or subdomain in the box and click **Add domain**.
 
-![](images/2024-05-11-10-42-39-image.png)
+
+![](images/2024-05-18-02-38-37-image.png)
+
+![](images/2024-05-18-02-39-12-image.png)
+
+
+
+
+
+
+
+
+
+![](images/2024-05-18-02-39-30-image.png)
+
+
+
+Go to your email and follow the confirmation link.
+
+Click **Domains** in the left column.
+
+
+
+![](images/2024-05-18-02-42-52-image.png)
+
+
+
+Click Add a domain into FreeDNS    
+
+![](images/2024-05-18-02-44-37-image.png)
+
+
+
+![](images/2024-05-18-02-46-25-image.png)
+
+
+
+![](images/2024-05-18-02-46-38-image.png)
 
 Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
 
-- `ns1.dynv6.com.`
-- `ns2.dynv6.com.`
-- `ns3.dynv6.com.`
+- NS1.AFRAID.ORG  
+- NS2.AFRAID.ORG  
+- NS3.AFRAID.ORG  
+- NS4.AFRAID.ORG
 
 If you're using a domain you just registered, you can update your domain records on the site where you registered it.
 
 If you're using a subdomain with a domain you're already using, you can update your domain records through your VPS provider or hosting service. On DigitalOcean, for example, you can find domain settings under **Manage > Networking > Domains**.
 
-Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.dynv6.com` as the same server. Click **Create Record**.
+Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.afraid.org` as the same server. Click **Create Record**.
 
-![](images/2024-05-11-10-46-59-image.png)
+![](images/2024-05-18-02-49-18-image.png)
 
-Repeat the previous step two more times, creating **NS** records that point to `ns2.dynv6.com` and `ns3.dynv6.com`.
+Repeat the previous step for the nameservers `ns3.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`.
+
+<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="left">
+
+
+
+
 
 ## Install ddclient
 
-❏ Go to `dynv6.com` on your desktop computer. Click **My Zones** and select your domain/subdomain from the dropdown menu.
-
-![](images/2024-05-11-10-57-24-image.png)
-
-Click on **Instructions**, then scroll down to the section titled **ddclient**. Keep this browser window open so you can access the password in a few steps.
-
-![](images/2024-05-11-11-00-07-image.png)
-
-On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
+❏ On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
 
 ```
 sudo apt install ddclient
@@ -780,11 +801,7 @@ sudo apt install ddclient
 sudo apt install libio-socket-ssl-perl
 ```
 
-
-
 ❏ Once `ddclient` is installed, a setup wizard will launch. 
-
-
 
 [New screen captures needed starting here.]
 
