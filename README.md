@@ -96,9 +96,29 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 ❏ Insert your newly flashed micro SD card into the card slot on your single-board computer.
 
-❏ Connect a monitor to your single-board computer. The OPZ2W has a Mini HDMI port, so you'll need an adapter to connect an HDMI cable.
+<img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
 
-❏ Connect a USB keyboard to your computer. With an OPZ2W you'll need to use a USB-C to USB-A adapter.
+
+
+<img src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" title="" alt="02_IMG_4116.jpg" width="335">
+
+
+
+<img src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" title="" alt="03_IMG_4120.jpg" width="333">
+
+
+
+<img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
+
+
+
+
+
+<img src="images/3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg" title="" alt="05_IMG_4109.jpg" width="345">
+
+
+
+
 
 ## Turn on your computer
 
@@ -563,8 +583,6 @@ Listen 0.0.0.0:80
 ❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
 ![Screenshot 2024-05-04 at 15.33.35.png](images/Screenshot%202024-05-04%20at%2015.33.35.png)
-
-## Reboot
 
 ## Set a static IP address
 
