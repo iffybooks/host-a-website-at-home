@@ -1,6 +1,8 @@
 ## 
 
-![Host a Website at Home Flyer IG.png](images/Host%20a%20Website%20at%20Home%20Flyer%20IG.png)
+<img src="images/05cba18c9f23f4520f4eeb87f6b46c05efd7153e.png" title="" alt="Host a Website at Home Cover.png" data-align="center">
+
+
 
 ## 
 
