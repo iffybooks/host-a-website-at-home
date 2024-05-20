@@ -1,6 +1,6 @@
 ## 
 
-![Host a Website at Home Flyer IG.png](/Users/iffybooks/Documents/GitHub/host-a-website-at-home/images/Host%20a%20Website%20at%20Home%20Flyer%20IG.png)
+![Host a Website at Home Flyer IG.png](images/Host%20a%20Website%20at%20Home%20Flyer%20IG.png)
 
 ## 
 
@@ -98,27 +98,13 @@ http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/service-and-su
 
 <img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
 
-
-
 <img src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" title="" alt="02_IMG_4116.jpg" width="335">
-
-
 
 <img src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" title="" alt="03_IMG_4120.jpg" width="333">
 
-
-
 <img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
 
-
-
-
-
 <img src="images/3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg" title="" alt="05_IMG_4109.jpg" width="345">
-
-
-
-
 
 ## Turn on your computer
 
@@ -622,7 +608,7 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 ❏ Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m31s536.png" alt="">
+<img src="images/19928390b675ecba5224e94148455e8c2911308d.png" title="" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="404">
 
 &nbsp;
 
@@ -637,8 +623,6 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468">
 
 &nbsp;
-
-## Reboot
 
 ## Enable local SSH access
 
@@ -684,6 +668,10 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 ## ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
+## Reboot
+
+abcde ...
+
 ## Test your SSH connection
 
 From a terminal window on your desktop computer, run the following command to start an **ssh** session with your server.
@@ -693,8 +681,6 @@ ssh orangepi@192.168.1.44
 ```
 
 When you're done, you can use the command `exit` to end the ssh session.
-
-
 
 ## Update your website from another computer using scp
 
@@ -736,49 +722,31 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 *Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
 
-
-
-
-
 ![](images/2024-05-18-02-38-37-image.png)
+
+❏
 
 ![](images/2024-05-18-02-39-12-image.png)
 
-
-
-
-
-
-
-
+❏
 
 ![](images/2024-05-18-02-39-30-image.png)
 
+❏ Go to your email and follow the confirmation link.
 
-
-Go to your email and follow the confirmation link.
-
-Click **Domains** in the left column.
-
-
+❏ Click **Domains** in the left column.
 
 ![](images/2024-05-18-02-42-52-image.png)
 
+❏ Click Add a domain into FreeDNS    
 
+![](images/2024-05-18-02-44-37-image.png)❏
 
-Click Add a domain into FreeDNS    
-
-![](images/2024-05-18-02-44-37-image.png)
-
-
-
-![](images/2024-05-18-02-46-25-image.png)
-
-
+![](images/2024-05-18-02-46-25-image.png)❏
 
 ![](images/2024-05-18-02-46-38-image.png)
 
-Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
+❏ Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
 
 - NS1.AFRAID.ORG  
 - NS2.AFRAID.ORG  
@@ -793,13 +761,9 @@ Create a new **NS** (name server) record for the domain or subdomain you're usin
 
 ![](images/2024-05-18-02-49-18-image.png)
 
-Repeat the previous step for the nameservers `ns3.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`.
+❏ Repeat the previous step for the nameservers `ns3.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`.
 
 <img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="left">
-
-
-
-
 
 ## Install ddclient
 
@@ -821,54 +785,50 @@ sudo apt install libio-socket-ssl-perl
 
 ❏ Once `ddclient` is installed, a setup wizard will launch. 
 
-[New screen captures needed starting here.]
 
-Select **other** from the list of service providers.
 
-<img src="images/vlcsnap-2024-05-04-22h49m15s041.png" />
+![vlcsnap-2024-05-20-09h04m22s877.png](images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png)
 
-❏ Choose `dyndns2` from the list of protocols. Then type `dynv6.com` for your DDNS server.
 
-Under **Username** type `none`. Select `Ok`.
 
-<img src="images/vlcsnap-2024-05-04-22h49m30s172.png" />
 
-&nbsp;
 
-Enter the password from the `dynv6.com` website. You'll be prompted to enter it again to confirm.
+❏ 
 
-<img src="images/vlcsnap-2024-05-04-22h50m34s877.png" />
+![vlcsnap-2024-05-20-09h04m57s918.png](images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png)
+
+
 
 &nbsp;
 
-Select **Web-based IP discovery service**, then **Ok**.
+❏ Enter the password from the `afraid.org` website. You'll be prompted to enter it again to confirm.
+
+![vlcsnap-2024-05-20-09h05m14s553.png](images/a104393f185b012b1e5d1e4996d145c6b767f243.png)
+
+
+
+&nbsp;
+
+❏ Select **Web-based IP discovery service**, then **Ok**.
 
 <img src="images/vlcsnap-2024-05-04-22h51m31s509.png" />
 
 &nbsp;
 
-Select any option from the list of IP discovery services, then **Ok**.
-
-<img src="images/vlcsnap-2024-05-04-22h54m10s797.png" />
-
-&nbsp;
-
-Set how frequently your server should check its IP address. The default is 5 minutes.
-
-<img src="images/vlcsnap-2024-05-04-22h54m14s305.png" />
-
-&nbsp;
-
-You can choose select your domain name from a list or enter it manually. Select **Ok**.
+❏ You can choose select your domain name from a list or enter it manually. Select **Ok**.
 
 <img src="images/vlcsnap-2024-05-04-22h54m19s696.png" />
 
 &nbsp;
 
-Finally, run this command to have `ddclient` check your current IP address every 5 minutes.
+❏ Finally, run this command to have `ddclient` check your current IP address every 5 minutes.
 
 ```
 sudo ddclient -daemon 5m
 ```
 
-Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
+![vlcsnap-2024-05-20-09h07m39s710.png](images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png)
+
+If you don't see anything when you run this command, that's a good thing. It means `ddclient` is running properly.
+
+❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
