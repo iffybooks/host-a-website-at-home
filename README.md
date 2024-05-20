@@ -50,7 +50,7 @@ Each subdomain string can be up to 63 characters long (case insensitive).
 
 ![](images/2024-05-18-02-38-37-image.png)
 
-# Flash Ubuntu to your SD card
+# ▶ Flash Ubuntu to your SD card
 
 ❏ Next you'll download the **Ubuntu Server** operating system image for your device. If you're using an Orange Pi Zero 2W, go to the following URL:
 
@@ -96,9 +96,9 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ❏ Click **Flash!** to write the Ubuntu disk image to your microSD card, which will take 5 minutes or so.
 
-# Set up your computer
+# ▶ Set up your hardware
 
-❏ Insert your newly flashed micro SD card into the card slot on your single-board computer.
+❏ Insert your microSD card into the card slot on your single-board computer. The printed side of the microSD card should be facing out.
 
 <img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
 
@@ -108,9 +108,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
 
-<img src="images/3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg" title="" alt="05_IMG_4109.jpg" width="345">
-
-# Turn on your computer
+# ▶ Turn on your computer
 
 ❏ Plug a USB-C cable into your computer and connect it to a USB power supply (2 amps or more).
 
@@ -142,7 +140,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468">
 
-## Increase the onscreen text size (optional)
+# ▶ Increase the onscreen text size (optional)
 
 If the onscreen text looks too small to read comfortably, follow the steps below to increase the size. Otherwise you can skip to the next step.
 
@@ -180,11 +178,13 @@ sudo nano /etc/default/console-setup
 
 When your computer finishes rebooting, the font will be bigger.
 
-# Connect to the internet via Ethernet
+# ▶ Connect to the internet via Ethernet
 
 *We strongly recommend connecting your single-board computer to your home router using an Ethernet cable. If you need to use wi-fi temporarily, you can skip to the next section.*
 
 ❏ Plug USB end of the Ethernet-to-USB adapter into the open USB port on your single-board computer. 
+
+![3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg](images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg)
 
 ❏ Connect an Ethernet cable to the Ethernet-to-USB adapter.
 
@@ -209,7 +209,7 @@ If you get output that looks like this, then you're connected to the internet:
 
 Press **ctrl + C** to close `ping` and return to the command prompt.
 
-# Connect to the internet via wi-fi (discouraged! 🙃)
+# ▶ Connect to the internet via wi-fi (discouraged! 🙃)
 
 *Hosting a website via wi-fi isn't recommended, because maintaining a steady long-term connection is too much of a headache. If you want to keep using wi-fi because Ethernet isn't an option at the moment, here's how to set it up.*
 
@@ -249,7 +249,7 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 <img src="images/vlcsnap-2024-05-04-18h14m47s352.png" />
 
-# Update your system software
+# ▶ Update your software
 
 ❏ Now that you're connected to the internet, you'll want to update your software packages. This step is important because some packages may need updates for security reasons.
 
@@ -265,7 +265,7 @@ sudo apt update && sudo apt-y upgrade
 
 <img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" />&nbsp;
 
-# Update your hostname
+# ▶ Update your hostname
 
 Your **hostname** is a short alphanumeric name for each device on a network, sort of like a nickname. Setting a descriptive hostname will make it easier to tell which device is which (for example, when using your router admin panel). 
 
@@ -281,7 +281,7 @@ hostnamectl set-hostname Zine-Gallery
 
 <img src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" />
 
-# Set up a firewall
+# ▶ Set up a firewall
 
 A firewall is a piece of software that restricts access to your device over the network. In this section you'll install and configure the firewall `ufw`, which will permit or deny each network request (inbound and outbound).
 
@@ -325,7 +325,7 @@ sudo ufw allow 22/tcp
 
 ![](images/vlcsnap-2024-05-06-19h10m33s671_border.png)
 
-# Install Apache
+# ▶ Install Apache HTTP Server
 
 Next you'll install Apache HTTP Server, one of the most widely used web server programs. *(Note: The term "web server" can refer to a piece of software that serves websites, like Apache. "Web server" can also refer to the computer the software is running on.)*
 
@@ -398,7 +398,7 @@ sudo nano index.html
 
 ❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
 
-# Create Apache configuration file
+# ▶ Create Apache configuration file
 
 ❏ Run the command below to change your current working directory to `/etc/apache2/sites-available`.
 
@@ -445,7 +445,7 @@ ServerAlias localhost
 
 <img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" />
 
-# Enable your website
+# ▶ Enable your website
 
 ❏ Run the following command to have Apache enable your website:
 
@@ -471,7 +471,7 @@ systemctl reload apache2
 
 <img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" />
 
-# Set up ports.conf
+# ▶ Set up ports.conf
 
 ❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
 
@@ -493,19 +493,19 @@ Listen 0.0.0.0:80
 
 <img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" />
 
-# Find your IP address
+# ▶ Find your IP address
 
 ❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.44`.
 
 ![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
 
-# Test your site on the local network
+# ▶ Test your site on the local network
 
 ❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
 ![Screenshot 2024-05-04 at 15.33.35.png](images/Screenshot%202024-05-04%20at%2015.33.35.png)
 
-# Set a static IP address
+# ▶ Set a static IP address
 
 ❏ Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
 
@@ -543,7 +543,7 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468">
 
-# Enable local SSH access
+# ▶ Enable local SSH access
 
 ❏ Run the command `so orangepi-config` to open the Orange Pi configuration utility.
 
@@ -573,11 +573,11 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 # ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
-# Reboot
+# ▶ Reboot
 
 abcde ...
 
-# Test your SSH connection
+# ▶ Test your SSH connection
 
 From a terminal window on your desktop computer, run the following command to start an **ssh** session with your server.
 
@@ -587,7 +587,7 @@ ssh orangepi@192.168.1.44
 
 When you're done, you can use the command `exit` to end the ssh session.
 
-# Update your website from another computer using scp
+# ▶ Update your website from another computer using scp
 
 ![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot 2024-05-04 at 15.55.57.png)
 
@@ -597,7 +597,7 @@ When you're done, you can use the command `exit` to end the ssh session.
 
 ![Screenshot 2024-05-04 at 15.57.08.png](images/Screenshot 2024-05-04 at 15.57.08.png)
 
-# Set up port forwarding on your router
+# ▶ Set up port forwarding on your router
 
 ❏ Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
 
@@ -621,7 +621,7 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 ❏ Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
 
-# Set up DDNS for your own domain or subdomain
+# ▶ Set up DDNS for your domain or subdomain
 
 *Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
 
@@ -641,7 +641,7 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 ![](images/2024-05-18-02-42-52-image.png)
 
-❏ Click Add a domain into FreeDNS    
+❏ Click **Add a domain into FreeDNS**.   
 
 ![](images/2024-05-18-02-44-37-image.png)❏
 
@@ -668,7 +668,7 @@ Create a new **NS** (name server) record for the domain or subdomain you're usin
 
 <img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="left">
 
-# Install ddclient
+# ▶ Install ddclient
 
 ❏ On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
 
