@@ -98,19 +98,29 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 # ▶ Set up your hardware
 
-❏ Insert your microSD card into the card slot on your single-board computer. The printed side of the microSD card should be facing out.
+❏ Insert the flashed microSD card into the card slot on your single-board computer. The printed side of the microSD card should be facing away from the board.
 
 <img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
 
+❏ Find the USB-C power cable and connect it to your USB power supply. Plug the other end of the cable into the USB-C port closest to the corner of the board.
+
 <img src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" title="" alt="02_IMG_4116.jpg" width="335">
+
+❏ Plug your USB-C to 2x USB-A adapter into the remaining USB-C port. *(Note: You can power your computer using either USB port, but only this one supports USB peripherals.)*
 
 <img src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" title="" alt="03_IMG_4120.jpg" width="333">
 
+❏ Connect a USB keyboard to your USB-C to 2x USB-A adapter.
+
+❏ Plug your Mini HDMI to HDMI adapter into the computer's Mini HDMI port.
+
 <img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
+
+❏ Plug an HDMI cable into the adapter from the last step. Connect the other end of the cable to the HDMI port on a monitor or TV.
 
 # ▶ Turn on your computer
 
-❏ Plug a USB-C cable into your computer and connect it to a USB power supply (2 amps or more).
+❏ Plug your USB power supply into a wall outlet.
 
 ❏ After a brief startup sequence, your screen should look like this:
 
@@ -122,7 +132,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
 
-❏ For the current pasword, type `orangepi` and press enter, or `raspberrypi` if you're using a Raspberry Pi. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
+❏ For the current pasword, type `orangepi` and press enter (or `raspberrypi` if you're using a Raspberry Pi). You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
 <img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
 
@@ -186,11 +196,11 @@ When your computer finishes rebooting, the font will be bigger.
 
 ![3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg](images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg)
 
-❏ Connect an Ethernet cable to the Ethernet-to-USB adapter.
+❏ Connect an Ethernet cable to the adapter.
 
-❏ Connect the Ethernet cable to the back of your home router.
+❏ Connect the other end of the Ethernet cable to an Ethernet port on the back of your home router.
 
-❏ To confirm you're connected to the internet, you can run the following `ping` command:
+❏ To confirm you're connected to the internet, you can run the following `ping` command on your single-board computer:
 
 ```
 ping iffybooks.net
@@ -211,7 +221,7 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 # ▶ Connect to the internet via wi-fi (discouraged! 🙃)
 
-*Hosting a website via wi-fi isn't recommended, because maintaining a steady long-term connection is too much of a headache. If you want to keep using wi-fi because Ethernet isn't an option at the moment, here's how to set it up.*
+*Hosting a website via wi-fi isn't recommended, because maintaining a long-term wireless connection is a headache. If you want to keep using wi-fi temporarily because Ethernet isn't an option, here's how to set it up.*
 
 ❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `sudo raspi-config` instead.)
 
@@ -229,9 +239,7 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 <img src="images/vlcsnap-2024-05-04-18h13m11s710.png" />
 
-❏ You'll see a list of available wi-fi networks. Select your home network, then press enter. *(Note: Some routers let you create a secondary wi-fi network, intended to keep IoT (Internet of Things) devices like security cameras separate from your primary network. If you're planning to leave your server connected to wi-fi, you may want to use your router's IoT network as a security precaution.)*
-
-<img src="images/vlcsnap-2024-05-04-18h13m15s945.png" />
+❏ You'll see a list of available wi-fi networks. Select your home network, then press enter.
 
 ❏ Enter your password at the prompt.
 
@@ -575,25 +583,39 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 # ▶ Reboot
 
-abcde ...
+❏ Type the command `reboot` and press **enter** to restart your computer.
 
 # ▶ Test your SSH connection
 
-From a terminal window on your desktop computer, run the following command to start an **ssh** session with your server.
+❏ From a terminal window on your desktop computer, run the following command to start an **ssh** session with your server.
 
 ```
 ssh orangepi@192.168.1.44
 ```
 
-When you're done, you can use the command `exit` to end the ssh session.
+❏ When you're done, you can use the command `exit` to end the ssh session.
 
 # ▶ Update your website from another computer using scp
 
+❏ On your desktop computer, go to `Documents` and create a directory named after the domain/subdomain you're using. In the example below, our directory is called `zinegallery.iffybooks.net`.
+
+❏ Open a plaintext editor and create a new HTML file. (In the example below we're using Sublime Text.)
+
 ![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot 2024-05-04 at 15.55.57.png)
+
+❏ Save the file with the name `index.html` to the website directory you just created.
+
+❏ If you want, add more pages, images, and files to your website directory.
+
+❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the IP address you're using.
+
+```
+scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
+```
 
 ![Screenshot 2024-05-04 at 15.43.08.png](images/Screenshot 2024-05-04 at 15.43.08.png)
 
-![Screenshot 2024-05-04 at 15.56.17.png](images/Screenshot 2024-05-04 at 15.56.17.png)
+
 
 ![Screenshot 2024-05-04 at 15.57.08.png](images/Screenshot 2024-05-04 at 15.57.08.png)
 
