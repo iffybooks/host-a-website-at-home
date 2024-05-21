@@ -16,23 +16,41 @@
 
 In this project you'll learn to set up an Ubuntu-based web server on a single-board computer, using Apache HTTP Server to serve your website. You'll configure Apache the proper way, letting you host multiple websites on the same machine if you wish. Then you'll set up port forwarding on your router to expose your site to the open web. Finally, you'll configure Dynamic DNS (DDNS) with a domain or subdomain, so your website will be accessible even when your ISP changes your home IP address.
 
-The examples in this zine use the **Orange Pi Zero 2W**, an inexpensive single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
+The examples in this zine use the **Orange Pi Zero 2W (OPZ2W)**, an inexpensive single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
 
 We sell complete home web server kits at Iffy Books. The kit costs $49 as of May 2024, and includes the following:
 
-• Orange Pi Zero 2W single-board computer w/1 GB of RAM
-• 32 GB microSD card
-• microSD card reader
-• 2 Amp USB power supply
-• USB-C power cable
-• Mini HDMI to HDMI adapter
-• USB-C to 2x USB-A adapter
-• USB-A to Ethernet adapter
-• Ethernet cable
+- Orange Pi Zero 2W single-board computer w/1 GB of RAM
+
+- 32 GB microSD card
+
+- microSD card reader
+
+- 2 Amp USB power supply
+
+- USB-C power cable
+
+- Mini HDMI to HDMI adapter
+
+- USB-C to 2x USB-A adapter
+
+- USB-A to Ethernet adapter
+
+- Ethernet cable
+
+You'll need the following:
+
+- A monitor (or TV) with HDMI video input
+
+- An HDMI cable
+
+- A keyboard with a USB cable
+
+
 
 # ▶ Choose a domain
 
-## Option 1: Choose a subdomain for a domain you already own.
+## Option 1: If you have a domain, choose a subdomain
 
 ❏ If you've already registered a domain and you'd like to create a subdomain for this project, the only thing you need to do at this point is decide what subdomain to use. For the examples below we'll use the subdomain **zinegallery.iffybooks.net**. We'll update your domain records later in the project.
 
@@ -84,7 +102,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ![2024-05-10-17-17-56-image.png](images/0641d8ae0e06f780827ca332fbb71ded7a302a53.png)
 
-❏ Now go to [etcher.balena.io](https://etcher.balena.io) and download **balenaEthcher**, which you'll use to flash the Ubuntu image onto your microSD card. balenaEtcher is available for macOS, Windows, and Linux.
+❏ Now go to **[etcher.balena.io](https://etcher.balena.io)** and download **balenaEthcher**, which you'll use to flash the Ubuntu image onto your microSD card. balenaEtcher is available for macOS, Windows, and Linux.
 
 ❏ Insert your microSD card into your microSD card reader and plug it into your computer's USB port. (If your computer only has a USB-C port, use the USB-C to USB-A adapter included in your kit.)
 
@@ -102,33 +120,35 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
 
-❏ Find the USB-C power cable and connect it to your USB power supply. Plug the other end of the cable into the USB-C port closest to the corner of the board.
+❏ Find the USB-C power cable and connect it to your USB power supply. Plug the other end of the cable into the outer USB-C port, closest to the corner of the board.
 
 <img src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" title="" alt="02_IMG_4116.jpg" width="335">
 
-❏ Plug your USB-C to 2x USB-A adapter into the remaining USB-C port. *(Note: You can power your computer using either USB port, but only this one supports USB peripherals.)*
+❏ Plug your USB-C to 2x USB-A adapter into the inner USB-C port, closer to the middle of the board. *(Note: You can power your computer using either USB-C port, but only the inner port works for connecting USB hardware, such as a keyboard.)*
 
 <img src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" title="" alt="03_IMG_4120.jpg" width="333">
 
-❏ Connect a USB keyboard to your USB-C to 2x USB-A adapter.
+❏ Connect a USB keyboard to the USB-C to 2x USB-A adapter.
 
-❏ Plug your Mini HDMI to HDMI adapter into the computer's Mini HDMI port.
+❏ Find the Mini HDMI port on your computer and plug in the Mini HDMI to HDMI adapter.
 
 <img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
 
-❏ Plug an HDMI cable into the adapter from the last step. Connect the other end of the cable to the HDMI port on a monitor or TV.
+❏ Connect an HDMI cable to the Mini HDMI to HDMI adapter. Plug the other end into the HDMI port on your monitor (or TV).
 
 # ▶ Turn on your computer
 
-❏ Plug your USB power supply into a wall outlet.
+❏ Set up your single-board computer, keyboard, and monitor somewhere close to your home router. The computer's USB power supply will need to reach an outlet.
 
-❏ After a brief startup sequence, your screen should look like this:
+❏ Plug your computer's USB power supply into a wall outlet.
+
+❏ After a brief startup sequence, your screen will look like this:
 
 <img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
 
-*(Note: From this point forward we'll invert the colors in screen captures in order to use less printer toner.)*
+*(Note: From this point on we'll invert the colors in screen captures in order to use less toner in the printed zine.)*
 
-❏ First you'll set a password. Type `passwd` at the command prompt, then press enter.
+❏ First you'll set a password for the current user. Type `passwd` at the command prompt, then press enter.
 
 <img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
 
@@ -503,7 +523,7 @@ Listen 0.0.0.0:80
 
 # ▶ Find your IP address
 
-❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.44`.
+❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.46`.
 
 ![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
 
@@ -537,19 +557,19 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 ❏ Select the `Static` option and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="" data-align="center">
 
 ❏ Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
 
-<img src="images/19928390b675ecba5224e94148455e8c2911308d.png" title="" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="404">
+<img title="" src="images/19928390b675ecba5224e94148455e8c2911308d.png" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="436" data-align="center">
 
 ❏ Select `Back` and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="" width="468" data-align="center">
 
 ❏ Select `Exit` and press enter to close the configuration utility.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468">
+<img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468" data-align="center">
 
 # ▶ Enable local SSH access
 
@@ -559,7 +579,7 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 ❏ Select `System` and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="" data-align="center">
 
 ❏ Select `SSH` and press enter.
 
@@ -607,6 +627,8 @@ ssh orangepi@192.168.1.44
 
 ❏ If you want, add more pages, images, and files to your website directory.
 
+![](images/2024-05-20-21-22-12-image.png)
+
 ❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the IP address you're using.
 
 ```
@@ -615,7 +637,7 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 ![Screenshot 2024-05-04 at 15.43.08.png](images/Screenshot 2024-05-04 at 15.43.08.png)
 
-
+❏ Open a browser window, type your server's IP address in the address bar, and press enter. You should see your updated site!
 
 ![Screenshot 2024-05-04 at 15.57.08.png](images/Screenshot 2024-05-04 at 15.57.08.png)
 
