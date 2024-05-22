@@ -46,8 +46,6 @@ You'll need the following:
 
 - A keyboard with a USB cable
 
-
-
 # ▶ Choose a domain
 
 ## Option 1: If you have a domain, choose a subdomain
@@ -617,19 +615,21 @@ ssh orangepi@192.168.1.44
 
 # ▶ Update your website from another computer using scp
 
-❏ On your desktop computer, go to `Documents` and create a directory named after the domain/subdomain you're using. In the example below, our directory is called `zinegallery.iffybooks.net`.
+❏ On your desktop computer, go to `Documents` and create a directory with the same name as the domain/subdomain you're using. In the example below, the directory is called `zinegallery.iffybooks.net`.
 
-❏ Open a plaintext editor and create a new HTML file. (In the example below we're using Sublime Text.)
+![](images/2024-05-20-22-36-27-image.png)
+
+❏ Open a plaintext editor and write some HTML for a new home page. (In the example below we're using Sublime Text.)
 
 ![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot 2024-05-04 at 15.55.57.png)
 
-❏ Save the file with the name `index.html` to the website directory you just created.
+❏ Save the file to the website directory you just created, with the name `index.html`.
 
-❏ If you want, add more pages, images, and files to your website directory.
+❏ If you want, add more pages, images, and files to your website directory. The example page we created above includes links to two PDF files.
 
 ![](images/2024-05-20-21-22-12-image.png)
 
-❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the IP address you're using.
+❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the local IP address you're using.
 
 ```
 scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
@@ -669,52 +669,58 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 *Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
 
-![](images/2024-05-18-02-38-37-image.png)
-
-❏
+❏ Go to `freedns.afraid.org`. Scroll down and click **Sign up Free**.
 
 ![](images/2024-05-18-02-39-12-image.png)
 
-❏
+❏ Enter your info to create a new account.
 
 ![](images/2024-05-18-02-39-30-image.png)
 
 ❏ Go to your email and follow the confirmation link.
 
-❏ Click **Domains** in the left column.
+❏ Go back to `freedns.afraid.org` and click **Domains** in the left column.
 
 ![](images/2024-05-18-02-42-52-image.png)
 
 ❏ Click **Add a domain into FreeDNS**.   
 
-![](images/2024-05-18-02-44-37-image.png)❏
+![](images/2024-05-18-02-44-37-image.png)❏ In the text box at the top of the page, enter the domain or subdomain you're using. Then select **Shared: Private** from the dropdown menu below. Click **Submit**.
 
-![](images/2024-05-18-02-46-25-image.png)❏
+![](images/2024-05-18-02-46-25-image.png)❏ The next page will confirm that your domain has been added to the system. It also says your domain has been temporarily marked as broken, which is normal.
 
 ![](images/2024-05-18-02-46-38-image.png)
 
-❏ Next you'll update your domain settings to use the following three name servers for your domain or subdomain:
+❏ Next you'll update your domain records to use the following name servers for your domain/subdomain:
 
 - NS1.AFRAID.ORG  
 - NS2.AFRAID.ORG  
 - NS3.AFRAID.ORG  
 - NS4.AFRAID.ORG
 
-If you're using a domain you just registered, you can update your domain records on the site where you registered it.
+If you're using a domain you just registered, you can update your domain records on the site where you registered it. If you used GoDaddy, for example, open your **Domain Portfolio** and click on a domain to open **Domain Settings**. Then click on the **DNS** tab.
 
-If you're using a subdomain with a domain you're already using, you can update your domain records through your VPS provider or hosting service. On DigitalOcean, for example, you can find domain settings under **Manage > Networking > Domains**.
+If you're creating a subdomain with a domain you're already using, you can update your domain records through your VPS provider or hosting service. On DigitalOcean, for example, you can find domain settings under **Manage > Networking > Domains**.
 
-Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.afraid.org` as the same server. Click **Create Record**.
+❏ Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.afraid.org` as the same server. Click **Create Record**.
 
 ![](images/2024-05-18-02-49-18-image.png)
 
-❏ Repeat the previous step for the nameservers `ns3.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`.
+❏ Repeat the previous step, creating three more NS records with the following name servers: `ns2.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`. You'll enter the same subdomain every time.
 
 <img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="left">
 
 # ▶ Install ddclient
 
-❏ On your single-board computer, run the command below to install `ddclient`. Type `y` at the propmpt and press enter to confirm.
+Next you'll install `ddclient`, a program that intermittently checks your single-board computer's IP address. If it changes, `ddclient` will update your DDNS provider.
+
+❏ On your single-board computer, run the following command to install a software package you'll need to use `ddclient`. Type `y` at the propmpt and press **enter** to confirm.
+
+```
+sudo apt install libio-socket-ssl-perl
+```
+
+❏ Run the command below to install `ddclient`. Type `y` at the propmpt and press **enter** to confirm.
 
 ```
 sudo apt install ddclient
@@ -722,35 +728,27 @@ sudo apt install ddclient
 
 <img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
 
-&nbsp;
-
-❏ Run this command to install a required dependency:
-
-```
-sudo apt install libio-socket-ssl-perl
-```
-
-❏ Once `ddclient` is installed, a setup wizard will launch. 
+❏ After installation, a setup wizard will launch. Use your arrow keys to select **freedns.afraid.org** from the list of DDNS providers. Press **enter** to continue.
 
 ![vlcsnap-2024-05-20-09h04m22s877.png](images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png)
 
-❏ 
+❏ Now enter the username for your account on **freedns.afraid.org**.
 
 ![vlcsnap-2024-05-20-09h04m57s918.png](images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png)
 
-❏ Enter the password from the `afraid.org` website. You'll be prompted to enter it again to confirm.
+❏ Type our your **freedns.afraid.org** account password and press **enter**. You'll be prompted to enter your password again to confirm it.
 
 ![vlcsnap-2024-05-20-09h05m14s553.png](images/a104393f185b012b1e5d1e4996d145c6b767f243.png)
 
-❏ Select **Web-based IP discovery service**, then **Ok**.
+❏ Select **Web-based IP discovery service**, then press **enter** to continue.
 
 <img src="images/vlcsnap-2024-05-04-22h51m31s509.png" />
 
-❏ You can choose select your domain name from a list or enter it manually. Select **Ok**.
+❏ Type out the domain/subdomain you're using and press **enter**.
 
 <img src="images/vlcsnap-2024-05-04-22h54m19s696.png" />
 
-❏ Finally, run this command to have `ddclient` check your current IP address every 5 minutes.
+❏ Finally, run the command below to have `ddclient` check your current IP address every 5 minutes.
 
 ```
 sudo ddclient -daemon 5m
@@ -758,6 +756,6 @@ sudo ddclient -daemon 5m
 
 ![vlcsnap-2024-05-20-09h07m39s710.png](images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png)
 
-If you don't see anything when you run this command, that's a good thing. It means `ddclient` is running properly.
+If you don't see any error messages when you run this command, that's a good thing! It means `ddclient` is running properly.
 
-❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait a few minutes for DNS settings to update and try again.
+❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait five minutes for DNS servers to update and try again.
