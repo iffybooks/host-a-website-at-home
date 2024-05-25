@@ -639,9 +639,9 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 # ▶ Set up port forwarding on your router
 
-❏ Open a web browser on a desktop computer and enter the IP address for your router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press enter, then log in with your admin password.
+❏ Open a web browser on a desktop computer and enter the IP address for your home router's admin panel. There's a good chance the IP address is `192.168.1.1`. Press **enter**, then log in with your admin password. (The admin password may be printed on the back of your router, depending on your ISP.)
 
-If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
+❏ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
 ![](images/2024-05-11-09-42-15-image.png)
 
@@ -649,21 +649,19 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 ![](images/2024-05-11-10-19-16-image.png)
 
-❏ Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type your server's static IP address. When you're done, click **Add to list** to create your port forwarding rule.
+❏ Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type the static IP address you chose for your server. Under **Schedule**, Select `Always`.
 
 ![](images/2024-05-11-10-21-21-image.png)
+
+❏ When you're done, click **Add to list** to create your port forwarding rule. Then click **Apply Changes**.
 
 ❏ To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
 ![](images/2024-05-11-10-31-00-image.png)
 
-![](images/2024-05-11-10-31-00-image.png)![](images/2024-05-11-10-31-00-image.png)
-
-❏ Copy and paste your home IP address into your URL bar and press enter, and you should see your website.
+❏ Copy and paste your home IP address into the URL bar and press **enter**, and you should see your website. 
 
 # ▶ Set up DDNS for your domain or subdomain
-
-*Note: If you created a subdomain through dynv6 at the beginning of the project, you can skip this step.*
 
 ❏ Go to `freedns.afraid.org`. Scroll down and click **Sign up Free**.
 
@@ -673,7 +671,7 @@ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of 
 
 ![](images/2024-05-18-02-39-30-image.png)
 
-❏ Go to your email and follow the confirmation link.
+❏ Open your email and follow the confirmation link.
 
 ❏ Go back to `freedns.afraid.org` and click **Domains** in the left column.
 
@@ -752,6 +750,6 @@ sudo ddclient -daemon 5m
 
 ![vlcsnap-2024-05-20-09h07m39s710.png](images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png)
 
-If you don't see any error messages when you run this command, that's a good thing! It means `ddclient` is running properly.
+If you don't see any error messages when you run this command, that's a good thing. It means `ddclient` is running properly.
 
 ❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait five minutes for DNS servers to update and try again.
