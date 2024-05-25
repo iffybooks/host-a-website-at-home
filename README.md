@@ -10,11 +10,11 @@
 
 - You can definitively take down your website by unplugging it. 
 
-- Commercial hosting starts around $5 per month, so hosting at home may be cheaper in the long run.
+- Commercial hosting starts around $5 per month, so hosting at home may(?) be cheaper in the long run.
 
-- Learning about networking is fun and useful.
+- Learning about networking is fun, and useful for future projects.
 
-In this project you'll learn to set up an Ubuntu-based web server on a single-board computer, using Apache HTTP Server to serve your website. You'll configure Apache the proper way, letting you host multiple websites on the same machine if you wish. Then you'll set up port forwarding on your router to expose your site to the open web. Finally, you'll configure Dynamic DNS (DDNS) with a domain or subdomain, so your website will be accessible even when your ISP changes your home IP address.
+In this project you'll learn to set up an Ubuntu-based web server on a single-board computer, using Apache HTTP Server to serve your website. You'll configure Apache the proper way, letting you host multiple websites on the same machine if you wish. Then you'll set up a firewall and turn on port forwarding on your home router, exposing your web server to the open web. You'll finish by configuring Dynamic DNS (DDNS) with a domain or subdomain, so your website will remain accessible even when your home IP address changes.
 
 The examples in this zine use the **Orange Pi Zero 2W (OPZ2W)**, an inexpensive single-board computer that uses very little power. You can buy an OPZ2W with 1 GB of RAM for around $20, but you'll need some additional hardware to get up and running.
 
@@ -48,7 +48,7 @@ You'll need the following:
 
 # ▶ Choose a domain
 
-## Option 1: If you have a domain, choose a subdomain
+## Option 1: If you have a domain already, choose a subdomain
 
 ❏ If you've already registered a domain and you'd like to create a subdomain for this project, the only thing you need to do at this point is decide what subdomain to use. For the examples below we'll use the subdomain **zinegallery.iffybooks.net**. We'll update your domain records later in the project.
 
@@ -104,7 +104,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ❏ Insert your microSD card into your microSD card reader and plug it into your computer's USB port. (If your computer only has a USB-C port, use the USB-C to USB-A adapter included in your kit.)
 
-❏ Open balenaEtcher, click **Flash from file**, and select the `.img` disk image file you just extracted.
+❏ Open **balenaEtcher**, click **Flash from file**, and select the `.img` disk image file you just extracted.
 
 ![2024-05-10-17-19-44-image.png](images/50a411dc182f8774c2138d5b882e09fab01f340a.png)
 
@@ -136,7 +136,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 # ▶ Turn on your computer
 
-❏ Set up your single-board computer, keyboard, and monitor somewhere close to your home router. The computer's USB power supply will need to reach an outlet.
+❏ Set up your single-board computer, keyboard, and monitor somewhere close to your home router.
 
 ❏ Plug your computer's USB power supply into a wall outlet.
 
@@ -150,11 +150,11 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
 
-❏ For the current pasword, type `orangepi` and press enter (or `raspberrypi` if you're using a Raspberry Pi). You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
+❏ For the current pasword, type `orangepi` and press **enter**. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
 <img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
 
-❏ You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
+You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
 ❏ Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
@@ -170,7 +170,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 # ▶ Increase the onscreen text size (optional)
 
-If the onscreen text looks too small to read comfortably, follow the steps below to increase the size. Otherwise you can skip to the next step.
+If the onscreen text is too small to read comfortably, follow the steps below to increase the size. Otherwise you can skip to the next section.
 
 ❏ Run the following command to open the `console-setup` preferences file using the text editor `nano`:
 
@@ -192,7 +192,7 @@ sudo nano /etc/default/console-setup
 
 <img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" />
 
-❏ *Tip: You can use the command `clear` at any time to clear the whole screen.*
+❏ *Tip: You can use the command `clear` at any time to clear the screen.*
 
 <img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" />
 
@@ -200,21 +200,19 @@ sudo nano /etc/default/console-setup
 
 <img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" />
 
-❏ Reboot your computer with `sudo reboot`.
+❏ Reboot your computer with `sudo reboot`. When your computer finishes rebooting, the text will be bigger.
 
 <img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" />
-
-When your computer finishes rebooting, the font will be bigger.
 
 # ▶ Connect to the internet via Ethernet
 
 *We strongly recommend connecting your single-board computer to your home router using an Ethernet cable. If you need to use wi-fi temporarily, you can skip to the next section.*
 
-❏ Plug USB end of the Ethernet-to-USB adapter into the open USB port on your single-board computer. 
+❏ Plug your Ethernet-to-USB adapter to your single-board computer via the USB-C to 2x USB-A adapter.
 
 ![3b560993806c4ab8c9881d57b5ed2c53e6d28a19.jpg](images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg)
 
-❏ Connect an Ethernet cable to the adapter.
+❏ Connect an Ethernet cable to the Ethernet-to-USB adapter.
 
 ❏ Connect the other end of the Ethernet cable to an Ethernet port on the back of your home router.
 
@@ -241,7 +239,7 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 *Hosting a website via wi-fi isn't recommended, because maintaining a long-term wireless connection is a headache. If you want to keep using wi-fi temporarily because Ethernet isn't an option, here's how to set it up.*
 
-❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `sudo raspi-config` instead.)
+❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
 <img src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" />
 
@@ -279,10 +277,10 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 ❏ Now that you're connected to the internet, you'll want to update your software packages. This step is important because some packages may need updates for security reasons.
 
-❏ Type the command below (actually two commands separated by `&&`, then press enter. 
+❏ Type the command below (actually two commands separated by `&&`), then press **enter**. 
 
 ```
-sudo apt update && sudo apt-y upgrade
+sudo apt update && sudo apt -y upgrade
 ```
 
 <img src="images/vlcsnap-2024-05-04-18h15m11s937_border.png" />
@@ -293,7 +291,7 @@ sudo apt update && sudo apt-y upgrade
 
 # ▶ Update your hostname
 
-Your **hostname** is a short alphanumeric name for each device on a network, sort of like a nickname. Setting a descriptive hostname will make it easier to tell which device is which (for example, when using your router admin panel). 
+A **hostname** is a short alphanumeric name for each device on a network, sort of like a nickname. Setting a descriptive hostname will make it easier to tell which device is which, for example when using your router admin panel. 
 
 ❏ To see your curent hostname, enter the command `hostname` and press enter. The default hostname is `orangepizero2w`.
 
@@ -309,9 +307,9 @@ hostnamectl set-hostname Zine-Gallery
 
 # ▶ Set up a firewall
 
-A firewall is a piece of software that restricts access to your device over the network. In this section you'll install and configure the firewall `ufw`, which will permit or deny each network request (inbound and outbound).
+A firewall is a piece of software that restricts access to your device over the network. In this section you'll install and configure the firewall program `ufw`, short for Uncomplicated Firewall, which will monitor network requests and permit or deny each one depending on rules you set up.
 
-❏ You'll start by installing `ufw` (short for "Uncomplicated Firewall"). Run the command `sudo apt install ufw`, then follow the prompts.
+❏ You'll start by installing `ufw`. Run the command `sudo apt install ufw`, then follow the prompts to finish installation.
 
 <img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" />
 
@@ -471,6 +469,28 @@ ServerAlias localhost
 
 <img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" />
 
+# ▶ Set up ports.conf
+
+❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
+
+<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
+
+❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
+
+```
+sudo nano ports.conf
+```
+
+<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" />
+
+❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
+
+```
+Listen 0.0.0.0:80
+```
+
+<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" />
+
 # ▶ Enable your website
 
 ❏ Run the following command to have Apache enable your website:
@@ -497,33 +517,11 @@ systemctl reload apache2
 
 <img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" />
 
-# ▶ Set up ports.conf
-
-❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
-
-<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
-
-❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
-
-```
-sudo nano ports.conf
-```
-
-<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" />
-
-❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
-
-```
-Listen 0.0.0.0:80
-```
-
-<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" />
-
 # ▶ Find your IP address
 
-❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `eth0` if you're using ethernet or `wlan0` if you're using wi-fi. In the example below, the server's local IP address is `192.168.1.46`.
+❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `enx0...` if you're using Ethernet, or `wlan0` if you're using wi-fi. In the example below the server's local IP address is `192.168.1.46`.
 
-![](images/vlcsnap-2024-05-04-18h29m22s232_border.png)
+![](images/2024-05-25-15-14-36-image.png)
 
 # ▶ Test your site on the local network
 
@@ -533,11 +531,11 @@ Listen 0.0.0.0:80
 
 # ▶ Set a static IP address
 
-❏ Ordinarily, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect to the network your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
+Typically, when you connect a computer to a network it's assigned a local IP address by a DHCP server program running on the router. Every time you connect, your machine will be given an arbitrary address that isn't already taken, typically beginning with `192.168`.
 
-Alternatively, you can give your computer a static IP address that never changes. In this case, a static IP address is required to set up port forwarding, which we'll cover in a future step.
+Alternatively, your computer can announce its own static IP address, which never changes. In this case you'll need a static IP address to set up port forwarding, which we'll cover in a future step.
 
-Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility. (On a Raspberry Pi, use `raspi-config` instead.)
+❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
 <img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" />
 
@@ -549,59 +547,57 @@ Run the command `sudo orangepi-config` to launch the Orange Pi configuration uti
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="">
 
-❏ Select the `eth0` option if your computer is connected via Ethernet, or select the option beginning with `en` if you're using wi-fi. (We recommend using Ethernet if possible, but we're using wi-fi in the example below.)
+❏ Select the `enx0...` option if your computer is connected via Ethernet.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="">
 
-❏ Select the `Static` option and press enter.
+❏ Select  `Static`  and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="" data-align="center">
 
-❏ Next to `Address`, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Select `OK` and press enter to save your configuration.
+❏ Next to **Address**, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Press **enter** to save your configuration.
 
 <img title="" src="images/19928390b675ecba5224e94148455e8c2911308d.png" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="436" data-align="center">
 
-❏ Select `Back` and press enter.
+❏ Select `Back` and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m46s954.png" alt="" width="468" data-align="center">
 
-❏ Select `Exit` and press enter to close the configuration utility.
+❏ Select `Exit` and press **enter** to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h34m49s645.png" alt="" width="468" data-align="center">
 
 # ▶ Enable local SSH access
 
-❏ Run the command `so orangepi-config` to open the Orange Pi configuration utility.
+❏ Run the command `sudo orangepi-config` to open the Orange Pi configuration utility.
 
 <img src="images/vlcsnap-2024-05-04-18h38m01s726_border.png" />
 
-❏ Select `System` and press enter.
+❏ Select `System` and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="" data-align="center">
 
-❏ Select `SSH` and press enter.
+❏ Select `SSH` and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="">
 
-❏ The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press enter to enable SSH access.
+❏ The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press **enter** to enable SSH access.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="">
 
-❏ Select `Back` and press enter.
+❏ Select `Back` and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="">
 
-❏ Select `Exit` and press enter to close the configuration utility.
+❏ Select `Exit` and press **enter** to close the configuration utility.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="">
-
-❏ Run the command `reboot` to reboot your computer.
-
-# ![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
 # ▶ Reboot
 
 ❏ Type the command `reboot` and press **enter** to restart your computer.
+
+![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
 # ▶ Test your SSH connection
 
@@ -621,7 +617,7 @@ ssh orangepi@192.168.1.44
 
 ❏ Open a plaintext editor and write some HTML for a new home page. (In the example below we're using Sublime Text.)
 
-![Screenshot 2024-05-04 at 15.55.57.png](images/Screenshot 2024-05-04 at 15.55.57.png)
+![](images/Screenshot_2024-05-04_at_15.55.57.png)
 
 ❏ Save the file to the website directory you just created, with the name `index.html`.
 
@@ -629,17 +625,17 @@ ssh orangepi@192.168.1.44
 
 ![](images/2024-05-20-21-22-12-image.png)
 
-❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the local IP address you're using.
+❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the local IP address you're using. Press **enter**. You'll be prompted to enter the root password for your single-board computer.
 
 ```
 scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 ```
 
-![Screenshot 2024-05-04 at 15.43.08.png](images/Screenshot 2024-05-04 at 15.43.08.png)
+![](images/Screenshot_2024-05-04_at_15.43.08.png)
 
-❏ Open a browser window, type your server's IP address in the address bar, and press enter. You should see your updated site!
+❏ Open a browser window on your desktop computer, type your server's IP address in the address bar, and press **enter**. You should see your updated site!
 
-![Screenshot 2024-05-04 at 15.57.08.png](images/Screenshot 2024-05-04 at 15.57.08.png)
+![](images/Screenshot_2024-05-04_at_15.57.08.png)
 
 # ▶ Set up port forwarding on your router
 
