@@ -40,7 +40,7 @@ We sell complete home web server kits at Iffy Books. The kit costs $49 as of May
 
 You'll need the following:
 
-- A monitor (or TV) with HDMI video input
+- A monitor or TV with HDMI video input
 
 - An HDMI cable
 
@@ -52,7 +52,7 @@ You'll need the following:
 
 ❏ If you've already registered a domain and you'd like to create a subdomain for this project, the only thing you need to do at this point is decide what subdomain to use. For the examples below we'll use the subdomain **zinegallery.iffybooks.net**. We'll update your domain records later in the project.
 
-Each subdomain string can be up to 63 characters long (case insensitive). 
+Each subdomain string can be up to 63 characters long, case insensitive. 
 
 ## Option 2: Buy a domain
 
@@ -62,7 +62,7 @@ Each subdomain string can be up to 63 characters long (case insensitive).
 
 ## Option 3: Sign up for a free subdomain from a DDNS provider
 
-❏ Go to **freedns.afraid.org** and set up a free subdomain. (There are many other sites that offer free subdomains, including dynv6.com.)
+❏ Go to **freedns.afraid.org** and set up a free subdomain. There are many other sites that offer free subdomains, including dynv6.com.
 
 ![](images/2024-05-18-02-38-37-image.png)
 
