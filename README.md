@@ -40,7 +40,7 @@ You'll also need the following:
 
 ❏ If you've already registered a domain and you'd like to create a subdomain for this project, the only thing you need to do at this point is decide what subdomain to use. For the examples below we'll use the subdomain **zinegallery.iffybooks.net**. We'll update your domain records later in the project.
 
-Each subdomain string can be up to 63 characters long (case insensitive). 
+Each subdomain string can be up to 63 characters long, case insensitive.
 
 <div style="page-break-after: always;"></div>
 
@@ -54,7 +54,7 @@ Each subdomain string can be up to 63 characters long (case insensitive).
 
 ❏ Go to **freedns.afraid.org** and set up a free subdomain. (There are many other sites that offer free subdomains, including dynv6.com.)
 
-<img title="" src="images/2024-05-18-02-38-37-image.png" alt="" width="347" data-align="center">
+<img title="" src="images/2024-05-18-02-38-37-image.png" alt="" width="357" data-align="center">
 
 <div style="page-break-after: always;"></div>
 
@@ -144,31 +144,35 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ❏ After a brief startup sequence, your screen will look like this:
 
-<img title="" src="images/vlcsnap-2024-05-04-18h06m09s993.png" alt="" data-align="center" width="478" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-18h06m09s993.png" alt="" data-align="center" width="461" style="padding-bottom: 1em;">
 
 *(Note: From this point on we'll invert the colors in screen captures in order to use less toner in the printed zine.)*
 
+<div style="page-break-after: always;"></div>
+
 ❏ First you'll set a password for the current user. Type `passwd` at the command prompt, then press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" alt="" data-align="center" width="488" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" alt="" data-align="center" width="382" style="padding-bottom: 1em;">
 
 ❏ For the current pasword, type `orangepi` and press **enter**. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" alt="" data-align="center" width="492" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" alt="" data-align="center" width="385" style="padding-bottom: 1em;">
 
 You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
 ❏ Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="543" data-align="center" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="390" data-align="center" style="padding-bottom: 1em;">
 
 ❏ Now type `passwd` and press enter to set a new password for your `root` account.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="497" data-align="center" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="324" data-align="center" style="padding-bottom: 1em;">
 
 ❏ When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468" data-align="center" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="304" data-align="center" style="padding-bottom: 1em;">
+
+<div style="page-break-after: always;"></div>
 
 # ▶ Increase the onscreen text size (optional)
 
@@ -180,31 +184,29 @@ If the onscreen text is too small to read comfortably, follow the steps below to
 sudo nano /etc/default/console-setup
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h09m12s644_border.png" data-align="center"  style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h09m12s644_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="477">
 
 ❏ Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
 
-<img src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" data-align="center"   style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="395">
 
 ❏ When you're finished, press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt **"Save modified buffer?"** Type `y` for "yes," then press **enter**.
 
-<img src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" data-align="center"  style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="299">
 
-❏ Press enter again to confirm the filename.
+❏ Press **enter** again to confirm the filename.
 
-<img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="420">
 
 ❏ *Tip: You can use the command `clear` at any time to clear the screen.*
 
-<img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="307">
 
 ❏ Now run the command `sudo update-initramfs -u` to confirm the new font size.
 
-<img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="406">
 
-❏ Reboot your computer with `sudo reboot`. When your computer finishes rebooting, the text will be bigger.
-
-<img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" data-align="center" style="padding-bottom: 1em;" />
+❏ Restart your computer with `sudo reboot`. When your computer finishes rebooting, the onscreen text will be bigger.
 
 # ▶ Connect to the internet via Ethernet
 
@@ -212,7 +214,7 @@ sudo nano /etc/default/console-setup
 
 ❏ Plug your Ethernet-to-USB adapter to your single-board computer via the USB-C to 2x USB-A adapter.
 
-<img src="images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg" alt="" data-align="center" style="padding-bottom: 1em;" width="257">
 
 ❏ Connect an Ethernet cable to the Ethernet-to-USB adapter.
 
@@ -223,6 +225,8 @@ sudo nano /etc/default/console-setup
 ```
 ping iffybooks.net
 ```
+
+<div style="page-break-after: always;"></div>
 
 If you get output that looks like this, then you're connected to the internet:
 
@@ -243,37 +247,39 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 ❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
-<img src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="410">
 
 ❏ You'll see a prompt that reads **"Configuration cannot work properly without a working internet connection."** Press any key to continue.
 
-<img src="images/vlcsnap-2024-05-04-18h12m53s220_border.png" data-align="center" style="padding-bottom: 1em;" />
+<div style="page-break-after: always;"></div>
 
 ❏ Use the down arrow key to select the `Network` menu, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m01s027.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h13m01s027.png" alt="" data-align="center" style="padding-bottom: 1em;" width="444">
 
 ❏ Use the down arrow key to select the `WiFi` menu, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m11s710.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h13m11s710.png" alt="" data-align="center" style="padding-bottom: 1em;" width="447">
 
-❏ You'll see a list of available wi-fi networks. Select your home network, then press enter.
+❏ You'll see a list of available wi-fi networks. Select your home network, then press **enter**.
 
 ❏ Enter your password at the prompt.
 
-<img src="images/vlcsnap-2024-05-04-18h13m28s733.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h13m28s733.png" alt="" data-align="center" style="padding-bottom: 1em;" width="464">
 
 ❏ Use the arrow keys to select `Quit`, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m57s055.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h13m57s055.png" alt="" data-align="center" style="padding-bottom: 1em;" width="465">
 
 ❏ Use the arrow keys to select `Back` , then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h14m41s289.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h14m41s289.png" alt="" data-align="center" style="padding-bottom: 1em;" width="465">
 
 ❏ Now select `Exit`. Then press **enter** to close the configuration menu.
 
-<img src="images/vlcsnap-2024-05-04-18h14m47s352.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h14m47s352.png" alt="" data-align="center" style="padding-bottom: 1em;" width="470">
+
+<div style="page-break-after: always;"></div>
 
 # ▶ Update your software
 
@@ -289,7 +295,7 @@ sudo apt update && sudo apt -y upgrade
 
 ❏ Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
 
-<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="485">
 
 # ▶ Update your hostname
 
@@ -297,7 +303,7 @@ A **hostname** is a short alphanumeric name for each device on a network, sort o
 
 ❏ To see your curent hostname, enter the command `hostname` and press enter. The default hostname is `orangepizero2w`.
 
-<img src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="473">
 
 ❏ Now run the command below, replacing **Zine-Gallery** with a descriptive name for your server (no spaces allowed, but hyphens are OK). You'll be prompted to enter your password.
 
@@ -305,7 +311,7 @@ A **hostname** is a short alphanumeric name for each device on a network, sort o
 hostnamectl set-hostname Zine-Gallery
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="502">
 
 # ▶ Set up a firewall
 
@@ -313,7 +319,7 @@ A firewall is a piece of software that restricts access to your device over the 
 
 ❏ You'll start by installing `ufw`. Run the command `sudo apt install ufw`, then follow the prompts to finish installation.
 
-<img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" data-align="center" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="418">
 
 ❏ Run the command below to deny incoming network connections by default.
 
@@ -321,7 +327,7 @@ A firewall is a piece of software that restricts access to your device over the 
 sudo ufw default deny incoming
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h26m51s348_border.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h26m51s348_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="556">
 
 ❏ Run the command below to allow outgoing network connections by default.
 
@@ -329,7 +335,7 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h26m59s436_border.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h26m59s436_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="493">
 
 ❏ Run the command below to allow incoming TCP connections on port 80:
 
@@ -337,7 +343,7 @@ sudo ufw default allow outgoing
 sudo ufw allow 80/tcp
 ```
 
-<img src = "images/vlcsnap-2024-05-04-18h27m09s846_border.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h27m09s846_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="514">
 
 ❏ Now run the command below to allow incoming TCP connections on port 22. This will make it possible to connect to your server via SSH, which we'll set up in a later section.
 
@@ -345,11 +351,11 @@ sudo ufw allow 80/tcp
 sudo ufw allow 22/tcp
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h41m07s243_border.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h41m07s243_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="504">
 
 ❏ Now run the command `sudo ufw enable` to turn on your firewall.
 
-<img src="images/vlcsnap-2024-05-06-19h10m33s671_border.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-06-19h10m33s671_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="497">
 
 # ▶ Install Apache HTTP Server
 
@@ -361,7 +367,7 @@ Next you'll install Apache HTTP Server, one of the most widely used web server p
 sudo apt install apache2
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m14s181_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h19m14s181_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="485">
 
 Now you'll make a directory to store your website files in. The `mkdir` command makes a directory, and the `-p` option creates any parent directories in the path if they don't already exist.
 
@@ -371,7 +377,7 @@ Now you'll make a directory to store your website files in. The `mkdir` command 
 sudo mkdir -p /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
 
 ❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
 
@@ -379,7 +385,7 @@ sudo mkdir -p /var/www/zinegallery.iffybooks.net
 sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="549">
 
 ❏ Now use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
 
@@ -387,7 +393,7 @@ sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 sudo chmod -R 755 /var/www/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m16s818_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h20m16s818_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="538">
 
 ❏ Use `cd` to change your current working directory to the directory you just created. *(Tip: After typing `/var/www/` and the first letter or two of your directory name, press **tab** to autocomplete the rest of the pathname.)*
 
@@ -395,7 +401,7 @@ sudo chmod -R 755 /var/www/
 cd /var/www/zinegallery.iffybooks.net/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="534">
 
 ❏ Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
 
@@ -403,7 +409,7 @@ cd /var/www/zinegallery.iffybooks.net/
 sudo nano index.html
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="546">
 
 ❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
 
@@ -420,7 +426,7 @@ sudo nano index.html
 </html>
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m31s495_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h21m31s495_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="471">
 
 ❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
 
@@ -432,11 +438,11 @@ sudo nano index.html
 cd /etc/apache2/sites-available/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h22m07s283_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h22m07s283_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="474">
 
 ❏ Type `ls` and press **enter** to see what files are in the current directory.
 
-<img src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="476">
 
 ❏ Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
 
@@ -444,7 +450,7 @@ cd /etc/apache2/sites-available/
 sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m15s189_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h23m15s189_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="476">
 
 ❏ Now you'll use `nano` to open the configuration file you just created.
 
@@ -452,7 +458,7 @@ sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 sudo nano zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m30s347_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h23m30s347_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="487">
 
 ❏ Use your arrow keys to move the cursor to the line `DocumentRoot /var/www/html`. Delete `html` at the end and replace it with the name of the directory where your website files are located (i.e., the domain you chose). Here's an example:
 
@@ -460,7 +466,7 @@ sudo nano zinegallery.iffybooks.net.conf
 DocumentRoot /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="472">
 
 ❏ Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
 
@@ -469,13 +475,13 @@ ServerName localhost
 ServerAlias localhost
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="494">
 
 # ▶ Set up ports.conf
 
 ❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
 
-<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="502">
 
 ❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
 
@@ -483,7 +489,7 @@ ServerAlias localhost
 sudo nano ports.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
 
 ❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
 
@@ -491,7 +497,7 @@ sudo nano ports.conf
 Listen 0.0.0.0:80
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="511">
 
 # ▶ Enable your website
 
@@ -501,7 +507,7 @@ Listen 0.0.0.0:80
 sudo a2ensite zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m41s342_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h25m41s342_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="515">
 
 ❏ Next, run this command to disable the site Apache runs by default:
 
@@ -509,7 +515,7 @@ sudo a2ensite zinegallery.iffybooks.net.conf
 sudo a2dissite 000-default.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="474">
 
 ❏ Restart Apache with the following command:
 
@@ -517,19 +523,19 @@ sudo a2dissite 000-default.conf
 systemctl reload apache2
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="491">
 
 # ▶ Find your IP address
 
 ❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `enx0...` if you're using Ethernet, or `wlan0` if you're using wi-fi. In the example below the server's local IP address is `192.168.1.46`.
 
-<img src="images/2024-05-25-15-14-36-image.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-25-15-14-36-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="488">
 
 # ▶ Test your site on the local network
 
 ❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
 
-<img src="images/Screenshot%202024-05-04%20at%2015.33.35.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/Screenshot%202024-05-04%20at%2015.33.35.png" alt="" data-align="center" style="padding-bottom: 1em;" width="478">
 
 # ▶ Set a static IP address
 
@@ -539,27 +545,27 @@ Alternatively, your computer can announce its own static IP address, which never
 
 ❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
-<img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="483">
 
 ❏ Select the `Network` menu and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="" data-align="center" style="padding-bottom: 1em;" width="469">
 
 ❏ Select `IP` and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="" data-align="center" style="padding-bottom: 1em;" width="492">
 
 ❏ Select the `enx0...` option if your computer is connected via Ethernet.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="" data-align="center" style="padding-bottom: 1em;" width="499">
 
 ❏ Select  `Static`  and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h34m21s618.png" alt="" data-align="center" style="padding-bottom: 1em;" width="514">
 
 ❏ Next to **Address**, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Press **enter** to save your configuration.
 
-<img title="" src="images/19928390b675ecba5224e94148455e8c2911308d.png" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="436" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/19928390b675ecba5224e94148455e8c2911308d.png" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="353" data-align="center" style="padding-bottom: 1em;">
 
 ❏ Select `Back` and press **enter**.
 
@@ -577,23 +583,23 @@ Alternatively, your computer can announce its own static IP address, which never
 
 ❏ Select `System` and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h38m21s670.png" alt="" data-align="center" style="padding-bottom: 1em;" width="496">
 
 ❏ Select `SSH` and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="" data-align="center" style="padding-bottom: 1em;" width="452">
 
 ❏ The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press **enter** to enable SSH access.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="" data-align="center" style="padding-bottom: 1em;" width="514">
 
 ❏ Select `Back` and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="" data-align="center" style="padding-bottom: 1em;" width="517">
 
 ❏ Select `Exit` and press **enter** to close the configuration utility.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="" data-align="center" style="padding-bottom: 1em;">
+<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="" data-align="center" style="padding-bottom: 1em;" width="494">
 
 # ▶ Reboot
 
@@ -615,17 +621,17 @@ ssh orangepi@192.168.1.44
 
 ❏ On your desktop computer, go to `Documents` and create a directory with the same name as the domain/subdomain you're using. In the example below, the directory is called `zinegallery.iffybooks.net`.
 
-<img src="images/2024-05-20-22-36-27-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-20-22-36-27-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
 
 ❏ Open a plaintext editor and write some HTML for a new home page. (In the example below we're using Sublime Text.)
 
-<img src="images/Screenshot_2024-05-04_at_15.55.57.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/Screenshot_2024-05-04_at_15.55.57.png" alt="" data-align="center" style="padding-bottom: 1em;" width="495">
 
 ❏ Save the file to the website directory you just created, with the name `index.html`.
 
 ❏ If you want, add more pages, images, and files to your website directory. The example page we created above includes links to two PDF files.
 
-<img src="images/2024-05-20-21-22-12-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-20-21-22-12-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="495">
 
 ❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the local IP address you're using. Press **enter**. You'll be prompted to enter the root password for your single-board computer.
 
@@ -633,11 +639,11 @@ ssh orangepi@192.168.1.44
 scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 ```
 
-<img src="images/Screenshot_2024-05-04_at_15.43.08.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/Screenshot_2024-05-04_at_15.43.08.png" alt="" data-align="center" style="padding-bottom: 1em;" width="476">
 
 ❏ Open a browser window on your desktop computer, type your server's IP address in the address bar, and press **enter**. You should see your updated site!
 
-<img src="images/Screenshot_2024-05-04_at_15.57.08.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/Screenshot_2024-05-04_at_15.57.08.png" alt="" data-align="center" style="padding-bottom: 1em;" width="485">
 
 # ▶ Set up port forwarding on your router
 
@@ -645,21 +651,21 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 ❏ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
-<img src="images/2024-05-11-09-42-15-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-11-09-42-15-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="444">
 
 ❏ Navigate to **Security & Firewall**, then **Port Forwarding**.
 
-<img src="images/2024-05-11-10-19-16-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-11-10-19-16-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="330">
 
 ❏ Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type the static IP address you chose for your server. Under **Schedule**, Select `Always`.
 
-<img src="images/2024-05-11-10-21-21-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-11-10-21-21-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="581">
 
 ❏ When you're done, click **Add to list** to create your port forwarding rule. Then click **Apply Changes**.
 
 ❏ To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
-<img src="images/2024-05-11-10-31-00-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-11-10-31-00-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="411">
 
 ❏ Copy and paste your home IP address into the URL bar and press **enter**, and you should see your website. 
 
@@ -667,25 +673,25 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 ❏ Go to `freedns.afraid.org`. Scroll down and click **Sign up Free**.
 
-<img title="" src="images/2024-05-18-02-39-12-image.png" alt="" data-align="center"  style="padding-bottom: 1em;" width="538">
+<img title="" src="images/2024-05-18-02-39-12-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="445">
 
 ❏ Enter your info to create a new account.
 
-<img title="" src="images/2024-05-18-02-39-30-image.png" alt="" width="531"  style="padding-bottom: 1em;" data-align="center">
+<img title="" src="images/2024-05-18-02-39-30-image.png" alt="" width="457" style="padding-bottom: 1em;" data-align="center">
 
 ❏ Open your email and follow the confirmation link.
 
 ❏ Go back to `freedns.afraid.org` and click **Domains** in the left column.
 
-<img title="" src="images/2024-05-18-02-42-52-image.png" alt="" data-align="center" style="padding-bottom: 1em;"  width="425">
+<img title="" src="images/2024-05-18-02-42-52-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="360">
 
 ❏ Click **Add a domain into FreeDNS**.   
 
 <img title="" src="images/2024-05-18-02-44-37-image.png" alt="" data-align="center"  style="padding-bottom: 1em;" width="443">❏ In the text box at the top of the page, enter the domain or subdomain you're using. Then select **Shared: Private** from the dropdown menu below. Click **Submit**.
 
-<img src="images/2024-05-18-02-46-25-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >❏ The next page will confirm that your domain has been added to the system. It also says your domain has been temporarily marked as broken, which is normal.
+<img title="" src="images/2024-05-18-02-46-25-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="462">❏ The next page will confirm that your domain has been added to the system. It also says your domain has been temporarily marked as broken, which is normal.
 
-<img src="images/2024-05-18-02-46-38-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-18-02-46-38-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="492">
 
 ❏ Next you'll update your domain records to use the following name servers for your domain/subdomain:
 
@@ -700,11 +706,11 @@ If you're creating a subdomain with a domain you're already using, you can updat
 
 ❏ Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.afraid.org` as the same server. Click **Create Record**.
 
-<img src="images/2024-05-18-02-49-18-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-18-02-49-18-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="487">
 
 ❏ Repeat the previous step, creating three more NS records with the following name servers: `ns2.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`. You'll enter the same subdomain every time.
 
-<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="497">
 
 # ▶ Install ddclient
 
@@ -726,23 +732,23 @@ sudo apt install ddclient
 
 ❏ After installation, a setup wizard will launch. Use your arrow keys to select **freedns.afraid.org** from the list of DDNS providers. Press **enter** to continue.
 
-<img src="images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png" title="" alt="vlcsnap-2024-05-20-09h04m22s877.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png" alt="vlcsnap-2024-05-20-09h04m22s877.png" data-align="center" style="padding-bottom: 1em;" width="456">
 
 ❏ Now enter the username for your account on **freedns.afraid.org**.
 
-<img src="images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png" title="" alt="vlcsnap-2024-05-20-09h04m57s918.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png" alt="vlcsnap-2024-05-20-09h04m57s918.png" data-align="center" style="padding-bottom: 1em;" width="468">
 
 ❏ Type our your **freedns.afraid.org** account password and press **enter**. You'll be prompted to enter your password again to confirm it.
 
-<img src="images/a104393f185b012b1e5d1e4996d145c6b767f243.png" title="" alt="vlcsnap-2024-05-20-09h05m14s553.png" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/a104393f185b012b1e5d1e4996d145c6b767f243.png" alt="vlcsnap-2024-05-20-09h05m14s553.png" data-align="center" style="padding-bottom: 1em;" width="488">
 
 ❏ Select **Web-based IP discovery service**, then press **enter** to continue.
 
-<img src="images/vlcsnap-2024-05-04-22h51m31s509.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-22h51m31s509.png" alt="" data-align="center" style="padding-bottom: 1em;" width="508">
 
 ❏ Type out the domain/subdomain you're using and press **enter**.
 
-<img src="images/vlcsnap-2024-05-04-22h54m19s696.png" data-align="center" style="padding-bottom: 1em;" />
+<img title="" src="images/vlcsnap-2024-05-04-22h54m19s696.png" alt="" data-align="center" style="padding-bottom: 1em;" width="521">
 
 ❏ Finally, run the command below to have `ddclient` check your current IP address every 5 minutes.
 
@@ -750,7 +756,7 @@ sudo apt install ddclient
 sudo ddclient -daemon 5m
 ```
 
-<img src="images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png" title="" alt="vlcsnap-2024-05-20-09h07m39s710.png" data-align="center" style="padding-bottom: 1em;">
+<img title="" src="images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png" alt="vlcsnap-2024-05-20-09h07m39s710.png" data-align="center" style="padding-bottom: 1em;" width="552">
 
 If you don't see any error messages when you run this command, that's a good thing. It means `ddclient` is running properly.
 
