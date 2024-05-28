@@ -593,7 +593,7 @@ Alternatively, your computer can announce its own static IP address, which never
 
 ❏ Select `Exit` and press **enter** to close the configuration utility.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="" data-align="center" style="padding-bottom: 1em;" >
+<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="" data-align="center" style="padding-bottom: 1em;">
 
 # ▶ Reboot
 
@@ -615,17 +615,17 @@ ssh orangepi@192.168.1.44
 
 ❏ On your desktop computer, go to `Documents` and create a directory with the same name as the domain/subdomain you're using. In the example below, the directory is called `zinegallery.iffybooks.net`.
 
-![](images/2024-05-20-22-36-27-image.png)
+<img src="images/2024-05-20-22-36-27-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Open a plaintext editor and write some HTML for a new home page. (In the example below we're using Sublime Text.)
 
-![](images/Screenshot_2024-05-04_at_15.55.57.png)
+<img src="images/Screenshot_2024-05-04_at_15.55.57.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Save the file to the website directory you just created, with the name `index.html`.
 
 ❏ If you want, add more pages, images, and files to your website directory. The example page we created above includes links to two PDF files.
 
-![](images/2024-05-20-21-22-12-image.png)
+<img src="images/2024-05-20-21-22-12-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Open a terminal window on your desktop computer and type out a command like the one below, substituting your website directory name and the local IP address you're using. Press **enter**. You'll be prompted to enter the root password for your single-board computer.
 
@@ -633,11 +633,11 @@ ssh orangepi@192.168.1.44
 scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 ```
 
-![](images/Screenshot_2024-05-04_at_15.43.08.png)
+<img src="images/Screenshot_2024-05-04_at_15.43.08.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Open a browser window on your desktop computer, type your server's IP address in the address bar, and press **enter**. You should see your updated site!
 
-![](images/Screenshot_2024-05-04_at_15.57.08.png)
+<img src="images/Screenshot_2024-05-04_at_15.57.08.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 # ▶ Set up port forwarding on your router
 
@@ -645,21 +645,21 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 ❏ If your ISP is V\*\*\*\*\*\*\*, you'll need to click **Advanced** at the top of the window to switch to the advanced admin panel.
 
-![](images/2024-05-11-09-42-15-image.png)
+<img src="images/2024-05-11-09-42-15-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Navigate to **Security & Firewall**, then **Port Forwarding**.
 
-![](images/2024-05-11-10-19-16-image.png)
+<img src="images/2024-05-11-10-19-16-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Under **Application**, give your server a name. The example is called `Zine Gallery Server`. For **Original Port** and **Forward to Port**, enter `80`. **Protocol** should be set to `TCP`. Under **Fwd to Addr**, type the static IP address you chose for your server. Under **Schedule**, Select `Always`.
 
-![](images/2024-05-11-10-21-21-image.png)
+<img src="images/2024-05-11-10-21-21-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ When you're done, click **Add to list** to create your port forwarding rule. Then click **Apply Changes**.
 
 ❏ To confirm port forwarding works, go to `ipchicken.com` and find your home IP address.
 
-![](images/2024-05-11-10-31-00-image.png)
+<img src="images/2024-05-11-10-31-00-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Copy and paste your home IP address into the URL bar and press **enter**, and you should see your website. 
 
@@ -667,25 +667,25 @@ scp -r ~/Documents/zinegallery.iffybooks.net/ root@192.168.1.46:/var/www/
 
 ❏ Go to `freedns.afraid.org`. Scroll down and click **Sign up Free**.
 
-![](images/2024-05-18-02-39-12-image.png)
+<img title="" src="images/2024-05-18-02-39-12-image.png" alt="" data-align="center"  style="padding-bottom: 1em;" width="538">
 
 ❏ Enter your info to create a new account.
 
-![](images/2024-05-18-02-39-30-image.png)
+<img title="" src="images/2024-05-18-02-39-30-image.png" alt="" width="531"  style="padding-bottom: 1em;" data-align="center">
 
 ❏ Open your email and follow the confirmation link.
 
 ❏ Go back to `freedns.afraid.org` and click **Domains** in the left column.
 
-![](images/2024-05-18-02-42-52-image.png)
+<img title="" src="images/2024-05-18-02-42-52-image.png" alt="" data-align="center" style="padding-bottom: 1em;"  width="425">
 
 ❏ Click **Add a domain into FreeDNS**.   
 
-![](images/2024-05-18-02-44-37-image.png)❏ In the text box at the top of the page, enter the domain or subdomain you're using. Then select **Shared: Private** from the dropdown menu below. Click **Submit**.
+<img title="" src="images/2024-05-18-02-44-37-image.png" alt="" data-align="center"  style="padding-bottom: 1em;" width="443">❏ In the text box at the top of the page, enter the domain or subdomain you're using. Then select **Shared: Private** from the dropdown menu below. Click **Submit**.
 
-![](images/2024-05-18-02-46-25-image.png)❏ The next page will confirm that your domain has been added to the system. It also says your domain has been temporarily marked as broken, which is normal.
+<img src="images/2024-05-18-02-46-25-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >❏ The next page will confirm that your domain has been added to the system. It also says your domain has been temporarily marked as broken, which is normal.
 
-![](images/2024-05-18-02-46-38-image.png)
+<img src="images/2024-05-18-02-46-38-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Next you'll update your domain records to use the following name servers for your domain/subdomain:
 
@@ -700,11 +700,11 @@ If you're creating a subdomain with a domain you're already using, you can updat
 
 ❏ Create a new **NS** (name server) record for the domain or subdomain you're using, and enter `ns1.afraid.org` as the same server. Click **Create Record**.
 
-![](images/2024-05-18-02-49-18-image.png)
+<img src="images/2024-05-18-02-49-18-image.png" title="" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Repeat the previous step, creating three more NS records with the following name servers: `ns2.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`. You'll enter the same subdomain every time.
 
-<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="center">
+<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="center" style="padding-bottom: 1em;" >
 
 # ▶ Install ddclient
 
@@ -722,27 +722,27 @@ sudo apt install libio-socket-ssl-perl
 sudo apt install ddclient
 ```
 
-<img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" data-align="center" />
+<img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" data-align="center"  style="padding-bottom: 1em;" />
 
 ❏ After installation, a setup wizard will launch. Use your arrow keys to select **freedns.afraid.org** from the list of DDNS providers. Press **enter** to continue.
 
-![vlcsnap-2024-05-20-09h04m22s877.png](images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png)
+<img src="images/8fbae53b3249ff68dbf4a17e5fd0ea96b271fec9.png" title="" alt="vlcsnap-2024-05-20-09h04m22s877.png" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Now enter the username for your account on **freedns.afraid.org**.
 
-![vlcsnap-2024-05-20-09h04m57s918.png](images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png)
+<img src="images/a4c8eef48e1f67f708a3d9a1e799bc6e67b5e36d.png" title="" alt="vlcsnap-2024-05-20-09h04m57s918.png" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Type our your **freedns.afraid.org** account password and press **enter**. You'll be prompted to enter your password again to confirm it.
 
-![vlcsnap-2024-05-20-09h05m14s553.png](images/a104393f185b012b1e5d1e4996d145c6b767f243.png)
+<img src="images/a104393f185b012b1e5d1e4996d145c6b767f243.png" title="" alt="vlcsnap-2024-05-20-09h05m14s553.png" data-align="center" style="padding-bottom: 1em;" >
 
 ❏ Select **Web-based IP discovery service**, then press **enter** to continue.
 
-<img src="images/vlcsnap-2024-05-04-22h51m31s509.png" data-align="center" />
+<img src="images/vlcsnap-2024-05-04-22h51m31s509.png" data-align="center" style="padding-bottom: 1em;" />
 
 ❏ Type out the domain/subdomain you're using and press **enter**.
 
-<img src="images/vlcsnap-2024-05-04-22h54m19s696.png" data-align="center" />
+<img src="images/vlcsnap-2024-05-04-22h54m19s696.png" data-align="center" style="padding-bottom: 1em;" />
 
 ❏ Finally, run the command below to have `ddclient` check your current IP address every 5 minutes.
 
@@ -750,7 +750,7 @@ sudo apt install ddclient
 sudo ddclient -daemon 5m
 ```
 
-![vlcsnap-2024-05-20-09h07m39s710.png](images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png)
+<img src="images/fa6c16a4b1cf7e197cb6a198a6b7128661ee3833.png" title="" alt="vlcsnap-2024-05-20-09h07m39s710.png" data-align="center" style="padding-bottom: 1em;">
 
 If you don't see any error messages when you run this command, that's a good thing. It means `ddclient` is running properly.
 
