@@ -2,8 +2,6 @@
 
 <div style="page-break-after: always;"></div>
 
-# 
-
 # Why  host a website at home?
 
 - You control what you post.
@@ -20,31 +18,21 @@ The examples in this zine use the **Orange Pi Zero 2W (OPZ2W)**, an inexpensive 
 
 We sell complete home web server kits at Iffy Books. The kit costs $49 as of May 2024, and includes the following:
 
-- Orange Pi Zero 2W single-board computer w/1 GB of RAM
+• Orange Pi Zero 2W single-board computer w/1 GB of RAM
+<br />• 32 GB microSD card
+<br />• microSD card reader
+<br />• 2 Amp USB power supply
+<br />• USB-C power cable
+<br />• Mini HDMI to HDMI adapter
+<br />• USB-C to 2x USB-A adapter
+<br />• USB-A to Ethernet adapter
+<br />• Ethernet cable
 
-- 32 GB microSD card
+You'll also need the following:
 
-- microSD card reader
-
-- 2 Amp USB power supply
-
-- USB-C power cable
-
-- Mini HDMI to HDMI adapter
-
-- USB-C to 2x USB-A adapter
-
-- USB-A to Ethernet adapter
-
-- Ethernet cable
-
-You'll need the following:
-
-- A monitor (or TV) with HDMI video input
-
-- An HDMI cable
-
-- A keyboard with a USB cable
+• A monitor (or TV) with HDMI video input
+<br />• An HDMI cable
+<br />• A keyboard with a USB cable
 
 # ▶ Choose a domain
 
@@ -54,17 +42,21 @@ You'll need the following:
 
 Each subdomain string can be up to 63 characters long (case insensitive). 
 
+<div style="page-break-after: always;"></div>
+
 ## Option 2: Buy a domain
 
 ❏ Go to a domain registry website of your choice, choose a domain name, and enter your credit card info to pay.
 
-<img src="images/2024-05-11-11-20-50-image.png" title="" alt="" width="496">
+<img title="" src="images/2024-05-11-11-20-50-image.png" alt="" data-align="center" width="257">
 
 ## Option 3: Sign up for a free subdomain from a DDNS provider
 
 ❏ Go to **freedns.afraid.org** and set up a free subdomain. (There are many other sites that offer free subdomains, including dynv6.com.)
 
-![](images/2024-05-18-02-38-37-image.png)
+<img title="" src="images/2024-05-18-02-38-37-image.png" alt="" width="347" data-align="center">
+
+<div style="page-break-after: always;"></div>
 
 # ▶ Flash Ubuntu to your SD card
 
@@ -78,13 +70,15 @@ Here's a QR code for the URL above, in case you're using the printed version of 
 
 ❏ Under **Ubuntu Image**, click **Downloads**.
 
-<img title="" src="images/33922add635879039cc946803b75c94b9b6c8b04.png" alt="2024-05-10-17-01-17-image.png" width="129">
+<img title="" src="images/33922add635879039cc946803b75c94b9b6c8b04.png" alt="2024-05-10-17-01-17-image.png" width="129" data-align="center">
 
 That link will take you to a directory on Google Drive. (The folks at Orange Pi are using Google Drive to avoid paying for bandwidth.)
 
 ❏ Double click on the directory **Linux6.1 kernel version image** to open it.
 
-![2024-05-10-17-03-25-image.png](images/1e8fffc51365305415c5f0c6044c689c8931e1d6.png)
+<img src="images/1e8fffc51365305415c5f0c6044c689c8931e1d6.png" title="" alt="2024-05-10-17-03-25-image.png" data-align="center">
+
+<div style="page-break-after: always;"></div>
 
 ❏ Double click on the directory **For development boards with 1GB_2GB memory...** to open it.
 
@@ -96,41 +90,49 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ❏ Find the file you just downloaded, **Orangepizero2w_1.0.0_ubuntu_jammy_server_linux6.1.31.7z**, in your File Explorer/Finder. Double click the file to extract its contents.
 
+<div style="page-break-after: always;"></div>
+
 ❏ You'll end up with a directory containing a disk image file ending with `.img`, along with a `.sha` checksum file.
 
-![2024-05-10-17-17-56-image.png](images/0641d8ae0e06f780827ca332fbb71ded7a302a53.png)
+<img src="images/0641d8ae0e06f780827ca332fbb71ded7a302a53.png" title="" alt="2024-05-10-17-17-56-image.png" data-align="center">
 
 ❏ Now go to **[etcher.balena.io](https://etcher.balena.io)** and download **balenaEthcher**, which you'll use to flash the Ubuntu image onto your microSD card. balenaEtcher is available for macOS, Windows, and Linux.
 
 ❏ Insert your microSD card into your microSD card reader and plug it into your computer's USB port. (If your computer only has a USB-C port, use the USB-C to USB-A adapter included in your kit.)
 
+<div style="page-break-after: always;"></div>
+
 ❏ Open **balenaEtcher**, click **Flash from file**, and select the `.img` disk image file you just extracted.
 
-![2024-05-10-17-19-44-image.png](images/50a411dc182f8774c2138d5b882e09fab01f340a.png)
+<img title="" src="images/50a411dc182f8774c2138d5b882e09fab01f340a.png" alt="2024-05-10-17-19-44-image.png" width="388" data-align="center">
 
 ❏ In balenaEtcher, click **Select target** and select your microSD card.
 
 ❏ Click **Flash!** to write the Ubuntu disk image to your microSD card, which will take 5 minutes or so.
 
+<div style="page-break-after: always;"></div>
+
 # ▶ Set up your hardware
 
 ❏ Insert the flashed microSD card into the card slot on your single-board computer. The printed side of the microSD card should be facing away from the board.
 
-<img src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" title="" alt="01_IMG_4115.jpg" width="257">
+<img title="" src="images/efdc00e9e93d873ee1697127995f147dd3b5a46b.jpg" alt="01_IMG_4115.jpg" width="209" data-align="center">
 
 ❏ Find the USB-C power cable and connect it to your USB power supply. Plug the other end of the cable into the outer USB-C port, closest to the corner of the board.
 
-<img src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" title="" alt="02_IMG_4116.jpg" width="335">
+<img title="" src="images/5e611879019878714352d1b98e8d3d2c49bc67e9.jpg" alt="02_IMG_4116.jpg" width="214" data-align="center">
+
+<div style="page-break-after: always;"></div>
 
 ❏ Plug your USB-C to 2x USB-A adapter into the inner USB-C port, closer to the middle of the board. *(Note: You can power your computer using either USB-C port, but only the inner port works for connecting USB hardware, such as a keyboard.)*
 
-<img src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" title="" alt="03_IMG_4120.jpg" width="333">
+<img title="" src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" alt="03_IMG_4120.jpg" width="221" data-align="center">
 
 ❏ Connect a USB keyboard to the USB-C to 2x USB-A adapter.
 
 ❏ Find the Mini HDMI port on your computer and plug in the Mini HDMI to HDMI adapter.
 
-<img src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" title="" alt="04_IMG_4128.jpg" width="348">
+<img title="" src="images/e4056d689b4e0cda8e4bdd69d75490dd01e07841.jpg" alt="04_IMG_4128.jpg" data-align="center" width="231">
 
 ❏ Connect an HDMI cable to the Mini HDMI to HDMI adapter. Plug the other end into the HDMI port on your monitor (or TV).
 
@@ -142,31 +144,31 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 ❏ After a brief startup sequence, your screen will look like this:
 
-<img src="images/vlcsnap-2024-05-04-18h06m09s993.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h06m09s993.png" alt="" data-align="center" width="478">
 
 *(Note: From this point on we'll invert the colors in screen captures in order to use less toner in the printed zine.)*
 
 ❏ First you'll set a password for the current user. Type `passwd` at the command prompt, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" alt="" data-align="center" width="488">
 
 ❏ For the current pasword, type `orangepi` and press **enter**. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
-<img src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" />
+<img title="" src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" alt="" data-align="center" width="492">
 
 You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
 ❏ Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="543">
+<img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="543" data-align="center">
 
 ❏ Now type `passwd` and press enter to set a new password for your `root` account.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="497">
+<img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="497" data-align="center">
 
 ❏ When you're done, run the command `su orangepi` to switch back to the user `orangepi`.
 
-<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468">
+<img title="" src="images/vlcsnap-2024-05-04-22h42m26s544_border.png" alt="" width="468" data-align="center">
 
 # ▶ Increase the onscreen text size (optional)
 
@@ -178,31 +180,31 @@ If the onscreen text is too small to read comfortably, follow the steps below to
 sudo nano /etc/default/console-setup
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h09m12s644_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h09m12s644_border.png" data-align="center" />
 
 ❏ Use the arrow keys on your keyboard to move the cursor to the line beginning with `FONTSIZE=`. Delete the value `8x16` and replace it with `16x32`.
 
-<img src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h09m36s520_border.png" data-align="center" />
 
 ❏ When you're finished, press `ctrl + X` on your keyboard to close the file. At the bottom left of your screen you'll see the prompt **"Save modified buffer?"** Type `y` for "yes," then press **enter**.
 
-<img src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m21s175_border.png" data-align="center" />
 
 ❏ Press enter again to confirm the filename.
 
-<img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m23s765_border.png" data-align="center" />
 
 ❏ *Tip: You can use the command `clear` at any time to clear the screen.*
 
-<img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h10m40s187_border.png" data-align="center" />
 
 ❏ Now run the command `sudo update-initramfs -u` to confirm the new font size.
 
-<img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h11m04s235_border.png" data-align="center" />
 
 ❏ Reboot your computer with `sudo reboot`. When your computer finishes rebooting, the text will be bigger.
 
-<img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h11m41s482_border.png" data-align="center" />
 
 # ▶ Connect to the internet via Ethernet
 
@@ -241,37 +243,37 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 ❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
-<img src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h12m09s218_border.png" data-align="center" />
 
 ❏ You'll see a prompt that reads **"Configuration cannot work properly without a working internet connection."** Press any key to continue.
 
-<img src="images/vlcsnap-2024-05-04-18h12m53s220_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h12m53s220_border.png" data-align="center" />
 
 ❏ Use the down arrow key to select the `Network` menu, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m01s027.png" />
+<img src="images/vlcsnap-2024-05-04-18h13m01s027.png" data-align="center" />
 
 ❏ Use the down arrow key to select the `WiFi` menu, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m11s710.png" />
+<img src="images/vlcsnap-2024-05-04-18h13m11s710.png" data-align="center" />
 
 ❏ You'll see a list of available wi-fi networks. Select your home network, then press enter.
 
 ❏ Enter your password at the prompt.
 
-<img src="images/vlcsnap-2024-05-04-18h13m28s733.png" />
+<img src="images/vlcsnap-2024-05-04-18h13m28s733.png" data-align="center" />
 
 ❏ Use the arrow keys to select `Quit`, then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h13m57s055.png" />
+<img src="images/vlcsnap-2024-05-04-18h13m57s055.png" data-align="center" />
 
 ❏ Use the arrow keys to select `Back` , then press enter.
 
-<img src="images/vlcsnap-2024-05-04-18h14m41s289.png" />
+<img src="images/vlcsnap-2024-05-04-18h14m41s289.png" data-align="center" />
 
 ❏ Now select `Exit`. Then press **enter** to close the configuration menu.
 
-<img src="images/vlcsnap-2024-05-04-18h14m47s352.png" />
+<img src="images/vlcsnap-2024-05-04-18h14m47s352.png" data-align="center" />
 
 # ▶ Update your software
 
@@ -283,11 +285,11 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 sudo apt update && sudo apt -y upgrade
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h15m11s937_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h15m11s937_border.png" data-align="center" />
 
 ❏ Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
 
-<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" />&nbsp;
+<img src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" data-align="center" />&nbsp;
 
 # ▶ Update your hostname
 
@@ -295,7 +297,7 @@ A **hostname** is a short alphanumeric name for each device on a network, sort o
 
 ❏ To see your curent hostname, enter the command `hostname` and press enter. The default hostname is `orangepizero2w`.
 
-<img src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" data-align="center" />
 
 ❏ Now run the command below, replacing **Zine-Gallery** with a descriptive name for your server (no spaces allowed, but hyphens are OK). You'll be prompted to enter your password.
 
@@ -303,7 +305,7 @@ A **hostname** is a short alphanumeric name for each device on a network, sort o
 hostnamectl set-hostname Zine-Gallery
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" data-align="center" />
 
 # ▶ Set up a firewall
 
@@ -311,7 +313,7 @@ A firewall is a piece of software that restricts access to your device over the 
 
 ❏ You'll start by installing `ufw`. Run the command `sudo apt install ufw`, then follow the prompts to finish installation.
 
-<img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m02s699_border.png" data-align="center" />
 
 ❏ Run the command below to deny incoming network connections by default.
 
@@ -359,7 +361,7 @@ Next you'll install Apache HTTP Server, one of the most widely used web server p
 sudo apt install apache2
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m14s181_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m14s181_border.png" data-align="center" />
 
 Now you'll make a directory to store your website files in. The `mkdir` command makes a directory, and the `-p` option creates any parent directories in the path if they don't already exist.
 
@@ -369,7 +371,7 @@ Now you'll make a directory to store your website files in. The `mkdir` command 
 sudo mkdir -p /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" data-align="center" />
 
 ❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
 
@@ -377,7 +379,7 @@ sudo mkdir -p /var/www/zinegallery.iffybooks.net
 sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" data-align="center" />
 
 ❏ Now use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
 
@@ -385,7 +387,7 @@ sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 sudo chmod -R 755 /var/www/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m16s818_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h20m16s818_border.png" data-align="center" />
 
 ❏ Use `cd` to change your current working directory to the directory you just created. *(Tip: After typing `/var/www/` and the first letter or two of your directory name, press **tab** to autocomplete the rest of the pathname.)*
 
@@ -393,7 +395,7 @@ sudo chmod -R 755 /var/www/
 cd /var/www/zinegallery.iffybooks.net/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" data-align="center" />
 
 ❏ Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
 
@@ -401,7 +403,7 @@ cd /var/www/zinegallery.iffybooks.net/
 sudo nano index.html
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" data-align="center" />
 
 ❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
 
@@ -418,11 +420,11 @@ sudo nano index.html
 </html>
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h21m31s495_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h21m31s495_border.png" data-align="center" />
 
 ❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
 
-# ▶ Create Apache configuration file
+# ▶ Create an Apache configuration file
 
 ❏ Run the command below to change your current working directory to `/etc/apache2/sites-available`.
 
@@ -430,11 +432,11 @@ sudo nano index.html
 cd /etc/apache2/sites-available/
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h22m07s283_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h22m07s283_border.png" data-align="center" />
 
 ❏ Type `ls` and press **enter** to see what files are in the current directory.
 
-<img src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" data-align="center" />
 
 ❏ Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
 
@@ -442,7 +444,7 @@ cd /etc/apache2/sites-available/
 sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m15s189_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m15s189_border.png" data-align="center" />
 
 ❏ Now you'll use `nano` to open the configuration file you just created.
 
@@ -450,7 +452,7 @@ sudo cp 000-default.conf zinegallery.iffybooks.net.conf
 sudo nano zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m30s347_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m30s347_border.png" data-align="center" />
 
 ❏ Use your arrow keys to move the cursor to the line `DocumentRoot /var/www/html`. Delete `html` at the end and replace it with the name of the directory where your website files are located (i.e., the domain you chose). Here's an example:
 
@@ -458,7 +460,7 @@ sudo nano zinegallery.iffybooks.net.conf
 DocumentRoot /var/www/zinegallery.iffybooks.net
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" data-align="center" />
 
 ❏ Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
 
@@ -467,13 +469,13 @@ ServerName localhost
 ServerAlias localhost
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" data-align="center" />
 
 # ▶ Set up ports.conf
 
 ❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
 
-<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" data-align="center" />
 
 ❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
 
@@ -481,7 +483,7 @@ ServerAlias localhost
 sudo nano ports.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" data-align="center" />
 
 ❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
 
@@ -489,7 +491,7 @@ sudo nano ports.conf
 Listen 0.0.0.0:80
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" data-align="center" />
 
 # ▶ Enable your website
 
@@ -499,7 +501,7 @@ Listen 0.0.0.0:80
 sudo a2ensite zinegallery.iffybooks.net.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m41s342_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h25m41s342_border.png" data-align="center" />
 
 ❏ Next, run this command to disable the site Apache runs by default:
 
@@ -507,7 +509,7 @@ sudo a2ensite zinegallery.iffybooks.net.conf
 sudo a2dissite 000-default.conf
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" data-align="center" />
 
 ❏ Restart Apache with the following command:
 
@@ -515,7 +517,7 @@ sudo a2dissite 000-default.conf
 systemctl reload apache2
 ```
 
-<img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" data-align="center" />
 
 # ▶ Find your IP address
 
@@ -537,19 +539,19 @@ Alternatively, your computer can announce its own static IP address, which never
 
 ❏ Run the command `sudo orangepi-config` to launch the Orange Pi configuration utility.
 
-<img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" />
+<img src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" data-align="center" />
 
 ❏ Select the `Network` menu and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="" data-align="center" >
 
 ❏ Select `IP` and press enter.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="" data-align="center" >
 
 ❏ Select the `enx0...` option if your computer is connected via Ethernet.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h34m12s001.png" alt="" data-align="center" >
 
 ❏ Select  `Static`  and press **enter**.
 
@@ -579,19 +581,19 @@ Alternatively, your computer can announce its own static IP address, which never
 
 ❏ Select `SSH` and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h38m40s212.png" alt="" data-align="center" >
 
 ❏ The first three options (`PermitRootLogin`, `Password Authentication`, and `PubkeyAuthentication`) should be selected by default. Move your cursor to `Save` and press **enter** to enable SSH access.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h38m55s326.png" alt="" data-align="center" >
 
 ❏ Select `Back` and press **enter**.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h39m35s435.png" alt="" data-align="center" >
 
 ❏ Select `Exit` and press **enter** to close the configuration utility.
 
-<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="">
+<img title="" src="images/vlcsnap-2024-05-04-18h39m52s976.png" alt="" data-align="center" >
 
 # ▶ Reboot
 
@@ -702,7 +704,7 @@ If you're creating a subdomain with a domain you're already using, you can updat
 
 ❏ Repeat the previous step, creating three more NS records with the following name servers: `ns2.afraid.org`, `ns3.afraid.org` and `ns4.afraid.org`. You'll enter the same subdomain every time.
 
-<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="left">
+<img title="" src="images/2024-05-18-02-50-20-image.png" alt="" data-align="center">
 
 # ▶ Install ddclient
 
@@ -720,7 +722,7 @@ sudo apt install libio-socket-ssl-perl
 sudo apt install ddclient
 ```
 
-<img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" />
+<img src="images/vlcsnap-2024-05-04-22h45m06s912_border.png" data-align="center" />
 
 ❏ After installation, a setup wizard will launch. Use your arrow keys to select **freedns.afraid.org** from the list of DDNS providers. Press **enter** to continue.
 
@@ -736,11 +738,11 @@ sudo apt install ddclient
 
 ❏ Select **Web-based IP discovery service**, then press **enter** to continue.
 
-<img src="images/vlcsnap-2024-05-04-22h51m31s509.png" />
+<img src="images/vlcsnap-2024-05-04-22h51m31s509.png" data-align="center" />
 
 ❏ Type out the domain/subdomain you're using and press **enter**.
 
-<img src="images/vlcsnap-2024-05-04-22h54m19s696.png" />
+<img src="images/vlcsnap-2024-05-04-22h54m19s696.png" data-align="center" />
 
 ❏ Finally, run the command below to have `ddclient` check your current IP address every 5 minutes.
 
@@ -752,4 +754,4 @@ sudo ddclient -daemon 5m
 
 If you don't see any error messages when you run this command, that's a good thing. It means `ddclient` is running properly.
 
-❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait five minutes for DNS servers to update and try again.
+❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait five minutes for DNS servers to update and try again. 
