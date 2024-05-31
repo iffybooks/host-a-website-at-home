@@ -1,4 +1,20 @@
+<img title="" src="images/white_box.png" alt="" data-align="center" height="11" />
+
 <img src="images/05cba18c9f23f4520f4eeb87f6b46c05efd7153e.png" title="" alt="Host a Website at Home Cover.png" data-align="center">
+
+<div style="page-break-after: always;"></div>
+
+<img title="" src="images/white_box.png" alt="" data-align="center" height="130" />
+
+<img title="" src="images/Iffy_Books_Logo_med.png" alt="" data-align="center" width="184">
+
+<h2 align="center"><i>To the Model Internet Club</i></p>
+
+<h2 align="center">Follow Iffy Books on Mastodon:<br />post.lurk.org/@iffybooks</p>
+
+<h2 align="center">Support us on Patreon:<br />patreon.com/iffybooks</p>
+
+<h2 align="center">Send corrections to<br />iffybooks@iffybooks.net</p>
 
 <div style="page-break-after: always;"></div>
 
@@ -819,3 +835,21 @@ sudo ddclient -daemon 5m
 If you don't see any error messages when you run this command, that's a good thing. It means `ddclient` is running properly.
 
 ❏ Now go to a browser on your desktop computer and enter your domain or subdomain in the URL bar. You should see your website! If not, wait five minutes for DNS servers to update and try again. 
+
+<div style="page-break-after: always;"></div>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+<img title="" src="images/purple_blob.png" alt="" data-align="left" width="92">**Anti-Copyright 2024**
+
+****
+
+**Iffy Books**
+
+**404 S. 20th St., PHL**
+
+**iffybooks.net**
