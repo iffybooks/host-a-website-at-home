@@ -138,7 +138,7 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <div style="page-break-after: always;"></div>
 
-❏ Plug your USB-C to 2x USB-A adapter into the inner USB-C port, closer to the middle of the board. *(Note: You can power your computer using either USB-C port, but only the inner port works for connecting USB hardware, such as a keyboard.)*
+❏ Plug your USB-C to 2x USB-A adapter into the inner USB-C port, closer to the middle of the board. *(Note: You can power your computer using either USB-C port, but only the inner port works for connecting USB hardware such as a keyboard.)*
 
 <img title="" src="images/18982930c0d9f6be464956577970ce2d4e5d6318.jpg" alt="03_IMG_4120.jpg" width="221" data-align="center" style="padding-bottom: 1em;">
 
@@ -166,21 +166,21 @@ That link will take you to a directory on Google Drive. (The folks at Orange Pi 
 
 <div style="page-break-after: always;"></div>
 
-❏ First you'll set a password for the current user. Type `passwd` at the command prompt, then press enter.
+❏ First you'll set a password for the current user. Type `passwd` at the command prompt, then press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h08m03s537_border.png" alt="" data-align="center" width="382" style="padding-bottom: 1em;">
 
-❏ For the current pasword, type `orangepi` and press **enter**. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
+❏ For the current password, type `orangepi` and press **enter**. You won't see any characters appear onscreen as you type. Then choose a new password and enter it. Write down your new password and/or store it in a password manager app.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h08m29s906_border.png" alt="" data-align="center" width="385" style="padding-bottom: 1em;">
 
 You're currently logged in as a user called `orangepi`. Next you'll switch to the `root` user and change its password.
 
-❏ Type `su root` and press enter. At the prompt, enter the default password `orangepi`.
+❏ Type `su root` and press **enter**. At the prompt, enter the default password `orangepi`.
 
 <img title="" src="images/vlcsnap-2024-05-04-22h40m23s942_border.png" alt="" width="390" data-align="center" style="padding-bottom: 1em;">
 
-❏ Now type `passwd` and press enter to set a new password for your `root` account.
+❏ Now type `passwd` and press **enter** to set a new password for your `root` account.
 
 <img title="" src="images/vlcsnap-2024-05-04-22h41m36s044_border.png" alt="" width="324" data-align="center" style="padding-bottom: 1em;">
 
@@ -230,7 +230,7 @@ sudo nano /etc/default/console-setup
 
 *We strongly recommend connecting your single-board computer to your home router using an Ethernet cable. If you need to use wi-fi temporarily, you can skip to the next section.*
 
-❏ Plug your Ethernet-to-USB adapter to your single-board computer via the USB-C to 2x USB-A adapter.
+❏ Plug your Ethernet-to-USB adapter into your single-board computer via the USB-C to 2x USB-A adapter.
 
 <img title="" src="images/6f4d29de1333a40237f4c18825a1a97ae4e062a6.jpg" alt="" data-align="center" style="padding-bottom: 1em;" width="257">
 
@@ -271,11 +271,11 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 <div style="page-break-after: always;"></div>
 
-❏ Use the down arrow key to select the `Network` menu, then press enter.
+❏ Use the down arrow key to select the `Network` menu, then press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h13m01s027.png" alt="" data-align="center" style="padding-bottom: 1em;" width="444">
 
-❏ Use the down arrow key to select the `WiFi` menu, then press enter.
+❏ Use the down arrow key to select the `WiFi` menu, then press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h13m11s710.png" alt="" data-align="center" style="padding-bottom: 1em;" width="447">
 
@@ -287,13 +287,13 @@ Press **ctrl + C** to close `ping` and return to the command prompt.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h13m28s733.png" alt="" data-align="center" style="padding-bottom: 1em;" width="464">
 
-❏ Use the arrow keys to select `Quit`, then press enter.
+❏ Use the arrow keys to select `Quit`, then press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h13m57s055.png" alt="" data-align="center" style="padding-bottom: 1em;" width="465">
 
 <div style="page-break-after: always;"></div>
 
-❏ Use the arrow keys to select `Back` , then press enter.
+❏ Use the arrow keys to select `Back` , then press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h14m41s289.png" alt="" data-align="center" style="padding-bottom: 1em;" width="465">
 
@@ -315,15 +315,15 @@ sudo apt update && sudo apt -y upgrade
 
 <img src="images/vlcsnap-2024-05-04-18h15m11s937_border.png" data-align="center" style="padding-bottom: 1em;" />
 
-❏ Enter your password at the prompt and press enter. It may take 10+ minutes for your packages to download and update.
+❏ Enter your password at the prompt and press **enter**. It may take 10+ minutes for your packages to download and update.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="485">
 
 # ▶ Update your hostname
 
-A **hostname** is a short alphanumeric name for each device on a network, sort of like a nickname. Setting a descriptive hostname will make it easier to tell which device is which, for example when using your router admin panel. 
+A **hostname** is a short alphanumeric name for each device on a network, like a nickname. Setting a descriptive hostname will make it easier to tell which device is which, for example when using your router admin panel. 
 
-❏ To see your curent hostname, enter the command `hostname` and press enter. The default hostname is `orangepizero2w`.
+❏ To see your current hostname, enter the command `hostname` and press **enter**. The default hostname is `orangepizero2w`.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="473">
 
@@ -403,7 +403,7 @@ sudo mkdir -p /var/www/zinegallery.iffybooks.net
 
 <img title="" src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
 
-❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. (Replace `zinegallery.iffybooks.net` below with the name of the dictory you just created.)
+❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. Replace `zinegallery.iffybooks.net` below with the name of the directory you just created.
 
 ```
 sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
@@ -439,7 +439,7 @@ sudo nano index.html
 
 <div style="page-break-after: always;"></div>
 
-❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example web pages.
+❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example HTML code.
 
 ```
 <!DOCTYPE html>
@@ -474,7 +474,7 @@ cd /etc/apache2/sites-available/
 
 <img title="" src="images/vlcsnap-2024-05-04-18h22m28s109_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="476">
 
-❏ Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`; yours should be the domain you chose earlier followed by `.conf`.
+❏ Use `cp` to make a copy of the file `000-default.conf`. In the example below, the new file will be called `zinegallery.iffybooks.net.conf`. Yours should be the domain you chose earlier, followed by `.conf`.
 
 ```
 sudo cp 000-default.conf zinegallery.iffybooks.net.conf
@@ -573,7 +573,7 @@ systemctl reload apache2
 
 # ▶ Test your site on the local network
 
-❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press enter. You should see your test website!
+❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press **enter**. You should see your test website!
 
 <img title="" src="images/Screenshot%202024-05-04%20at%2015.33.35.png" alt="" data-align="center" style="padding-bottom: 1em;" width="381">
 
@@ -589,13 +589,13 @@ Alternatively, your computer can announce its own static IP address, which never
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m11s162_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="483">
 
-❏ Select the `Network` menu and press enter.
+❏ Select the `Network` menu and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m22s250.png" alt="" data-align="center" style="padding-bottom: 1em;" width="469">
 
 <div style="page-break-after: always;"></div>
 
-❏ Select `IP` and press enter.
+❏ Select `IP` and press **enter**.
 
 <img title="" src="images/vlcsnap-2024-05-04-18h33m31s237.png" alt="" data-align="center" style="padding-bottom: 1em;" width="471">
 
@@ -609,7 +609,7 @@ Alternatively, your computer can announce its own static IP address, which never
 
 <div style="page-break-after: always;"></div>
 
-❏ Next to **Address**, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 255. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Press **enter** to save your configuration.
+❏ Next to **Address**, enter the local IP address you'd like to use. It should begin with `192.168.1.` and end with a number from 2 to 254. You may want to leave this option as-is, because you know your DHCP-assigned IP address isn't being used by another device. Press **enter** to save your configuration.
 
 <img title="" src="images/19928390b675ecba5224e94148455e8c2911308d.png" alt="vlcsnap-2024-05-20-09h02m24s513.png" width="330" data-align="center" style="padding-bottom: 1em;">
 
@@ -844,9 +844,9 @@ If you don't see any error messages when you run this command, that's a good thi
 
 &nbsp;
 
-<img title="" src="images/purple_blob.png" alt="" data-align="left" width="92">**Anti-Copyright 2024**
+<img title="" src="images/white_box.png" alt="" data-align="center" height="370" />
 
-****
+<img title="" src="images/purple_blob.png" alt="" data-align="left" width="92"><br />**Anti-Copyright 2024**
 
 **Iffy Books**
 
