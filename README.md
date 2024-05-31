@@ -8,7 +8,7 @@
 
 <img title="" src="images/Iffy_Books_Logo_med.png" alt="" data-align="center" width="184">
 
-<h2 align="center"><i>To the Model Internet Club</i></p>
+<h2 align="center"><i>For the Model Internet Club</i></p>
 
 <h2 align="center">Follow Iffy Books on Mastodon:<br />post.lurk.org/@iffybooks</p>
 
@@ -854,6 +854,4 @@ If you don't see any error messages when you run this command, that's a good thi
 
 **iffybooks.net**
 
-
-
-*Updated May 31, 2024 at 4 p.m.*
+*Updated May 31, 2024 at 6 p.m.*
