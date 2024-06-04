@@ -327,6 +327,8 @@ A **hostname** is a short alphanumeric name for each device on a network, like a
 
 <img title="" src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="473">
 
+<div style="page-break-after: always;"></div>
+
 ❏ Now run the command below, replacing **Zine-Gallery** with a descriptive name for your server (no spaces allowed, but hyphens are OK). You'll be prompted to enter your password.
 
 ```
@@ -854,4 +856,4 @@ If you don't see any error messages when you run this command, that's a good thi
 
 **iffybooks.net**
 
-*Updated May 31, 2024 at 6 p.m.*
+*Updated June 3, 2024*
