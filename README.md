@@ -8,7 +8,7 @@
 
 <img title="" src="images/Iffy_Books_Logo_med.png" alt="" data-align="center" width="184">
 
-<h2 align="center"><i>For the Model Internet Club</i></p>
+<h2 align="center"><i>Many thanks to the Model Internet Club</i></p>
 
 <h2 align="center">Follow Iffy Books on Mastodon:<br />post.lurk.org/@iffybooks</p>
 
@@ -546,7 +546,7 @@ Listen 0.0.0.0:80
 
 ❏ On a computer connected to the same network as your server, open a web browser, type the server's IP address in the address bar, and press **enter**. You should see your test website!
 
-<img title="" src="images/Screenshot%202024-05-04%20at%2015.33.35.png" alt="" data-align="center" style="padding-bottom: 1em;" width="381">
+<img title="" src="images/Screenshot%202024-05-04%20at%2015.33.35.png" alt="" data-align="center" style="padding-bottom: 1em;" width="613">
 
 <div style="page-break-after: always;"></div>
 
@@ -811,10 +811,15 @@ If you don't see any error messages when you run this command, that's a good thi
 
 &nbsp;
 
-&nbsp;
+<div style="page-break-after: always;"></div>
 
 &nbsp;
+😻
+&nbsp;
 
+<div style="page-break-after: always;"></div>
+
+&nbsp;
 <img title="" src="images/white_box.png" alt="" data-align="center" height="370" />
 
 <img title="" src="images/purple_blob.png" alt="" data-align="left" width="92"><br />**Anti-Copyright 2024**
