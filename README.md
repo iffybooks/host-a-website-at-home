@@ -58,21 +58,13 @@ You'll also need the following:
 
 Each subdomain string can be up to 63 characters long, case insensitive.
 
-<div style="page-break-after: always;"></div>
-
 ## Option 2: Buy a domain
 
-❏ Go to a domain registry website of your choice, choose a domain name, and enter your credit card info to pay.
+❏ Go to a domain registry website of your choice, choose a domain name, and enter your credit card info to pay. [Namecheap.com](https://namecheap.com) is one popular option, but there are many others.
 
-<img title="" src="images/2024-05-11-11-20-50-image.png" alt="" data-align="center" width="257">
+## ~~Option 3: Sign up for a free subdomain~~
 
-## Option 3: Sign up for a free subdomain from a DDNS provider
-
-❏ Go to **freedns.afraid.org** and set up a free subdomain. (There are many other sites that offer free subdomains, including dynv6.com.)
-
-<img title="" src="images/2024-05-18-02-38-37-image.png" alt="" width="357" data-align="center">
-
-<div style="page-break-after: always;"></div>
+*If you have a static IP address, you can get a free subdomain from [freedns.afraid.org](https://freedns.afraid.org) or [dynv6.com](https://dynv6.com). However, we weren't able to get those free subdomains working with Dynamic DNS, which is needed if your home IP address changes often. If you know of a free subdomain provider that allows creating NS records, let us know!*
 
 # ▶ Flash Ubuntu to your SD card
 
@@ -319,24 +311,6 @@ sudo apt update && sudo apt -y upgrade
 
 <img title="" src="images/vlcsnap-2024-05-04-18h15m32s775_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="485">
 
-# ▶ Update your hostname
-
-A **hostname** is a short alphanumeric name for each device on a network, like a nickname. Setting a descriptive hostname will make it easier to tell which device is which, for example when using your router admin panel. 
-
-❏ To see your current hostname, enter the command `hostname` and press **enter**. The default hostname is `orangepizero2w`.
-
-<img title="" src="images/vlcsnap-2024-05-04-18h18m20s739_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="473">
-
-<div style="page-break-after: always;"></div>
-
-❏ Now run the command below, replacing **Zine-Gallery** with a descriptive name for your server (no spaces allowed, but hyphens are OK). You'll be prompted to enter your password.
-
-```
-hostnamectl set-hostname Zine-Gallery
-```
-
-<img title="" src="images/vlcsnap-2024-05-04-18h18m33s779_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="502">
-
 # ▶ Set up a firewall
 
 A firewall is a piece of software that restricts access to your device over the network. In this section you'll install and configure the firewall program `ufw`, short for Uncomplicated Firewall, which will monitor network requests and permit or deny each one depending on rules you set up.
@@ -361,6 +335,8 @@ sudo ufw default allow outgoing
 
 <img title="" src="images/vlcsnap-2024-05-04-18h26m59s436_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="562">
 
+<div style="page-break-after: always;"></div>
+
 ❏ Run the command below to allow incoming TCP connections on port 80:
 
 ```
@@ -381,11 +357,11 @@ sudo ufw allow 22/tcp
 
 <img title="" src="images/vlcsnap-2024-05-06-19h10m33s671_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="635">
 
+<div style="page-break-after: always;"></div>
+
 # ▶ Install Apache HTTP Server
 
 Next you'll install Apache HTTP Server, one of the most widely used web server programs. *(Note: The term "web server" can refer to a piece of software that serves websites, like Apache. "Web server" can also refer to the computer the software is running on.)*
-
-<div style="page-break-after: always;"></div>
 
 ❏ Run the command below to install Apache. You'll be prompted to enter your password.
 
@@ -405,6 +381,8 @@ sudo mkdir -p /var/www/zinegallery.iffybooks.net
 
 <img title="" src="images/vlcsnap-2024-05-04-18h19m39s448_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
 
+<div style="page-break-after: always;"></div>
+
 ❏ Use `chown` to set the current user (`orangepi`) as the owner of the directory you just created. Replace `zinegallery.iffybooks.net` below with the name of the directory you just created.
 
 ```
@@ -412,8 +390,6 @@ sudo chown -R $USER:$USER /var/www/zinegallery.iffybooks.net
 ```
 
 <img title="" src="images/vlcsnap-2024-05-04-18h19m57s347_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="549">
-
-<div style="page-break-after: always;"></div>
 
 ❏ Now use `chmod` to set read-write-execute permissions for the directory `/var/www/`. The `755` option means only the owner (`orangepi`) can write to the directory, while all users will have read and execute permissions.
 
@@ -431,6 +407,8 @@ cd /var/www/zinegallery.iffybooks.net/
 
 <img title="" src="images/vlcsnap-2024-05-04-18h20m42s389_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="534">
 
+<div style="page-break-after: always;"></div>
+
 ❏ Next you'll use the text editor `nano` to create a file called `index.html`. This will be the first page people will see when they visit your website.
 
 ```
@@ -438,8 +416,6 @@ sudo nano index.html
 ```
 
 <img title="" src="images/vlcsnap-2024-05-04-18h21m02s005_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="546">
-
-<div style="page-break-after: always;"></div>
 
 ❏ Now you'll type out some HTML code for a basic web page, just to use as a test. You can adapt the code below, or do a web search for example HTML code.
 
@@ -502,40 +478,7 @@ DocumentRoot /var/www/zinegallery.iffybooks.net
 
 <img title="" src="images/vlcsnap-2024-05-04-18h23m53s870_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="472">
 
-<div style="page-break-after: always;"></div>
-
-❏ Create two new lines above the one you just edited, and type out the following options. (If you decide to host more than one website on your server, you'll update these lines later.) When you're done, press **ctrl + X** and follow the prompts to save the file.
-
-```
-ServerName localhost
-ServerAlias localhost
-```
-
-<img title="" src="images/vlcsnap-2024-05-04-18h25m02s853_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="494">
-
-# ▶ Set up ports.conf
-
-❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
-
-<img title="" src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="502">
-
-<div style="page-break-after: always;"></div>
-
-❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
-
-```
-sudo nano ports.conf
-```
-
-<img title="" src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="516">
-
-❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
-
-```
-Listen 0.0.0.0:80
-```
-
-<img title="" src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="511">
+❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
 
 <div style="page-break-after: always;"></div>
 
@@ -557,21 +500,47 @@ sudo a2dissite 000-default.conf
 
 <img title="" src="images/vlcsnap-2024-05-04-18h25m53s476_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="474">
 
-❏ Restart Apache with the following command:
-
-```
-systemctl reload apache2
-```
-
-<img title="" src="images/vlcsnap-2024-05-04-18h26m15s464_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="491">
+Ordinarily, you'd run the command `systemctl reload apache2` at this point to restart the Apache server. But we're rebooting the computer after the next step, so it isn't necessary this time.
 
 <div style="page-break-after: always;"></div>
+
+# ▶ Set up ports.conf
+
+❏ Run the command `cd /etc/apache2/` to change your curent working directory to `/etc/apache2/`. Then use `ls` to view the directory's contents.
+
+<img title="" src="images/vlcsnap-2024-05-04-18h28m38s809_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="433">
+
+❏ Use the following command to open the configuration file `ports.conf` with the text editor `nano`.
+
+```
+sudo nano ports.conf
+```
+
+<img title="" src="images/vlcsnap-2024-05-04-18h28m59s891_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="477">
+
+❏ Find the line beginning with "Listen" and update it to match the line below. This change will expose your Apache website to other devices on your network.
+
+```
+Listen 0.0.0.0:80
+```
+
+<img title="" src="images/vlcsnap-2024-05-04-18h29m08s844_border.png" alt="" data-align="center" style="padding-bottom: 1em;" width="341">
+
+❏ When you're ready to save your file, press **ctrl+X** to exit. Follow the prompts at the bottom of the screen to save the file.
+
+# ▶ Reboot
+
+❏ Type the command `reboot` and press **enter** to reboot your computer.
+
+![](images/vlcsnap-2024-05-04-18h40m13s233_border.png)
 
 # ▶ Find your IP address
 
 ❏ Run the command `ip addr` to find your IP address on the local network. Look for a line beginning with `inet 192.168.`, which will be under `enx0...` if you're using Ethernet, or `wlan0` if you're using wi-fi. In the example below the server's local IP address is `192.168.1.46`.
 
 <img title="" src="images/2024-05-25-15-14-36-image.png" alt="" data-align="center" style="padding-bottom: 1em;" width="488">
+
+<div style="page-break-after: always;"></div>
 
 # ▶ Test your site on the local network
 
@@ -856,4 +825,4 @@ If you don't see any error messages when you run this command, that's a good thi
 
 **iffybooks.net**
 
-*Updated June 3, 2024*
+*Updated June 14, 2024*
